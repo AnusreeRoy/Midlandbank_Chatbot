@@ -1,0 +1,23 @@
+{
+
+  "/api": {
+
+    "target": "http://localhost:8000/chatbot/",
+
+    "secure": false,
+
+    "logLevel": "debug",
+
+    "changeOrigin": true,
+
+    "pathRewrite": {"^/api": ""},
+
+    "headers": {
+
+      "X-Proxy": "angular-dev-server"
+
+    }
+
+  }
+
+}

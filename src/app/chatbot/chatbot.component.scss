@@ -1,0 +1,220 @@
+/* Chatbot Container and Icon */
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  text-align: center;
+}
+
+.chatbot-icon {
+   color: white;
+    border: none; 
+    border-radius: 10%; 
+    width: 80px; 
+    height: 80px; 
+    font-size: 24px; 
+    cursor: pointer;
+
+    img{
+      height: 100%;
+      width: 100%;
+    }
+}
+
+.chatbot-text {
+  display: block;
+  margin-bottom: 5px; /* Space between text and icon */
+  font-size: 16px;
+  color: #3b3085;
+  font-family: Arial, sans-serif;
+}
+
+/* Chat Interface */
+.chat-interface {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  background-color: #e56175;
+  font-family: Arial;
+  font-size: 10pt;
+  font-weight: bold;
+  color: white;
+  padding: 6px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
+
+.chat-body {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px;
+  background-color: #f9f9f9;
+  max-height: 400px;
+}
+
+
+.message-text {
+  word-wrap: break-word; /* Wrap text to prevent overflow */
+  overflow-wrap: break-word; /* Alternative for text wrapping */
+  white-space: normal; /* Allow text wrapping */
+ }
+ 
+.message-container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  width: 100%;
+  gap: 10px;
+  
+
+  .message-icon{
+    margin-right: 10px;
+  }
+
+  .message-icon, .user-message-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+  }
+  .user-message-icon {
+    background-color: #f5dce4;
+    border-radius: 50%;
+    margin-left: 10px;
+  }
+
+  p {
+    margin: 0;
+    padding: 8px 12px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    max-width: 70%;
+    word-wrap: break-word;
+    font-family: Arial;
+    font-size: 9pt;
+    text-align:left;
+  }
+ 
+}
+/* Align user messages to the right */
+.user-message {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  width: 100%;
+
+  p {
+    background-color: #dad4df;
+    color: #4a2828;
+  }
+}
+
+/* Align bot messages to the left */
+.bot-message {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+
+  p {
+    background-color: #fed7da;
+    color: #490481;
+  }
+}
+
+.loading-indicator {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  color: gray;
+  animation: typing-animation 1s infinite;
+}
+@keyframes typing-animation {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+
+/* Chat Footer */
+.chat-footer {
+  display: flex;
+  padding: 10px;
+
+  input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  button {
+    background-color: #e56175;;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-left: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  /* Adjust for mobile phones */
+  .chat-interface {
+    width: 70%; /* Use almost full width */
+    bottom: 20px; /* Adjust position */
+    right: 5%; /* Center the chat */
+  }
+
+  .chatbot-container {
+    bottom: 20px; /* Adjust placement */
+    right: 5px; /* Make room for smaller screens */
+  }
+
+  .chatbot-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .message-container p {
+    max-width: 100%; /* Allow full width for bubbles */
+    font-size: 12px; /* Adjust text size */
+    font-family: Arial;
+    font-size: 9pt;
+  }
+
+  .chat-footer input {
+    font-size: 12px;
+    padding: 4px;
+  }
+
+  .chat-footer button {
+    font-size: 12px;
+    padding: 2px 4px; /* Reduce padding */
+  }
+}

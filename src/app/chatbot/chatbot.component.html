@@ -1,0 +1,38 @@
+<div class="chatbot-container">
+  <!-- Text Message -->
+  <span class="chatbot-text">Need help? Ask Us!</span>
+
+  <!-- Chatbot Icon -->
+  <img src="chat-icon.png" alt="Chatbot Icon" class="chatbot-icon" (click)="toggleChat()" />
+
+  <!-- Chat Interface -->
+  <div *ngIf="chatVisible" class="chat-interface">
+    <!-- Chat Header -->
+    <div class="chat-header">
+      <h4>Chat with us!</h4>
+      <button (click)="toggleChat()">×</button>
+    </div>
+
+    <!-- Chat Body -->
+    <div #chatBody class="chat-body">
+      <div *ngFor="let message of chatHistory" class="message-container">
+        <div [ngClass]="{ 'user-message': message.isUser, 'bot-message': !message.isUser }">
+          <img *ngIf="message.isUser" src="user-icon.png" alt="User Icon" class="user-message-icon" />
+          <img *ngIf="!message.isUser" src="chat-icon.png" alt="Bot Icon" class="message-icon" />
+          <p [innerHTML]="message.text | linebreaks"></p>
+          <span *ngIf="message.isLoading" class="loading-indicator"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Footer -->
+    <div class="chat-footer">
+      <input
+      type="text"
+      [(ngModel)]="userQuery"
+      placeholder="Type your message..."
+      (keydown.enter)="sendMessage()" />
+    <button (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+</div>
