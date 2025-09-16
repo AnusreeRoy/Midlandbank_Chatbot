@@ -10,9 +10,9 @@
 .chatbot-icon {
    color: white;
     border: none; 
-    border-radius: 10%; 
-    width: 80px; 
-    height: 80px; 
+    border-radius: 50%; 
+    width: 60px; 
+    height: 60px; 
     font-size: 24px; 
     cursor: pointer;
 
@@ -25,7 +25,7 @@
 .chatbot-text {
   display: block;
   margin-bottom: 5px; /* Space between text and icon */
-  font-size: 16px;
+  font-size: 13px;
   color: #3b3085;
   font-family: Arial, sans-serif;
 }
@@ -35,20 +35,34 @@
   position: fixed;
   bottom: 30px;
   right: 20px;
-  width: 300px;
+  width: 350px;
   height: 400px;
   background-color: white;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
+  transition: all 0.3s ease;
+
+  &.expanded{
+    width: 100vw;
+    height:100vh;
+    bottom: 0;
+    right: 0;
+    border-radius: 0;
+    z-index: 9999;
+
+    .chat-body{
+      max-height: calc(100vh - 120px); 
+    }
+  }
 }
 
 .chat-header {
   background-color: #e56175;
-  font-family: Arial;
-  font-size: 10pt;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
   font-weight: bold;
   color: white;
   padding: 6px;
@@ -56,6 +70,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 
   button {
     background: none;
@@ -107,27 +123,31 @@
 
   p {
     margin: 0;
-    padding: 8px 12px;
+    padding: 1px 14px;
     background-color: #f1f1f1;
-    border-radius: 8px;
-    max-width: 70%;
+    border-radius: 12px;
+    max-width: 75%;
     word-wrap: break-word;
-    font-family: Arial;
-    font-size: 9pt;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1;
     text-align:left;
   }
  
 }
+
 /* Align user messages to the right */
 .user-message {
   display: flex;
   flex-direction: row-reverse;
   align-items: flex-end;
   width: 100%;
+  margin-top: 10px;
 
   p {
-    background-color: #dad4df;
+    background-color: #f5b1b1;
     color: #4a2828;
+    max-width: 60%;
   }
 }
 
@@ -138,10 +158,12 @@
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
+  margin-top: 10px;
 
   p {
-    background-color: #fed7da;
-    color: #490481;
+    background-color: rgb(229, 231, 235);
+    color: black;
+    max-width: 60%;
   }
 }
 
@@ -160,27 +182,68 @@
 
 
 /* Chat Footer */
+//   display: flex;
+//   padding: 10px;
+// .chat-footer {
+
+//   input {
+//     flex: 1;
+//     padding: 10px;
+//     border: 1px solid #ccc;
+//     border-radius: 10px;
+//     font-size: 14px;
+//     height: 15px;
+
+//   }
+
+//   button {
+//     background-color: #e56175;;
+//     color: white;
+//     border: none;
+//     padding: 8px 16px;
+//     margin-left: 8px;
+//     cursor: pointer;
+//     border-radius: 4px;
+//   }
+// }
+
 .chat-footer {
   display: flex;
-  padding: 10px;
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
 
-  input {
+  .input-container {
+    position: relative;
     flex: 1;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
+    max-width: 100%;
 
-  button {
-    background-color: #e56175;;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    margin-left: 8px;
-    cursor: pointer;
-    border-radius: 4px;
+    input {
+      width: 100%;
+      padding: 10px 40px 10px 10px; 
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 14px;
+      height: 40px;
+      box-sizing: border-box;
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      font-size: 16px;
+      padding: 0;
+      margin: 0;
+      color: #e56175;
+      cursor: pointer;
+    }
   }
 }
+
 
 /* Responsive Adjustments */
 @media (max-width: 600px) {
@@ -199,13 +262,6 @@
   .chatbot-icon {
     width: 50px;
     height: 50px;
-  }
-
-  .message-container p {
-    max-width: 100%; /* Allow full width for bubbles */
-    font-size: 12px; /* Adjust text size */
-    font-family: Arial;
-    font-size: 9pt;
   }
 
   .chat-footer input {

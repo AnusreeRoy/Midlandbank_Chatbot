@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <div class="chatbot-container">
   <!-- Text Message -->
   <span class="chatbot-text">Need help? Ask Us!</span>
@@ -6,11 +7,16 @@
   <img src="chat-icon.png" alt="Chatbot Icon" class="chatbot-icon" (click)="toggleChat()" />
 
   <!-- Chat Interface -->
-  <div *ngIf="chatVisible" class="chat-interface">
+  <div *ngIf="chatVisible" class="chat-interface" [ngClass]="{expanded: isExpanded}">
     <!-- Chat Header -->
     <div class="chat-header">
-      <h4>Chat with us!</h4>
+      <h4>Midland Bank AI Assistant</h4>
+      <div class="chat-header-buttons">
+      <button (click)="toggleExpand()" class="expand-btn">
+        <i class="fa-solid" [ngClass]="isExpanded? 'fa-compress': 'fa-expand'"></i>
+      </button>
       <button (click)="toggleChat()">×</button>
+    </div>
     </div>
 
     <!-- Chat Body -->
@@ -27,12 +33,16 @@
 
     <!-- Chat Footer -->
     <div class="chat-footer">
+      <div class="input-container">
       <input
+      #chatInput
       type="text"
       [(ngModel)]="userQuery"
-      placeholder="Type your message..."
+      placeholder="Message Assistant"
       (keydown.enter)="sendMessage()" />
-    <button (click)="sendMessage()">Send</button>
+    <button (click)="sendMessage()">
+      <i class="fa-solid fa-paper-plane"></i>
+    </button>
     </div>
   </div>
 </div>

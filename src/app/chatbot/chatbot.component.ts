@@ -71,14 +71,26 @@ import { LinebreaksPipe } from '../linebreaks.pipe';
 export class ChatbotComponent {
 
   @ViewChild('chatBody') chatBody!: ElementRef;
+  @ViewChild('chatInput') chatInput!: ElementRef<HTMLInputElement>;
   chatVisible: boolean = false;
   userQuery: string = '';
+  isExpanded: boolean = false;
   chatHistory: { text: string; isUser: boolean;  isLoading: boolean }[] = [];
 
   constructor(private http: HttpClient) {} // Inject HttpClient
 
   toggleChat(): void {
     this.chatVisible = !this.chatVisible;
+
+    setTimeout(() => {
+      if(this.chatVisible && this.chatInput){
+        this.chatInput.nativeElement.focus();
+      }
+    }, 100);
+  }
+
+  toggleExpand(): void {
+    this.isExpanded = !this.isExpanded;
   }
 
   sendMessage(): void {
@@ -86,15 +98,16 @@ export class ChatbotComponent {
       this.chatHistory.push({ text: this.userQuery, isUser: true, isLoading: false });
   
       // Add temporary "Typing..." message only for this input
-      const typingMessage = { text: "Typing...", isUser: false, isLoading: true };
+      const typingMessage = { text: "Thinking...", isUser: false, isLoading: true };
       this.chatHistory.push(typingMessage);
 
       let dotCount = 0;
       const typingInterval = setInterval(() => {
         dotCount = (dotCount + 1) % 4; // Cycle through 0, 1, 2, 3
-        typingMessage.text = "Typing" + ".".repeat(dotCount);
+        typingMessage.text = "Thinking" + ".".repeat(dotCount);
       }, 500); // Update every 500ms  
-  
+      
+    // this.http.post<{ response: string }>('http://chatbot.midlandbankbd.net:4200/'+this.userQuery, { withCredentials: true })
       this.http.post<{ response: string }>('http://localhost:8000/chatbot/', { message: this.userQuery }, { withCredentials: true })
         .subscribe({
           next: (data) => {
@@ -127,6 +140,7 @@ export class ChatbotComponent {
         });
   
       this.userQuery = ''; // Clear input field
+      this.chatInput.nativeElement.focus(); // Refocus input
       this.scrollToBottom();
     }
   }
@@ -139,11 +153,18 @@ export class ChatbotComponent {
     }
   }
 
-  scrollToBottom(): void {
-    setTimeout(() => {
-      if (this.chatBody?.nativeElement) {
-        this.chatBody.nativeElement.scrollTop = this.chatBody.nativeElement.scrollHeight;
+  
+scrollToBottom(): void {
+  setTimeout(() => {
+    if (this.chatBody?.nativeElement) {
+      const chatBodyEl = this.chatBody.nativeElement;
+      const lastMessage = chatBodyEl.lastElementChild;
+
+      if (lastMessage) {
+        (lastMessage as HTMLElement).scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-    }, 1500);
-  }
+    }
+  }, 150); 
+}
+
 }
