@@ -1,3 +1,4 @@
+
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
 # Compiled output
@@ -41,3 +42,20 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Ignore virtual environment
+myenv/
+
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+
+# Ignore environment config
+*.env
+
+# Ignore SQLite DB if not needed
+*.sqlite3
+
+# Ignore system files
+.DS_Store
+0da1ad8aff0abd98a324e80b08bc585d100150c8
