@@ -20,7 +20,7 @@ def build_message_list(prompt: str,context: str,cache: dict,history: list) -> li
     messages = [{"role": "system", "content": system_message}]
 
     # 2) Inject up to the last 20 turns of history
-    messages.extend(history[-20:])
+    messages.extend(history[-6:])
 
     # 3) Add the new user turn
     messages.append({"role": "user", "content": prompt})

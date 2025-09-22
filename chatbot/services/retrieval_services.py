@@ -15,6 +15,7 @@ from chromadb.utils import embedding_functions
 from chatbot.apps import product_aliases_data as product_aliases
 from chatbot.data import config 
 from chatbot.utils.text_utils import normalize_query_with_aliases
+import time
 
 embedding_func = embedding_functions.SentenceTransformerEmbeddingFunction(
     model_name="BAAI/bge-base-en-v1.5"
@@ -300,12 +301,15 @@ def get_relevant_chroma_data(query: str, n_results: int = 5):
 
     try:
         print(f"\n📦 Querying vector data from ChromaDB collection: {collection.name}")
+        start_time = time.time()
         results = collection.query(
             query_texts=[query],
             n_results=n_results,
             include=["documents", "metadatas", "distances"]
 
         )
+        end_time = time.time()
+        print(f"⏱️ ChromaDB query completed in {end_time - start_time:.2f} seconds")
 
         all_results = []
         query_category, query_category_score = identify_query_category(query)

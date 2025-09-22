@@ -221,6 +221,7 @@ def chatbot_response(request):
     
    # Try to fuzzy match multiple products
     matched_products = product_utils.extract_multiple_products(user_message, all_products)
+    print(f"🔍 Fuzzy matched products: {matched_products}")
     
     if len(matched_products) == 2:
         print(f"🧠 Multiple products detected: {matched_products}")
@@ -235,11 +236,12 @@ def chatbot_response(request):
                 contexts.append(f"📌 *{prod}*\n{context.strip()}")
     
         if contexts:
-            MAX_CONTEXT_LENGTH = 4000  # Adjust based on token limits
+            MAX_CONTEXT_LENGTH = 2500  # Adjust based on token limits
             processed_contexts = []
             for c in contexts:
                 if len(c) > MAX_CONTEXT_LENGTH:
                     processed_contexts.append(product_utils.summarize_context(c, llm_services, cache, history=chat_history))
+                    print(f"🗜️ Summarized context length: {len(processed_contexts)}")
                 else:
                     processed_contexts.append(c)
             comparison_prompt = (

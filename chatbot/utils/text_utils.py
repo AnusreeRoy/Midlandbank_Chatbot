@@ -27,12 +27,12 @@ def clean_response(text):
         clean_text.append('.'.join(filtered_sents).strip())
     return "\n".join(clean_text).strip()
 
-def truncate_context(context, max_chars=6000):
+def truncate_context(context, max_chars=4000, fallback_min=1000):
     if len(context) <= max_chars:
         return context
     truncated = context[:max_chars]
     last_period = truncated.rfind('.')
-    if last_period == -1 or last_period < max_chars * 0.5:
+    if last_period == -1 or last_period < fallback_min:
         return truncated.strip() + " ..."
     return truncated[:last_period+1]
 
@@ -178,6 +178,14 @@ def extract_topic_from_message(message: str):
         "guide me", "more info", "details please"
     ]
     message_lower = message.lower().strip()
+    
+    # === New addition: Ignore short numeric or currency answers ===
+    if re.fullmatch(r'(bdt|taka)?\s?[\d,.]+( years?)?', message_lower) or re.fullmatch(r'[\d,.]+\s?(years?)?', message_lower):
+        return None
+    
+    # Also ignore short replies that are likely parameters
+    if len(message_lower.split()) <= 2 and any(char.isdigit() for char in message_lower):
+        return None
 
     # If the message is very short and vague
     if len(message_lower.split()) < 3 and any(k in message_lower for k in follow_up_keywords):
