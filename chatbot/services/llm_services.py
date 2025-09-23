@@ -5,6 +5,8 @@ from chatbot.services.retrieval_services import cache
 from chatbot.data.config import system_message
 from chatbot.utils import text_utils
 client = OpenAI(api_key=settings.API_KEY)
+import logging
+logger = logging.getLogger(__name__)
 
 def build_message_list(prompt: str,context: str,cache: dict,history: list) -> list:
     
@@ -53,5 +55,5 @@ def get_gpt_response(messages: list, cache: dict) -> str:
         cache[key] = out
         return out
     except Exception as e:
-        print("OpenAI API Error:", e)
+        logger.error("OpenAI API Error:", e)
         return "Sorry, I’m having trouble right now."

@@ -2,7 +2,8 @@
 import json
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
-import time, re
+import time, re, logging
+logger = logging.getLogger(__name__)
 # Import from your new modules
 from chatbot.data import config #
 from chatbot.services import retrieval_services
@@ -230,8 +231,8 @@ def chatbot_response(request):
         for prod in matched_products[:2]:  # Compare first two matched products
             print(f"📄 Getting context for: {prod}")
             context = retrieval_services.get_relevant_chroma_data(prod)
-            print(f"📄 Raw context length: {len(context) if context else 0}")
-            print(f"📄 Context preview: {context[:300] if context else 'No context found'}")
+            # print(f"📄 Raw context length: {len(context) if context else 0}")
+            # print(f"📄 Context preview: {context[:300] if context else 'No context found'}")
             if context.strip():
                 contexts.append(f"📌 *{prod}*\n{context.strip()}")
     
@@ -241,7 +242,7 @@ def chatbot_response(request):
             for c in contexts:
                 if len(c) > MAX_CONTEXT_LENGTH:
                     processed_contexts.append(product_utils.summarize_context(c, llm_services, cache, history=chat_history))
-                    print(f"🗜️ Summarized context length: {len(processed_contexts)}")
+                    # print(f"🗜️ Summarized context length: {len(processed_contexts)}")
                 else:
                     processed_contexts.append(c)
             comparison_prompt = (
@@ -253,7 +254,7 @@ def chatbot_response(request):
     
             messages = llm_services.build_message_list(user_message, final_context, cache, history=chat_history)
             response = llm_services.get_gpt_response(messages, cache)
-    
+            logger.info(f"🤖 GPT Comparison Response: {response}")
             text_utils.append_to_chat_history(request, user_message, response)
             return JsonResponse({"response": response})
     
@@ -279,11 +280,11 @@ def chatbot_response(request):
     start_time = time.time()
     # Pass all necessary config data to the service function
     raw_context = retrieval_services.get_relevant_chroma_data(current_topic)
-    print("DEBUG: Raw context type: ", raw_context[:300])
+    # print("DEBUG: Raw context type: ", raw_context[:300])
     context = text_utils.sanitize_context(raw_context)
     end_time = time.time()
     print(f"⏳ ChromaDB Query Time: {end_time - start_time:.2f} seconds")
-    print("DEBUG: Context directly from get_relevant_chroma_data (first 500 chars):\n", context[:300])
+    # print("DEBUG: Context directly from get_relevant_chroma_data (first 500 chars):\n", context[:300])
     
     
     if not context.strip():
@@ -296,7 +297,7 @@ def chatbot_response(request):
             formatted_board_context = "\n".join([
             f"• {line.strip()}" for line in board_context.splitlines()
         ])
-        print("DEBUG: Extracted board context (first 300 chars):\n", formatted_board_context[:300])
+        # print("DEBUG: Extracted board context (first 300 chars):\n", formatted_board_context[:300])
         messages = llm_services.build_message_list(user_message, context, cache, history=chat_history)
         response = llm_services.get_gpt_response(messages, cache)
         return JsonResponse({"response": response})
@@ -305,7 +306,7 @@ def chatbot_response(request):
     elif query_category_identified == 'management':
         management_context = text_utils.extract_management_sentences(context, config.management_roles)
         if management_context.strip():
-            print("DEBUG: Extracted management context (first 300 chars):\n", management_context[:300])
+            # print("DEBUG: Extracted management context (first 300 chars):\n", management_context[:300])
             messages = llm_services.build_message_list(user_message, context, cache, history=chat_history)
             response = llm_services.get_gpt_response(messages, cache)
             return JsonResponse({"response": response})
@@ -313,20 +314,20 @@ def chatbot_response(request):
     elif query_category_identified == 'sponsor':
         sponsor_context = text_utils.extract_sponsor_sentences(context)
         if sponsor_context.strip():
-            print("DEBUG: Extracted sponsor context (first 300 chars):\n", sponsor_context[:300])
+            # print("DEBUG: Extracted sponsor context (first 300 chars):\n", sponsor_context[:300])
             messages = llm_services.build_message_list(user_message, context, cache, history=chat_history)
             response = llm_services.get_gpt_response(messages, cache)
             return JsonResponse({"response": response})
     
     
     # Generate response using GPT
-    print(f"DEBUG: Context *before* calling get_gpt_response (first 500 chars):\n {context[:500]}") 
+    # print(f"DEBUG: Context *before* calling get_gpt_response (first 500 chars):\n {context[:500]}") 
     messages = llm_services.build_message_list(user_message, context, cache, history=chat_history)
     response = llm_services.get_gpt_response(messages, cache)
     # Save to session
     text_utils.append_to_chat_history(request, user_message, response)
-    print("DEBUG session before append", chat_history)
-    print(f"🤖 GPT Response: {response}")
+    # print("DEBUG session before append", chat_history)
+    # print(f"🤖 GPT Response: {response}")
     
     # Fallback product listing if GPT doesn't help
     if (

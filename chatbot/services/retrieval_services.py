@@ -342,19 +342,19 @@ def get_relevant_chroma_data(query: str, n_results: int = 5):
 
         # Sort results using the comprehensive scoring system
         all_results.sort(key=lambda x: x['relevance_score'], reverse=True)
-        for i, res in enumerate(all_results[:5]): # Print top 5 to see what's being prioritized
-            print(f"Rank {i+1}: Score={res['relevance_score']:.4f}, Categories={res['categories']}, Content Preview: {res['content'][:150]}...")
-        print("-------------------------------------------------------------------")
+        # for i, res in enumerate(all_results[:5]): # Print top 5 to see what's being prioritized
+        #     print(f"Rank {i+1}: Score={res['relevance_score']:.4f}, Categories={res['categories']}, Content Preview: {res['content'][:150]}...")
+        # print("-------------------------------------------------------------------")
 
         # Filter results to keep only the most relevant ones
         if query_category and category_keywords[query_category].get('exclusive', False):
             best_results = [r for r in all_results[:n_results] if query_category in r['categories']]
         else:
             best_results = all_results[:n_results]
-            print("\n--- DEBUG: Contents of best_results before raw_results creation ---")
-            for i, res in enumerate(best_results):
-                print(f"Result {i+1} (Score: {res['relevance_score']:.4f}): Content Length={len(res['content'])}, Content Preview: {res['content'][:300]}...")
-            print("-------------------------------------------------------------------")
+            # print("\n--- DEBUG: Contents of best_results before raw_results creation ---")
+            # for i, res in enumerate(best_results):
+            #     print(f"Result {i+1} (Score: {res['relevance_score']:.4f}): Content Length={len(res['content'])}, Content Preview: {res['content'][:300]}...")
+            # print("-------------------------------------------------------------------")
 
         if best_results:
             formatted_results = []
@@ -392,12 +392,12 @@ def get_relevant_chroma_data(query: str, n_results: int = 5):
                 formatted_results.append(f"• {content}\n  [Relevance: {result['relevance_score']:.4f}]")
 
             # Debug log each document being passed to GPT
-            print("\n📄 Documents sent to GPT:")
-            for result in best_results:
-                print(f"\n[Collection: {result['collection']}]")
-                print(f"Categories: {result['categories']}")
-                print(f"Relevance Score: {result['relevance_score']:.4f}")
-                print("Content Preview:\n", result['content'][:500], "...\n")
+            # print("\n📄 Documents sent to GPT:")
+            # for result in best_results:
+            #     print(f"\n[Collection: {result['collection']}]")
+            #     print(f"Categories: {result['categories']}")
+            #     print(f"Relevance Score: {result['relevance_score']:.4f}")
+            #     print("Content Preview:\n", result['content'][:500], "...\n")
 
             original_results = best_results.copy()
             query_lower = query.lower().strip()
@@ -423,9 +423,9 @@ def get_relevant_chroma_data(query: str, n_results: int = 5):
             #print(f"Raw results {raw_results}")
             context = "\n\n".join(raw_results)
             cache[cache_key] = context
-            print(f"\n--- DEBUG: FINAL context sent to GPT (first 1000 chars) ---")
-            print(context[:6000])
-            print("-----------------------------------------------------------")
+            # print(f"\n--- DEBUG: FINAL context sent to GPT (first 1000 chars) ---")
+            # print(context[:6000])
+            # print("-----------------------------------------------------------")
             return context
 
 
