@@ -1,9 +1,35 @@
 import re
 from fuzzywuzzy import fuzz
+from difflib import get_close_matches
 from chatbot.data.config import bank_keywords
 from chatbot.services import llm_services
 from chatbot.services.retrieval_services import cache
 from chatbot.services import retrieval_services
+
+def normalize_message(text):
+    text = text.lower()
+    text = re.sub(r'[^\w\s]', '', text)
+    text = re.sub(r'\s+', ' ', text).strip()
+
+    # Expand common abbreviations
+    replacements = {
+        "u": "you",
+        "r": "are",
+        "ur": "your",
+        "pls": "please",
+        "thx": "thanks"
+    }
+    words = text.split()
+    expanded = [replacements.get(w, w) for w in words]
+    return ' '.join(expanded)
+
+
+def fuzzy_greeting_match(text, greetings_dict):
+    normalized = normalize_message(text)
+    matches = get_close_matches(normalized, greetings_dict.keys(), n=1, cutoff=0.6)
+    return matches[0] if matches else None
+
+
 
 def is_relevant_query(user_message):
     """Check if query is banking-related using fuzzy matching."""

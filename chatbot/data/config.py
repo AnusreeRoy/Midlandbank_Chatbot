@@ -23,7 +23,8 @@ bank_keywords = [
     'policy', 'regulation', 'compliance', 'risk management', 'audit', 'internal control',
     'financial statements', 'annual report', 'financial report', 'quarterly report',
     'investor contact', 'nrb', 'bancassurance', 'sponsors', 'eligibility', 'requirements',
-    'documents', 'criteria', 'features', 'benefits', 'minimum deposit', 'amount', 'tenure'
+    'documents', 'criteria', 'features', 'benefits', 'minimum deposit', 'amount', 'tenure',
+    'students', 'university' 
     ]
 
 # Define comprehensive category keywords for better matching
@@ -115,7 +116,7 @@ greetings = {
         "good evening": "Good evening! Do you have any banking-related inquiries?",
         "okay": "Do you need any further assistance?",
         "ok": "Do you need any further assistance?",
-        "how are you": "I'm here and ready to help with any Midland Bank questions you have.",
+        "how are you": "I'm here and ready to help with any Midland Bank questions you have."
     }
 # Structured product list handling ===
 general_product_queries = [

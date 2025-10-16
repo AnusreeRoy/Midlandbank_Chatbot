@@ -16,6 +16,9 @@ from chatbot.apps import product_aliases_data as product_aliases
 from chatbot.data import config 
 from chatbot.utils.text_utils import normalize_query_with_aliases
 import time
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
 
 embedding_func = embedding_functions.SentenceTransformerEmbeddingFunction(
     model_name="BAAI/bge-base-en-v1.5"

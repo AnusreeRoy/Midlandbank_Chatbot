@@ -14,6 +14,9 @@ from chatbot.utils import text_utils
 from chatbot.utils import product_utils
 from chatbot.services.retrieval_services import cache
 from chatbot.data.config import PRODUCT_ALIASES
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
 
 @api_view(["GET", "POST"])
 def chatbot_response(request):
@@ -24,10 +27,7 @@ def chatbot_response(request):
     if not user_message:
         return JsonResponse({"response": "Please enter a question about Midland Bank."})
     
-    # Step: Handle expected follow-up values (age, location, etc.)
-    if not user_message:
-        return JsonResponse({"response": "Please enter a question about Midland Bank."})
-    
+         
     # Step: Handle follow-up values first
     followup_response = text_utils.handle_conversation_state(user_message, request)
     if followup_response:
@@ -60,6 +60,27 @@ def chatbot_response(request):
     if reframed_message:
         print(f"🛠️ Reframed user message: '{user_message}' → '{reframed_message}'")
         user_message = reframed_message
+               
+    #Handle common greetings
+    normalized = text_utils.normalize_message(user_message)
+    user_message_lower = user_message.lower()
+    if normalized in config.greetings:
+        return JsonResponse({"response": config.greetings[normalized]})
+
+    # Avoid fuzzy matching confirmation words like "yes"
+    confirmation_words = {"yes", "yeah", "yep", "sure", "ok", "okay", "no", "nope"}
+    if normalized not in confirmation_words and len(normalized) >3:  # Limit length for greetings
+        matched_key = text_utils.fuzzy_greeting_match(normalized, config.greetings)
+        if matched_key:
+            return JsonResponse({"response": config.greetings[matched_key]})
+        
+    
+    # Check if query is banking-related
+    if not text_utils.is_relevant_query(user_message):
+        return JsonResponse({
+            "response": "I didn't quite catch that. Could you please rephrase your question related to Midland Bank?"
+        })
+        
         
     # Query normalization and alias handling
     # Apply role aliases first for common phrase standardization
@@ -68,16 +89,10 @@ def chatbot_response(request):
     
     # Apply product/general aliases for query normalization
     user_message = text_utils.normalize_query_with_aliases(user_message, PRODUCT_ALIASES)
-            
-    user_message_lower = user_message.lower()
-    
+                
     # Identify query category        
     query_category_identified, _ = identify_query_category(user_message)
-    print(f"DEBUG: Identified Query Category: {query_category_identified}")
-            
-    #Handle common greetings
-    if user_message_lower in config.greetings:
-        return JsonResponse({"response": config.greetings[user_message_lower]})  
+    print(f"DEBUG: Identified Query Category: {query_category_identified}") 
        
     # Detect topic and handle follow-ups
     current_topic = text_utils.extract_topic_from_message(user_message)
@@ -101,13 +116,6 @@ def chatbot_response(request):
     request.session["chat_history"] = chat_history  # Ensure chat history is stored
     request.session.modified = True
     
-    # Check if query is banking-related
-    if not text_utils.is_relevant_query(user_message):
-        return JsonResponse({
-            "response": "I can only provide information about Midland Bank. Please ask a bank-related question."
-        })
-        
-         
     # === Structured product list handling ===
     if any(q in user_message_lower for q in config.general_product_queries):
         grouped = product_listing_service.list_products_grouped_by_category()
