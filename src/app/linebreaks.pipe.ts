@@ -1,12 +1,14 @@
-// linebreaks.pipe.ts
 import { Pipe, PipeTransform } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Pipe({
   name: 'linebreaks',
-  standalone: true // This pipe can be used in standalone components
+  standalone: true
 })
 export class LinebreaksPipe implements PipeTransform {
-  transform(text: string): string {
+  constructor(private sanitizer: DomSanitizer) {}
+
+  transform(text: string): SafeHtml {
     if (!text) return '';
 
     const lines = text.trim().split('\n');
@@ -23,13 +25,12 @@ export class LinebreaksPipe implements PipeTransform {
         continue;
       }
 
-      // === HEADINGS ===
+      // === Headings ===
       const headingLabels = ['savings products', 'loan products', 'current products', 'islamic products',
-        'general products', 'agent-banking products', 'cards products', 'loans products',
-        'savings', 'loan', 'current', 'benefits', 'eligibility', 'documents'];
+        'general products', 'agent-banking products', 'cards products', 'loans products', 'loans', 'loan', 
+        'current','savings', 'loan', 'current', 'benefits', 'eligibility', 'documents'];
 
       const cleanedLine = line.toLowerCase().replace(/^[-•\s]+/, '').replace(/[:\s]+$/g, '').trim();
-
       const isHeading = headingLabels.includes(cleanedLine);
 
       if (isHeading) {
@@ -37,11 +38,11 @@ export class LinebreaksPipe implements PipeTransform {
           html += '</ul>';
           inList = false;
         }
-        html += `<h3>${line.replace(/^[-•\s]+/, '').replace(/[:\s]+$/g, '').trim()}</h3>`;
+        html += `<h3>${this.escapeHtml(line)}</h3>`;
         continue;
       }
 
-      // Heading for product name
+      // MDB Product heading
       const isPotentialProductHeading =
         /^[A-Z\s\d\-&()]+$/.test(line) && line.startsWith('MDB') && line.split(' ').length <= 6;
       if (isPotentialProductHeading) {
@@ -49,7 +50,7 @@ export class LinebreaksPipe implements PipeTransform {
           html += '</ul>';
           inList = false;
         }
-        html += `<h3>${line.trim()}</h3>`;
+        html += `<h3>${this.escapeHtml(line)}</h3>`;
         continue;
       }
 
@@ -62,12 +63,11 @@ export class LinebreaksPipe implements PipeTransform {
           inList = false;
         }
 
-        // Extract key and value
         const cleanLine = line.replace(/^[-•]\s*/, '');
         const [key, ...rest] = cleanLine.split(':');
         const value = rest.join(':').trim();
 
-        html += `<p><b>${key.trim()}:</b> ${value}</p>`;
+        html += `<p><b>${this.escapeHtml(key.trim())}:</b> ${this.escapeHtml(value)}</p>`;
       }
       else if (isBullet) {
         if (!inList) {
@@ -75,14 +75,14 @@ export class LinebreaksPipe implements PipeTransform {
           inList = true;
         }
         const cleanLine = line.replace(/^[-•]\s*/, '');
-        html += `<li>${cleanLine}</li>`;
+        html += `<li>${this.escapeHtml(cleanLine)}</li>`;
       }
       else {
         if (inList) {
           html += '</ul>';
           inList = false;
         }
-        html += `<p>${line}</p>`;
+        html += `<p>${this.escapeHtml(line)}</p>`;
       }
     }
 
@@ -90,6 +90,13 @@ export class LinebreaksPipe implements PipeTransform {
       html += '</ul>';
     }
 
-    return html;
+    return this.sanitizer.bypassSecurityTrustHtml(html);
+  }
+
+  private escapeHtml(text: string): string {
+    return text
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
   }
 }

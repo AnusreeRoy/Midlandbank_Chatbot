@@ -56,10 +56,11 @@
 
 
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, ViewChild, ElementRef } from '@angular/core';
+import { Component, HostListener, ViewChild, ElementRef, ViewChildren, QueryList, AfterViewChecked, ChangeDetectorRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { LinebreaksPipe } from '../linebreaks.pipe';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-chatbot',
@@ -68,49 +69,83 @@ import { LinebreaksPipe } from '../linebreaks.pipe';
   templateUrl: './chatbot.component.html',
   styleUrls: ['./chatbot.component.scss']
 })
-export class ChatbotComponent {
+export class ChatbotComponent implements AfterViewChecked {
 
   @ViewChild('chatBody') chatBody!: ElementRef;
   @ViewChild('chatInput') chatInput!: ElementRef<HTMLInputElement>;
+  @ViewChildren('messageElement') messageElements!: QueryList<ElementRef>;
+  @ViewChildren('messageText') messageTexts!: QueryList<ElementRef>;
+
+  private shouldScroll = false;
+
+  ngAfterViewChecked(): void {
+    if (this.shouldScroll) {
+      this.scrollToBottom();
+      this.shouldScroll = false;
+    }
+  }
   chatVisible: boolean = false;
   userQuery: string = '';
   isExpanded: boolean = false;
   chatHistory: { text: string; isUser: boolean;  isLoading: boolean }[] = [];
 
-  constructor(private http: HttpClient) {} // Inject HttpClient
 
-  toggleChat(): void {
-    this.chatVisible = !this.chatVisible;
+  constructor(private http: HttpClient, private sanitizer: DomSanitizer, private cdr: ChangeDetectorRef) {} // Inject HttpClient and DomSanitizer
+
+toggleChat(): void {
+  this.chatVisible = !this.chatVisible;
+
+  if (this.chatVisible) {
+    this.addGreeting(); // greet on open
 
     setTimeout(() => {
-      if(this.chatVisible && this.chatInput){
+      if (this.chatInput) {
         this.chatInput.nativeElement.focus();
       }
     }, 100);
   }
+}
+
 
   toggleExpand(): void {
     this.isExpanded = !this.isExpanded;
   }
 
+  sanitize(text: string): SafeHtml {
+    const escaped = text.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const formatted = escaped.replace(/\n/g, '<br/>');
+    return this.sanitizer.bypassSecurityTrustHtml(formatted);
+  }
   sendMessage(): void {
+    
+    if (this.userQuery.trim().length > 1000){
+      alert("Your message exceeds the 1000 character limit. Please shorten your message and try again.");
+      return;
+    }
+
     if (this.userQuery.trim()) {
       this.chatHistory.push({ text: this.userQuery, isUser: true, isLoading: false });
   
       // Add temporary "Typing..." message only for this input
-      const typingMessage = { text: "Thinking...", isUser: false, isLoading: true };
+      const typingMessage = { text: '', isUser: false, isLoading: true };
       this.chatHistory.push(typingMessage);
+      this.shouldScroll = true; // Ensure scroll after view update
 
       let dotCount = 0;
+      const baseText = 'Thinking';
       const typingInterval = setInterval(() => {
         dotCount = (dotCount + 1) % 4; // Cycle through 0, 1, 2, 3
-        typingMessage.text = "Thinking" + ".".repeat(dotCount);
+        typingMessage.text = baseText + ".".repeat(dotCount);
+        this.cdr.markForCheck();
+        this.shouldScroll = true; // Ensure scroll after view update
       }, 500); // Update every 500ms  
       
     // this.http.post<{ response: string }>('http://chatbot.midlandbankbd.net:4200/'+this.userQuery, { withCredentials: true })
+    //this.http.post<{ response: string }>('http://chatbot.midlandbankbd.net:4200/chatbot/',{ message: this.userQuery },{ withCredentials: true })
       this.http.post<{ response: string }>('http://localhost:8000/chatbot/', { message: this.userQuery }, { withCredentials: true })
         .subscribe({
           next: (data) => {
+            clearInterval(typingInterval);
             console.log("Received response:", data); // Log response for debugging
   
             // Remove "Typing..." message and add the actual response
@@ -120,6 +155,7 @@ export class ChatbotComponent {
             }
   
             this.chatHistory.push({ text: data.response, isUser: false, isLoading:false });
+            this.shouldScroll = true; // Ensure scroll after view update
           },
           error: (error) => {
             clearInterval(typingInterval);
@@ -141,7 +177,7 @@ export class ChatbotComponent {
   
       this.userQuery = ''; // Clear input field
       this.chatInput.nativeElement.focus(); // Refocus input
-      this.scrollToBottom();
+      this.shouldScroll = true; // Ensure scroll after view update
     }
   }
 
@@ -155,16 +191,57 @@ export class ChatbotComponent {
 
   
 scrollToBottom(): void {
-  setTimeout(() => {
-    if (this.chatBody?.nativeElement) {
-      const chatBodyEl = this.chatBody.nativeElement;
-      const lastMessage = chatBodyEl.lastElementChild;
-
-      if (lastMessage) {
-        (lastMessage as HTMLElement).scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-  }, 150); 
+  const elements = this.messageElements?.toArray();
+  if (elements && elements.length > 0) {
+    const last = elements[elements.length - 1];
+    last.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }
+
+
+private addGreeting(): void {
+  // Prevent duplicate greeting
+  const alreadyGreeted = this.chatHistory.some(msg =>
+    msg.text.includes("Midland Bank")
+  );
+  if (alreadyGreeted) return;
+
+  // Determine time-based greeting
+  const hour = new Date().getHours();
+  let timeGreeting = "Hello";
+  if (hour < 12) {
+    timeGreeting = "Good morning";
+  } else if (hour < 18) {
+    timeGreeting = "Good afternoon";
+  } else {
+    timeGreeting = "Good evening";
+  }
+
+  // Add typing animation for realism
+  const typingMessage = { text: "Typing", isUser: false, isLoading: true };
+  this.chatHistory.push(typingMessage);
+
+  let dotCount = 0;
+  const typingInterval = setInterval(() => {
+    dotCount = (dotCount + 1) % 4;
+    typingMessage.text = "Typing" + ".".repeat(dotCount);
+  }, 400);
+
+  setTimeout(() => {
+    clearInterval(typingInterval);
+    const index = this.chatHistory.indexOf(typingMessage);
+    if (index !== -1) this.chatHistory.splice(index, 1);
+
+    // Push the friendly greeting
+    this.chatHistory.push({
+      text: `👋 ${timeGreeting}! I'm the Midland Bank AI Assistant. How can I help you today?`,
+      isUser: false,
+      isLoading: false
+    });
+
+    this.shouldScroll = true; // Ensure scroll after view update
+  }, 200);
+}
+
 
 }
