@@ -9,7 +9,7 @@ import chromadb
 from chromadb.config import Settings
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # Suppress INFO and WARNING logs
 import diskcache as dc
-cache = dc.Cache("cache_dir")  # Initialize disk cache for caching results
+cache = dc.Cache("cache_dir", size_limit=1e9)  # Initialize disk cache for caching results
 from chromadb.utils import embedding_functions
 # Import the loaded product aliases data
 from chatbot.apps import product_aliases_data as product_aliases

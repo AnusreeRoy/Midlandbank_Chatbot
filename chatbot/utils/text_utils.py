@@ -145,6 +145,13 @@ def extract_sponsor_sentences(context: str, sponsor_keywords=None):
 
 import re
 
+def normalize_query_for_matching(query: str) -> str:
+    query = query.lower().strip()
+    query = re.sub(r'\bu\b', 'you', query)         # Replace u → you
+    query = re.sub(r'[^\w\s]', '', query)          # Remove punctuation like ? or !
+    return query
+
+
 def normalize_query_with_aliases(query: str, aliases: dict) -> str:
     # Sort by descending alias length to match longer phrases first
     sorted_aliases = sorted(aliases.items(), key=lambda x: -len(x[0]))
@@ -248,7 +255,7 @@ def reframe_confirmation_reply(user_message, last_topic, last_bot_message):
     confirmations = {
         "yes", "ok", "okay", "sure", "go ahead", "please do", "proceed", "alright",
         "tell me more", "elaborate", "how can i apply for it", "how do i apply", "apply for it",
-        "more info", "details please", "what's the process", "what about it", "this", "that", "it"
+        "more info", "details please", "what's the process", "what about it", "this", "that", "it",
         "guide me", "next steps", "what's next", "i want to know more", "i want to apply",
         "more details", "more information", "please continue", "continue", "go on"
     }

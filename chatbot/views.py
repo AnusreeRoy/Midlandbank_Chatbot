@@ -117,6 +117,7 @@ def chatbot_response(request):
     request.session.modified = True
     
     # === Structured product list handling ===
+    user_message_lower = text_utils.normalize_query_for_matching(user_message)
     if any(q in user_message_lower for q in config.general_product_queries):
         grouped = product_listing_service.list_products_grouped_by_category()
         if not grouped:

@@ -24,7 +24,8 @@ bank_keywords = [
     'financial statements', 'annual report', 'financial report', 'quarterly report',
     'investor contact', 'nrb', 'bancassurance', 'sponsors', 'eligibility', 'requirements',
     'documents', 'criteria', 'features', 'benefits', 'minimum deposit', 'amount', 'tenure',
-    'students', 'university' 
+    'students', 'university','e-gp', 'corporate banking', 'business banking', 'merchant services', 'Excise duty',
+    'RTGS'
     ]
 
 # Define comprehensive category keywords for better matching
@@ -65,7 +66,7 @@ category_keywords = {
             'exclusive': False
         },
         'islamic': {
-            'keywords': ['islamic', 'saalam', 'shariah', 'mudaraba', 'murabaha', 'halal'],
+            'keywords': ['islamic', 'saalam', 'shariah', 'mudaraba', 'murabaha', 'halal', 'islami'],
             'weight': 1.5,
             'exclusive': True
         },
@@ -124,7 +125,11 @@ general_product_queries = [
         "what products do you have", "show all products", "what are the products", "available products",
         "product list", "products offered", "product categories list", "product names", "list of products",
         "what products are available", "list of midland bank products", "midland bank products",
-        "midland bank product list", "midland bank product categories"
+        "midland bank product list", "midland bank product categories", "what do you offer", 
+        "what do you provide", "what are your services", "services you offer", "what are your offerings", 
+        "show me what you offer", "show me your services", "services list", "your products", "your services", 
+        "list your products", "tell me about your products", "do you have any products",
+        "offerings", "bank offerings"
     ]
     
 category_map = {

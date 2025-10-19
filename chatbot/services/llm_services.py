@@ -4,6 +4,8 @@ from chatbot.services.retrieval_services import cache
 # from chatbot.utils.text_utils import clean_response
 from chatbot.data.config import system_message
 from chatbot.utils import text_utils
+import hashlib
+import json
 client = OpenAI(api_key=settings.API_KEY)
 import logging
 logger = logging.getLogger(__name__)
@@ -34,26 +36,40 @@ def build_message_list(prompt: str,context: str,cache: dict,history: list) -> li
     return messages
 
 
-def get_gpt_response(messages: list, cache: dict) -> str:
+
+def get_gpt_response(messages: list, cache) -> str:
     """
     Sends `messages` to GPT-5, caching by the hash of their content.
+    Supports TTL if cache is DiskCache.
     """
     if cache is None:
+        logger.warning("No cache provided; using temporary in-memory cache")
         cache = {}
-    key = f"gpt5:{hash(tuple((m['role'], m['content']) for m in messages))}"
+
+    model = getattr(settings, "DEFAULT_GPT_MODEL", "gpt-5")
+    key_data = json.dumps(messages, sort_keys=True)
+    key = f"{model}:{hashlib.sha256(key_data.encode()).hexdigest()}"
+
     if key in cache:
         return cache[key]
 
     try:
         resp = client.responses.create(
-            model="gpt-5",
+            model=model,
             input=messages,
             reasoning={"effort": "minimal"},
             text={"verbosity": "low"}
         )
         out = resp.output_text.strip()
-        cache[key] = out
+
+        # Use TTL if available
+        if hasattr(cache, "set"):
+            cache.set(key, out, expire=60 * 60)
+        else:
+            cache[key] = out
+
         return out
+
     except Exception as e:
-        logger.error("OpenAI API Error:", e)
+        logger.error("OpenAI API Error:", exc_info=e)
         return "Sorry, I’m having trouble right now."
