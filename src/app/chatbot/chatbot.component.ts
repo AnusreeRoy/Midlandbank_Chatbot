@@ -140,9 +140,10 @@ toggleChat(): void {
         this.shouldScroll = true; // Ensure scroll after view update
       }, 500); // Update every 500ms  
       
-    // this.http.post<{ response: string }>('http://chatbot.midlandbankbd.net:4200/'+this.userQuery, { withCredentials: true })
-    //this.http.post<{ response: string }>('http://chatbot.midlandbankbd.net:4200/chatbot/',{ message: this.userQuery },{ withCredentials: true })
-      this.http.post<{ response: string }>('http://localhost:8000/chatbot/', { message: this.userQuery }, { withCredentials: true })
+    this.http.post<{ response: string }>('http://localhost:8000/chatbot/', { message: this.userQuery },{ withCredentials: true })
+    //this.http.post<{ response: string }>('http://localhost:33915/mdb/GetChatbotResponse/' , { message: this.userQuery }, { withCredentials: true })
+    //this.http.post<{ response: string }>('http://10.96.56.51:4200/mdb/GetChatbotResponse/' , { message: this.userQuery }, { withCredentials: true })
+
         .subscribe({
           next: (data) => {
             clearInterval(typingInterval);
@@ -167,8 +168,8 @@ toggleChat(): void {
             }
   
             const errorMessage = error.status === 429 
-              ? "Rate limit exceeded. Please wait and try again." 
-              : "Error communicating with chatbot.";
+              ? "Your query is highly important to us. Currently we’re receiving a huge number of requests. Please wait a moment and try again.." 
+              : "We are having some trouble right now. Please wait or try again later.";
   
             this.chatHistory.push({ text: errorMessage, isUser: false, isLoading:false });
           },

@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import DOMPurify from 'dompurify';
 
 @Pipe({
   name: 'linebreaks',
@@ -90,7 +91,8 @@ export class LinebreaksPipe implements PipeTransform {
       html += '</ul>';
     }
 
-    return this.sanitizer.bypassSecurityTrustHtml(html);
+    const safeHtml = DOMPurify.sanitize(html, { USE_PROFILES: { html: true } });
+    return this.sanitizer.bypassSecurityTrustHtml(safeHtml);
   }
 
   private escapeHtml(text: string): string {
