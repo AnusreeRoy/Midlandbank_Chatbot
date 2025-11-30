@@ -295,20 +295,20 @@
   "board members":"board of directors",
   "list of board members":"board of directors",
   "list of board of directors":"board of directors",
-  "cto":"cto of midland bank",
-  "chief technology officer":"cto of midland bank",
-  "cto of midland bank":"cto",
-  "chief technology officer of midland bank":"cto",
+  "cto":"chief technology officer",
+  "cto of midland bank":"chief technology officer",
   "sponsor shareholders" :"sponsors of midland bank",
   "sponsor" : "sponsors of midland bank",
   "sponsors of midland bank" : "sponsors of midland bank",
   "sponsors":"sponsors of midland bank",
   "islamic deposit":"islamic savings products",
-  "women banking":"women centric products",
-  "women based products":"women centric products",
+  "women banking":"midland bank women centric products",
+  "women based products":"midland bank women centric products",
+  "women specific products" : "midland bank women centric products",
   "scheudle of charges islami banking":"islamic banking charges",
   "schedule of charges treasury market" : "treasury market charges",
   "prepaid card charges":"prepaid card fees and charges",
-  "debit card charges":"debit card fees and charges"
+  "debit card charges":"debit card fees and charges",
+  "office hours of gulshan branch":"Gulshan branch office hours"
 
 }

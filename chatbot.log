@@ -1,0 +1,653 @@
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '16', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+BODY RAW: b'{"message":"hi"}'
+POST DATA: {'message': 'hi'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '28', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+BODY RAW: b'{"message":"gulshan branch"}'
+POST DATA: {'message': 'gulshan branch'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': 'eyJjb252ZXJzYXRpb25fc3RhdGUiOnsidHlwZSI6ImF3YWl0aW5nX2xvY2F0aW9uIn19:1vLJBU:8f400gUYS8w-7Cab8rA7e8OynhAY4-N4_-3L-8Z4x-4'}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Cookie': 'sessionid=eyJjb252ZXJzYXRpb25fc3RhdGUiOnsidHlwZSI6ImF3YWl0aW5nX2xvY2F0aW9uIn19:1vLJBU:8f400gUYS8w-7Cab8rA7e8OynhAY4-N4_-3L-8Z4x-4'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+No cache provided; using temporary in-memory cache
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '16', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+BODY RAW: b'{"message":"hi"}'
+POST DATA: {'message': 'hi'}
+User message: 'hi'
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '31', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+BODY RAW: b'{"message":"chattogram branch"}'
+POST DATA: {'message': 'chattogram branch'}
+User message: 'chattogram branch'
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': 'eyJjb252ZXJzYXRpb25fc3RhdGUiOnsidHlwZSI6ImF3YWl0aW5nX2xvY2F0aW9uIn19:1vLJIG:dXBihI_F1nPpG0QhYhVwnlSa0_s1dPCNJuyPVKA1vFI'}
+HEADERS: {'Content-Length': '24', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Cookie': 'sessionid=eyJjb252ZXJzYXRpb25fc3RhdGUiOnsidHlwZSI6ImF3YWl0aW5nX2xvY2F0aW9uIn19:1vLJIG:dXBihI_F1nPpG0QhYhVwnlSa0_s1dPCNJuyPVKA1vFI'}
+BODY RAW: b'{"message":"chattogram"}'
+POST DATA: {'message': 'chattogram'}
+User message: 'chattogram'
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJw1ykEKgDAMBdG7_LUn8DIlxKgFbUoaC1J6dyviahbzGlhTFSvkUVMoTi6YG_zOoziUv2HCEqss6BOuIhZiWvWFvxiYd3LXzehE7w_lyyE-:1vLJIL:6p3UOYATyBAPMvqoI56BzB5LsRXWdEyq_h8Ux_7rQ1U'}
+HEADERS: {'Content-Length': '22', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Cookie': 'sessionid=.eJw1ykEKgDAMBdG7_LUn8DIlxKgFbUoaC1J6dyviahbzGlhTFSvkUVMoTi6YG_zOoziUv2HCEqss6BOuIhZiWvWFvxiYd3LXzehE7w_lyyE-:1vLJIL:6p3UOYATyBAPMvqoI56BzB5LsRXWdEyq_h8Ux_7rQ1U'}
+BODY RAW: b'{"message":"gulshan?"}'
+POST DATA: {'message': 'gulshan?'}
+User message: 'gulshan?'
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '16', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+BODY RAW: b'{"message":"hi"}'
+POST DATA: {'message': 'hi'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '28', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+BODY RAW: b'{"message":"gulshan branch"}'
+POST DATA: {'message': 'gulshan branch'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': 'eyJjb252ZXJzYXRpb25fc3RhdGUiOnsidHlwZSI6ImF3YWl0aW5nX2xvY2F0aW9uIn19:1vLJPS:1RKe9Ycyzoejq99ef8xTuXF7FZfpW_wMqQIX_OcOthw'}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Cookie': 'sessionid=eyJjb252ZXJzYXRpb25fc3RhdGUiOnsidHlwZSI6ImF3YWl0aW5nX2xvY2F0aW9uIn19:1vLJPS:1RKe9Ycyzoejq99ef8xTuXF7FZfpW_wMqQIX_OcOthw'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+No cache provided; using temporary in-memory cache
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJyrVkrOzytLLSpOLMnMz4svLkksSVWyqlYqqSwA0ko5-ckQiaLU5NTMstQUpVodpdLi1KL4zLy0fJBCmAqg4vTSnOKMxDyl2loAg1wgBg:1vLJPa:qbWRnMzoy6V7-KGd8gJkH9VYBNEc1f9w792pJBUOnPE'}
+HEADERS: {'Content-Length': '28', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Cookie': 'sessionid=.eJyrVkrOzytLLSpOLMnMz4svLkksSVWyqlYqqSwA0ko5-ckQiaLU5NTMstQUpVodpdLi1KL4zLy0fJBCmAqg4vTSnOKMxDyl2loAg1wgBg:1vLJPa:qbWRnMzoy6V7-KGd8gJkH9VYBNEc1f9w792pJBUOnPE'}
+BODY RAW: b'{"message":"banani branch "}'
+POST DATA: {'message': 'banani branch '}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJxlj8FKBDEMhl8l5DyIenMvwuLFJ_CgMmTa7LZsTZY2HRmGeXdb1xXBUyD5_i_Jik5l5lzIospYjIxxt6It51YxqbsMMjuOM3vcBqyF8xjloB28Eg0-1lQCSUcSFRtNz9G1_kRCEmHKJC7ggC6QjSEW07zg7nXFrKkv694-VjEW-xfchl-SSmlxatBf_Bm8ylu9v717MAg0M3g2iqnAQTMQ7C-6_bcOcjwGA9HPG3jRmjwsWiHFE8MHgym0VzJDt5MzIPEQtOarS5jytMBToBP9HAhRijH5R9zety-vi3m2:1vLJQG:MWerYwmYcbHfwMggv8xSGS8VpnZbnvZ1Txp-vfHjZYg'}
+HEADERS: {'Content-Length': '39', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Cookie': 'sessionid=.eJxlj8FKBDEMhl8l5DyIenMvwuLFJ_CgMmTa7LZsTZY2HRmGeXdb1xXBUyD5_i_Jik5l5lzIospYjIxxt6It51YxqbsMMjuOM3vcBqyF8xjloB28Eg0-1lQCSUcSFRtNz9G1_kRCEmHKJC7ggC6QjSEW07zg7nXFrKkv694-VjEW-xfchl-SSmlxatBf_Bm8ylu9v717MAg0M3g2iqnAQTMQ7C-6_bcOcjwGA9HPG3jRmjwsWiHFE8MHgym0VzJDt5MzIPEQtOarS5jytMBToBP9HAhRijH5R9zety-vi3m2:1vLJQG:MWerYwmYcbHfwMggv8xSGS8VpnZbnvZ1Txp-vfHjZYg'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '39', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+BODY RAW: b'{"message":"mymensingh branch details"}'
+POST DATA: {'message': 'mymensingh branch details'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': 'eyJjb252ZXJzYXRpb25fc3RhdGUiOnsidHlwZSI6ImF3YWl0aW5nX2xvY2F0aW9uIn19:1vLJj1:fDztTtullgTfpDiEuVyj6dGuTNPfN0FhMlpd1HOG_Dw'}
+HEADERS: {'Content-Length': '24', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Cookie': 'sessionid=eyJjb252ZXJzYXRpb25fc3RhdGUiOnsidHlwZSI6ImF3YWl0aW5nX2xvY2F0aW9uIn19:1vLJj1:fDztTtullgTfpDiEuVyj6dGuTNPfN0FhMlpd1HOG_Dw'}
+BODY RAW: b'{"message":"mymensingh"}'
+POST DATA: {'message': 'mymensingh'}
+No cache provided; using temporary in-memory cache
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '39', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-05a68372f2681bc241ecc189b500fd28-f5a4111380cf5040-00'}
+BODY RAW: b'{\r\n  "message": "mymensingh details"\r\n}'
+POST DATA: {'message': 'mymensingh details'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '31', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-cb0e7a4a859f3cddc1da7af0c2f7cdb4-937c3d74ca6a1823-00'}
+BODY RAW: b'{\r\n  "message": "mymensingh"\r\n}'
+POST DATA: {'message': 'mymensingh'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '38', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-f5d32bcce9fcc8f7adbf7c646ddcf0af-4f402742d725f3fd-00'}
+BODY RAW: b'{\r\n  "message": "mymensingh branch"\r\n}'
+POST DATA: {'message': 'mymensingh branch'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '31', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-31f93d5fb8d7a2ee6593f5ca147f62f8-536067abe05b71f5-00'}
+BODY RAW: b'{\r\n  "message": "mymensingh"\r\n}'
+POST DATA: {'message': 'mymensingh'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '31', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-a42a30b02ce20e5bfc1afd3227df10c7-afaa3f3b8a77349f-00'}
+BODY RAW: b'{\r\n  "message": "mymensingh"\r\n}'
+POST DATA: {'message': 'mymensingh'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '38', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-22182ec24c02f74bdaa8e840b030825a-bee1529eca846bf8-00'}
+BODY RAW: b'{\r\n  "message": "mymensingh branch"\r\n}'
+POST DATA: {'message': 'mymensingh branch'}
+No cache provided; using temporary in-memory cache
+No cache provided; using temporary in-memory cache
+No cache provided; using temporary in-memory cache
+No cache provided; using temporary in-memory cache
+No cache provided; using temporary in-memory cache
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '28', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-33d13031bb633bb649a8ccc454ab8531-b49e593ed9d872cc-00'}
+BODY RAW: b'{"message":"gulshan branch"}'
+POST DATA: {'message': 'gulshan branch'}
+No cache provided; using temporary in-memory cache
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-59da144834dcdb64228c05f567010a01-cb25bb30a567a3f6-00'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+No cache provided; using temporary in-memory cache
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-4bb36061e021aa6b912162bee04ce1bd-9f98fdda6846fcd4-00'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+No cache provided; using temporary in-memory cache
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-21a87da6d731f7bbeef613f59d054584-739cd0ed7ab2b182-00'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+No cache provided; using temporary in-memory cache
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '28', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-3d8d865d78a7aec8ddc01da33c0f9195-bb0b2a005c9b9175-00'}
+BODY RAW: b'{"message":"gulshan branch"}'
+POST DATA: {'message': 'gulshan branch'}
+No cache provided; using temporary in-memory cache
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '42', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-526018b85abc29ac68488e37e8ef429f-ec410d52bd089095-00'}
+BODY RAW: b'{"message":"tell me about saalam e saver"}'
+POST DATA: {'message': 'tell me about saalam e saver'}
+No cache provided; using temporary in-memory cache
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '16', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-eb1cdf3e803abd4d72ce1210036d853d-7e2398b2feecef09-00'}
+BODY RAW: b'{"message":"hi"}'
+POST DATA: {'message': 'hi'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '23', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-f0eac22e907ebd9e535ced9cba6465bd-148ba1d6011dc932-00'}
+BODY RAW: b'{"message":"gulshan ]"}'
+POST DATA: {'message': 'gulshan ]'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-ac139931b4c29951e63c3041a7a71188-52046f69e587a94c-00'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '16', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-c03fbc2e76e7d142c2e78769fd22421e-c86c7666f37c405a-00'}
+BODY RAW: b'{"message":"hi"}'
+POST DATA: {'message': 'hi'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-e2bc75f094fc1fe67e0bdc8f064f62d3-2abec91bcc24d2a2-00'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-f4f80b45dde299c46993397948eafea4-701ff9eeb2d678a1-00'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '16', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+BODY RAW: b'{"message":"hi"}'
+POST DATA: {'message': 'hi'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '16', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+BODY RAW: b'{"message":"hi"}'
+POST DATA: {'message': 'hi'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '16', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+BODY RAW: b'{"message":"hi"}'
+POST DATA: {'message': 'hi'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': 'eyJjb252ZXJzYXRpb25fc3RhdGUiOnsidHlwZSI6ImF3YWl0aW5nX2xvY2F0aW9uIn19:1vLcZM:0xm7oeMQ0Bi2fTvDEkd19QJ_0ohsz4FZSiAkd9L84EQ'}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Cookie': 'sessionid=eyJjb252ZXJzYXRpb25fc3RhdGUiOnsidHlwZSI6ImF3YWl0aW5nX2xvY2F0aW9uIn19:1vLcZM:0xm7oeMQ0Bi2fTvDEkd19QJ_0ohsz4FZSiAkd9L84EQ'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+No cache provided; using temporary in-memory cache
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': 'eyJjb252ZXJzYXRpb25fc3RhdGUiOnsidHlwZSI6ImF3YWl0aW5nX2xvY2F0aW9uIn19:1vLcvh:yWGr85akjDF7e3-m3qm0cRrKBVajWvvV7LHXMmw_dt4'}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Cookie': 'sessionid=eyJjb252ZXJzYXRpb25fc3RhdGUiOnsidHlwZSI6ImF3YWl0aW5nX2xvY2F0aW9uIn19:1vLcvh:yWGr85akjDF7e3-m3qm0cRrKBVajWvvV7LHXMmw_dt4'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+No cache provided; using temporary in-memory cache
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-4f58228686f67075b22bc4f6550dfe71-5c080aeb83129ef5-00'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-144424c3a13b0b80e30fdd2226015997-fa889ee9d3c2d710-00'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-b674840ea6087b3dbe68170475b2e746-9c05428f3d9eff0b-00'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJyrVkrOzytLLSpOLMnMz4svLkksSVWyqlYqqSwA0ko5-ckQiaLU5NTMstQUpVodpdLi1KL4zLy0fJBCmAqg4vTSnOKMxDyl2loAg1wgBg:1vLcvp:7ahzg0p7Xa4413kX3WmLjw3bW6thRAQdTeuAjsi-998'}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Cookie': 'sessionid=.eJyrVkrOzytLLSpOLMnMz4svLkksSVWyqlYqqSwA0ko5-ckQiaLU5NTMstQUpVodpdLi1KL4zLy0fJBCmAqg4vTSnOKMxDyl2loAg1wgBg:1vLcvp:7ahzg0p7Xa4413kX3WmLjw3bW6thRAQdTeuAjsi-998'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJyrVkrOzytLLSpOLMnMz4svLkksSVWyqlYqqSwA0ko5-ckQiaLU5NTMstQUpVodpdLi1KL4zLy0fJBCmAqg4vTSnOKMxDyl2loAg1wgBg:1vLd0F:Y1CYmUV1o9OhaeTFJEEXgtVofhUNHHzNPkIWK1aBc28'}
+HEADERS: {'Content-Length': '28', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Cookie': 'sessionid=.eJyrVkrOzytLLSpOLMnMz4svLkksSVWyqlYqqSwA0ko5-ckQiaLU5NTMstQUpVodpdLi1KL4zLy0fJBCmAqg4vTSnOKMxDyl2loAg1wgBg:1vLd0F:Y1CYmUV1o9OhaeTFJEEXgtVofhUNHHzNPkIWK1aBc28'}
+BODY RAW: b'{"message":"gulshan branch"}'
+POST DATA: {'message': 'gulshan branch'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '16', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+BODY RAW: b'{"message":"hi"}'
+POST DATA: {'message': 'hi'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '35', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+BODY RAW: b'{"message":"mirpur branch details"}'
+POST DATA: {'message': 'mirpur branch details'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': 'eyJjb252ZXJzYXRpb25fc3RhdGUiOnsidHlwZSI6ImF3YWl0aW5nX2xvY2F0aW9uIn19:1vLdFR:eGHjr9zAlVVPy0LYCfLSBIyPCdwp4kxo9aHNx4kHzlE'}
+HEADERS: {'Content-Length': '20', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Cookie': 'sessionid=eyJjb252ZXJzYXRpb25fc3RhdGUiOnsidHlwZSI6ImF3YWl0aW5nX2xvY2F0aW9uIn19:1vLdFR:eGHjr9zAlVVPy0LYCfLSBIyPCdwp4kxo9aHNx4kHzlE'}
+BODY RAW: b'{"message":"mirpur"}'
+POST DATA: {'message': 'mirpur'}
+No cache provided; using temporary in-memory cache
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '16', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US, en; q=0.9', 'Traceparent': '00-fccfcd464421ee14138a1bd99d5bd0b2-f985ae9aea887362-00'}
+BODY RAW: b'{"message":"hi"}'
+POST DATA: {'message': 'hi'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '35', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US, en; q=0.9', 'Traceparent': '00-4e48e41d7d070527cc8bcd854357e431-13f09c32590c70d1-00'}
+BODY RAW: b'{"message":"mirpur branch details"}'
+POST DATA: {'message': 'mirpur branch details'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '20', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US, en; q=0.9', 'Traceparent': '00-add1679db8b57e0dfb5ed223c40c18dc-dbfa4f99e07a0fa0-00'}
+BODY RAW: b'{"message":"mirpur"}'
+POST DATA: {'message': 'mirpur'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '19', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US, en; q=0.9', 'Traceparent': '00-b7f8babcc81a441f88b0555c14190fca-e5fd49f2d5d89a91-00'}
+BODY RAW: b'{"message":"dhaka"}'
+POST DATA: {'message': 'dhaka'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US, en; q=0.9', 'Traceparent': '00-e0f7f30e45b3802892f0f23c5a4f509d-b703ad41aa5ac5d0-00'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '16', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:33915', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:33915/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US, en; q=0.9', 'Traceparent': '00-20d5bc3b7e89bc5e94ee643ef9b6a461-c017986f19bd67ca-00'}
+BODY RAW: b'{"message":"hi"}'
+POST DATA: {'message': 'hi'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '36', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:33915', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:33915/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US, en; q=0.9', 'Traceparent': '00-7a72d34ca4d3820926920598696567ed-e472133ceecb20ad-00'}
+BODY RAW: b'{"message":"gulshan branch details"}'
+POST DATA: {'message': 'gulshan branch details'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:33915', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:33915/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US, en; q=0.9', 'Traceparent': '00-909b02fc164f87913d84e5c68a5ef2a2-70a4a15b738eb5f4-00'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '16', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+BODY RAW: b'{"message":"hi"}'
+POST DATA: {'message': 'hi'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '36', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+BODY RAW: b'{"message":"gulshan branch details"}'
+POST DATA: {'message': 'gulshan branch details'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': 'eyJjb252ZXJzYXRpb25fc3RhdGUiOnsidHlwZSI6ImF3YWl0aW5nX2xvY2F0aW9uIn19:1vLdWN:44_My0wznBTjBpmNDG7kkNfYzPz_oHTKm22Zydbw-E0'}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Cookie': 'sessionid=eyJjb252ZXJzYXRpb25fc3RhdGUiOnsidHlwZSI6ImF3YWl0aW5nX2xvY2F0aW9uIn19:1vLdWN:44_My0wznBTjBpmNDG7kkNfYzPz_oHTKm22Zydbw-E0'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+No cache provided; using temporary in-memory cache
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '36', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.117 Safari/537.36', 'Accept': 'application/json, text/javascript, */*; q=0.01', 'Accept-Language': 'en-US, en; q=0.9', 'Accept-Encoding': 'gzip, deflate, br', 'Connection': 'keep-alive', 'Traceparent': '00-95cdb1f1c8a150b883e8eca60e816b2a-a22cfa3960ee7527-00'}
+BODY RAW: b'{"message":"gulshan branch details"}'
+POST DATA: {'message': 'gulshan branch details'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.117 Safari/537.36', 'Accept': 'application/json, text/javascript, */*; q=0.01', 'Accept-Language': 'en-US, en; q=0.9', 'Accept-Encoding': 'gzip, deflate, br', 'Connection': 'keep-alive', 'Traceparent': '00-1ecf0c30d1d483899fc8ab848128fdb9-925c2f0186e4def3-00'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '36', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Accept': 'application/json, text/plain, */*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Connection': 'keep-alive', 'Referer': 'http://localhost:4200/', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Ch-Ua-Platform': '"Windows"', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Traceparent': '00-e0fb9ed03fa32fc620debece50f6d781-a4204c9d0eb38ebd-00'}
+BODY RAW: b'{"message":"gulshan branch details"}'
+POST DATA: {'message': 'gulshan branch details'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Accept': 'application/json, text/plain, */*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Connection': 'keep-alive', 'Referer': 'http://localhost:4200/', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Ch-Ua-Platform': '"Windows"', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Traceparent': '00-15841def0ae3592859a67e5111fccb6a-67a16bd8ab6fb0e5-00'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '36', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9'}
+BODY RAW: b'{"message":"gulshan branch details"}'
+POST DATA: {'message': 'gulshan branch details'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': 'eyJjb252ZXJzYXRpb25fc3RhdGUiOnsidHlwZSI6ImF3YWl0aW5nX2xvY2F0aW9uIn19:1vLdgl:F-GIXw6ITfCz04xDPupjetL2GTQeeTxm4qRvg7GDY-Y'}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Cookie': 'sessionid=eyJjb252ZXJzYXRpb25fc3RhdGUiOnsidHlwZSI6ImF3YWl0aW5nX2xvY2F0aW9uIn19:1vLdgl:F-GIXw6ITfCz04xDPupjetL2GTQeeTxm4qRvg7GDY-Y'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+No cache provided; using temporary in-memory cache
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJyrVkrOzytLLSpOLMnMz4svLkksSVWyqlYqqSwA0ko5-ckQiaLU5NTMstQUpVodpdLi1KL4zLy0fJBCmAqg4vTSnOKMxDyl2loAg1wgBg:1vLdgt:FZtC0SHgPea_SrpB9Djj1ziN7t5L6_NWgad-vOkLi3w'}
+HEADERS: {'Content-Length': '36', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Cookie': 'sessionid=.eJyrVkrOzytLLSpOLMnMz4svLkksSVWyqlYqqSwA0ko5-ckQiaLU5NTMstQUpVodpdLi1KL4zLy0fJBCmAqg4vTSnOKMxDyl2loAg1wgBg:1vLdgt:FZtC0SHgPea_SrpB9Djj1ziN7t5L6_NWgad-vOkLi3w'}
+BODY RAW: b'{"message":"gulshan branch details"}'
+POST DATA: {'message': 'gulshan branch details'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJx1U2Fv0zAQ_SunfECbSEtc1m7LPkC6AgPRbVqLQDBUXeJb4821I9vJmKr-d-ylXQuMD0nsd-_e3dkvy6jQqiFj0QmtZtahoyhdRu6h8t9I6qINGCpINMSjVRzVlsxMqBsdiBuGJ89raUtUgSLRupnTlSi2OOQGVVECJ4dC2iiOihLdrBTWafMQpT-WkdEyVA0FQlgrR8r9X2EVP6WgtV4HPXs374wMAfrHlQQf1iLDP0TSa3WtOhtQ4YLSv5g74UJzH04SxgKYcW7I2hTOhzDV92Ri-EwNyU4_hoPk1SGca-NKyBpSNcUb1U4vhlGJd9hhPdYLOiPRCOuPMG3xnXq08C2msB6_247_diG4RMVzVHc57ypyIeMyG35L4eXe0dE-JMcDGAzggCVwzFi8gzK2QUPOe_z1lNKDfj_ps8PjQYh818oP-sX4GjvtjFHhnEwKWZlj7t8L4vAJxVwYTuYEMMDd2w3wfKOntb_vBRmYkGlEQVvVK7wVOYyoOQETll1OzfMaU9-PxSL4DkpdG38HLEmTBLIxXNe9hL2Gg7C9HJ_ABF1tOD78w2AtI-itW7GAjT9wzCV5WwB0tsmhvlDzFs2mY7BtSgt8VI_eg4XOhSTwP0uJZk7QCIRxOwBcKCkUwV5lqELB4QVU2rqw3Ad0oLR3l3Wt3lBIaf1eSnocMoWv2STzvnk3Ob3wn8vRaQzDq2kWzHtO_ha4MC3VgjZQkqzgXnjzIdiKCnEjik3Hb6LVz9VvNBtPfg:1vLdhl:fwJwfgtQH-mHoGUaGFNFubXP5NFl2B4WmqkU3G0Nc9U'}
+HEADERS: {'Content-Length': '17', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:4200/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Cookie': 'sessionid=.eJx1U2Fv0zAQ_SunfECbSEtc1m7LPkC6AgPRbVqLQDBUXeJb4821I9vJmKr-d-ylXQuMD0nsd-_e3dkvy6jQqiFj0QmtZtahoyhdRu6h8t9I6qINGCpINMSjVRzVlsxMqBsdiBuGJ89raUtUgSLRupnTlSi2OOQGVVECJ4dC2iiOihLdrBTWafMQpT-WkdEyVA0FQlgrR8r9X2EVP6WgtV4HPXs374wMAfrHlQQf1iLDP0TSa3WtOhtQ4YLSv5g74UJzH04SxgKYcW7I2hTOhzDV92Ri-EwNyU4_hoPk1SGca-NKyBpSNcUb1U4vhlGJd9hhPdYLOiPRCOuPMG3xnXq08C2msB6_247_diG4RMVzVHc57ypyIeMyG35L4eXe0dE-JMcDGAzggCVwzFi8gzK2QUPOe_z1lNKDfj_ps8PjQYh818oP-sX4GjvtjFHhnEwKWZlj7t8L4vAJxVwYTuYEMMDd2w3wfKOntb_vBRmYkGlEQVvVK7wVOYyoOQETll1OzfMaU9-PxSL4DkpdG38HLEmTBLIxXNe9hL2Gg7C9HJ_ABF1tOD78w2AtI-itW7GAjT9wzCV5WwB0tsmhvlDzFs2mY7BtSgt8VI_eg4XOhSTwP0uJZk7QCIRxOwBcKCkUwV5lqELB4QVU2rqw3Ad0oLR3l3Wt3lBIaf1eSnocMoWv2STzvnk3Ob3wn8vRaQzDq2kWzHtO_ha4MC3VgjZQkqzgXnjzIdiKCnEjik3Hb6LVz9VvNBtPfg:1vLdhl:fwJwfgtQH-mHoGUaGFNFubXP5NFl2B4WmqkU3G0Nc9U'}
+BODY RAW: b'{"message":"gul"}'
+POST DATA: {'message': 'gul'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '36', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Accept': 'application/json, text/plain, */*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Connection': 'keep-alive', 'Referer': 'http://localhost:4200/', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Ch-Ua-Platform': '"Windows"', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Traceparent': '00-917ce229ed1a954678fc114214cc7b36-7743f388833ce397-00'}
+BODY RAW: b'{"message":"gulshan branch details"}'
+POST DATA: {'message': 'gulshan branch details'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Accept': 'application/json, text/plain, */*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Connection': 'keep-alive', 'Referer': 'http://localhost:4200/', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Ch-Ua-Platform': '"Windows"', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Traceparent': '00-950739bab469e68406dba14a411f9acc-f900efe6cb965120-00'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Accept': 'application/json, text/plain, */*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Connection': 'keep-alive', 'Referer': 'http://localhost:4200/', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36', 'Sec-Ch-Ua-Platform': '"Windows"', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Traceparent': '00-d73ebc931d26b95cbeb2059603bb62d8-d57232479752edb1-00'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Accept': 'application/json, text/plain, */*', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9', 'Connection': 'keep-alive', 'Referer': 'http://localhost:4200/', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36', 'Sec-Ch-Ua-Platform': '"Windows"', 'Sec-Ch-Ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:4200', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Traceparent': '00-667d9472df792c62dada8d9dbf895966-f66eff73fa6c73a7-00'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '36', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-60bcc45557848176fd97068c2ef26792-f45ef8da30cfbb6f-00'}
+BODY RAW: b'{"message":"gulshan branch details"}'
+POST DATA: {'message': 'gulshan branch details'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-91d95cae217e784a4c922ecafe5fd0c5-bcc49b22d7883cad-00'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '17', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-510aa2283f8aa6f1efdfe994c35c1340-fd79d7c2b443bbcc-00'}
+BODY RAW: b'{"message":"dfg"}'
+POST DATA: {'message': 'dfg'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJxNjkEKwjAQRa8yzFpExY3duHDjHVRKaMYmNM2UzIRSSu9uWkTc_vce_BmDEa2VB99ghfbd4g4bZ7R2XpTThNVjxsSBCs1CacUclaJ-9WX340akRKagf-nuQR0lgmc-HY5n8AqBuRMIviOYOCfoScS0BNbbuFkXhYZ7KmHi3DpoApkUpj3cOAe7RjCUSQgSCUULY7m8zZHIgqMwwOjVXXF5LR8Wd09_:1vLdtc:LkUwAlvZtuoCzXeKJJ5UJel-JyN3200_H3bv03QeWIU'}
+HEADERS: {'Content-Length': '36', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-84095acbbe9ecb1dedd13e4559bc13a8-1c47582034d8a540-00', 'Cookie': 'sessionid=.eJxNjkEKwjAQRa8yzFpExY3duHDjHVRKaMYmNM2UzIRSSu9uWkTc_vce_BmDEa2VB99ghfbd4g4bZ7R2XpTThNVjxsSBCs1CacUclaJ-9WX340akRKagf-nuQR0lgmc-HY5n8AqBuRMIviOYOCfoScS0BNbbuFkXhYZ7KmHi3DpoApkUpj3cOAe7RjCUSQgSCUULY7m8zZHIgqMwwOjVXXF5LR8Wd09_:1vLdtc:LkUwAlvZtuoCzXeKJJ5UJel-JyN3200_H3bv03QeWIU'}
+BODY RAW: b'{"message":"gulshan branch details"}'
+POST DATA: {'message': 'gulshan branch details'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJxNjkFKBDEQRa9S1HoQFTfOxoUb76DShKTsFJNJNVUVm6bpu5sJIm7_ex_ejiWYTy4LRzxj-prxhDEHnzKbi254ft9RpVCnzUhvWKpT9V_9OP3xYNZPoaP_0huDZ1KCj_Z4__AE7FBELgaFLwSbNIUrmYWZIHGqw3p2iHKlflRpc4ZYKGjZ7uBVWkm3Eyx9MgIlo5pg7cljrkQJMpUFVvb8gsfnaPkmteAsdeqB3mN39G0Z0Wtg5zpPReIw8Dh-AHN0Ykw:1vLdtt:7XKLOwyDIFUDG4WCkrb1EjKja84SdL7hUrTVNvMg574'}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-74a893e3ddb6a19eb86be2a1337e471a-266283ed255e51c8-00', 'Cookie': 'sessionid=.eJxNjkFKBDEQRa9S1HoQFTfOxoUb76DShKTsFJNJNVUVm6bpu5sJIm7_ex_ejiWYTy4LRzxj-prxhDEHnzKbi254ft9RpVCnzUhvWKpT9V_9OP3xYNZPoaP_0huDZ1KCj_Z4__AE7FBELgaFLwSbNIUrmYWZIHGqw3p2iHKlflRpc4ZYKGjZ7uBVWkm3Eyx9MgIlo5pg7cljrkQJMpUFVvb8gsfnaPkmteAsdeqB3mN39G0Z0Wtg5zpPReIw8Dh-AHN0Ykw:1vLdtt:7XKLOwyDIFUDG4WCkrb1EjKja84SdL7hUrTVNvMg574'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+No cache provided; using temporary in-memory cache
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJxNj81qxDAMBl9F6LyUtvTSvfTQS9-hLcHY2tis1wqSvEsIefcq6Q-9auaD0YI1qA3GU4l4xHQa8YAxBxtyUWOZ8fi-oHAlp11JNszNqNmPvh7-eFD1UXD0X3orYJmE4KM_3j88QTGozGeFWs4EM3eBC6mGkSCV1Hbr2SDyhXwo3McMsVKQOt_BK_eathFMflICIaWW4ObJ-7kRJchUJ7gVyy-4fu4tVxINVrgNHmgeu6DN0xZdOX4DoUjlSsk_2j8dSjvxJv4aLo-9ag4N1_ULu6ZuuA:1vLdu3:gGfjfJFEcWYmrbeOCNPYVfTjHqwhMwBapJl-WdVAP_c'}
+HEADERS: {'Content-Length': '27', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-5bc9ba30c0e48ffae37c38a2d1269af8-1d1209d6b5a2c2b5-00', 'Cookie': 'sessionid=.eJxNj81qxDAMBl9F6LyUtvTSvfTQS9-hLcHY2tis1wqSvEsIefcq6Q-9auaD0YI1qA3GU4l4xHQa8YAxBxtyUWOZ8fi-oHAlp11JNszNqNmPvh7-eFD1UXD0X3orYJmE4KM_3j88QTGozGeFWs4EM3eBC6mGkSCV1Hbr2SDyhXwo3McMsVKQOt_BK_eathFMflICIaWW4ObJ-7kRJchUJ7gVyy-4fu4tVxINVrgNHmgeu6DN0xZdOX4DoUjlSsk_2j8dSjvxJv4aLo-9ag4N1_ULu6ZuuA:1vLdu3:gGfjfJFEcWYmrbeOCNPYVfTjHqwhMwBapJl-WdVAP_c'}
+BODY RAW: b'{"message":"mdbl products"}'
+POST DATA: {'message': 'mdbl products'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJyFVEtv00AQ_isjn4rUJoC40AsS6QvRNhUt6oGgaOtd20PWM2Z2nWBV_e_Mbur0wYGL5Z355vXN477wJsRl5A7L4rBo7Z2HTtj2ZQzFflE2Ji4bDJFlKA5_3BfC3imuD06Smik6iiqwVV087O_0JgQ1Mqp6DjpDiI0TB4v-_dt3HwAjeOZVAI8rBwP3Aq0LwdQOLFrKqI8RSm6dGgr3dQOld0b8MIEZ994mI-hUFByIC44sbDTlLCbnLDTOd7DB2Hx6nt4_6b-s-_-FaBHb7AIY-N1jucqVgIa-OPo8qkaHEzh3UUuDFfFGE8SyAaZc8RaqlKD61gqi5ow0WdCCvlCIGPuITOYpucMFHaQYcCX8y5URTpAMlW4U37KskGqYmQ6j2r1SX0dRL71omEcNTOF6IIulSZHgnA2N4JkWLKbU5isoOYa5WCevfZ5kSAo6hSMMJfcU9TWqP6P3Aa560WEKOyNlRAsGrmCmyegk7J1PZ29G7fGfjuVZbQuap8nRHkeDr8i4RavNN6RTo96QiNdaytq9BsOezYIAxDp4mLlO4_gm-T915MT4aTRSu6RRs1pM-0T4qTi35Qf2KqUkDVHYh9ZQX5nMaXoqYTb_qHaNSq_6WeNWZCi7bVkrDynZ7HL6TUNvzJ13cKw51APcuLIh9lyj0_kqhUOAi-uLY3XRsIZt2Fv9r4y02e_l6Vy_JR9w9xgFn2Yn7Ej9cgPfreVdY74KhgZfdPzSCL4EXYnRjNe4GgVz-cU7_LzWKRwfR9hFbHlA2Ls93kW9RLlrWDiapxk0Eg_67hmiTSks6ERprXrv4bFT--Nup9VTjrW2IZvcab_TEukA6dE4c8bCvKqU7gmcma4bIPJ29cmI6M5Z3hBwl_kArPJ9CI2Rx6uTTkWYFA8_85KvldS8DEvd_KhX4L6IQ5eugeftlizFlU5HzOqpyMdkiVRxAo4IBde91xBUPDz8BSdd4cw:1vLduQ:VOGq6BYtMPPyqfWSpcdFkzWNWeWmYK4-2Uun4PpC--M'}
+HEADERS: {'Content-Length': '36', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-07af11c75aa16703e1101f98bf9226f8-2525a0c1a38a563f-00', 'Cookie': 'sessionid=.eJyFVEtv00AQ_isjn4rUJoC40AsS6QvRNhUt6oGgaOtd20PWM2Z2nWBV_e_Mbur0wYGL5Z355vXN477wJsRl5A7L4rBo7Z2HTtj2ZQzFflE2Ji4bDJFlKA5_3BfC3imuD06Smik6iiqwVV087O_0JgQ1Mqp6DjpDiI0TB4v-_dt3HwAjeOZVAI8rBwP3Aq0LwdQOLFrKqI8RSm6dGgr3dQOld0b8MIEZ994mI-hUFByIC44sbDTlLCbnLDTOd7DB2Hx6nt4_6b-s-_-FaBHb7AIY-N1jucqVgIa-OPo8qkaHEzh3UUuDFfFGE8SyAaZc8RaqlKD61gqi5ow0WdCCvlCIGPuITOYpucMFHaQYcCX8y5URTpAMlW4U37KskGqYmQ6j2r1SX0dRL71omEcNTOF6IIulSZHgnA2N4JkWLKbU5isoOYa5WCevfZ5kSAo6hSMMJfcU9TWqP6P3Aa560WEKOyNlRAsGrmCmyegk7J1PZ29G7fGfjuVZbQuap8nRHkeDr8i4RavNN6RTo96QiNdaytq9BsOezYIAxDp4mLlO4_gm-T915MT4aTRSu6RRs1pM-0T4qTi35Qf2KqUkDVHYh9ZQX5nMaXoqYTb_qHaNSq_6WeNWZCi7bVkrDynZ7HL6TUNvzJ13cKw51APcuLIh9lyj0_kqhUOAi-uLY3XRsIZt2Fv9r4y02e_l6Vy_JR9w9xgFn2Yn7Ej9cgPfreVdY74KhgZfdPzSCL4EXYnRjNe4GgVz-cU7_LzWKRwfR9hFbHlA2Ls93kW9RLlrWDiapxk0Eg_67hmiTSks6ERprXrv4bFT--Nup9VTjrW2IZvcab_TEukA6dE4c8bCvKqU7gmcma4bIPJ29cmI6M5Z3hBwl_kArPJ9CI2Rx6uTTkWYFA8_85KvldS8DEvd_KhX4L6IQ5eugeftlizFlU5HzOqpyMdkiVRxAo4IBde91xBUPDz8BSdd4cw:1vLduQ:VOGq6BYtMPPyqfWSpcdFkzWNWeWmYK4-2Uun4PpC--M'}
+BODY RAW: b'{"message":"gulshan branch details"}'
+POST DATA: {'message': 'gulshan branch details'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJyNVdtu4zYQ_ZWBHwoH9UVKk-xG-9D6lmTb-ILYixSti4AWxxZjilRJSl4jyL93KFu2k6ZAX2yRPDycGc45fKlJZt2T05mIa1FtlUubMAULw1ScAEfHhLS1Ri1OmHtKhHXabGvRny81oyXShtyi8ctaOVSOJlK-kJAZzfPY2dpr44Bk1tJ2RqBT-B0anOfnQXhtgcHfuYjXILVeA3Mw7HerpYqwBffoIEVYK72BTSIoSK0QtjrfQQ2CIG6D1iGnz9ZczdVXZZ1wuRNasWNw0Vw1_RkwMfoZYwc3QlHWWE0_arMWagU9lglH-94tT50hltzQMfsVaMN0q7iImT8J7jVTFbhHCRsWU_UI5IlhbDia95w3JcQf2oa-sLHOlaNRtdwVUlqY5IZuwx42UUUoYdBL6FEwwkH9vt07q1YH3zNtTnKbq7FLCG7Kq31bjEfBEejmV-jZhFK6oFQKfA-G-r4xQGkHUpS1JlI88_y3qNAw2XbMrNCv0LaVYemx4LcGcVcfqC-pJL6JbANSpvIlK2vqh1QwXn7QaiGovMRTiN0UUyVtqilz64MtKdsPdPSGLSTCgGJYbWGGcaK01CuB1F-x0dbCcDocEEWi6dhES07fS2bSknd0O6bfWDd1tj9FHHvHHor6dQbfONeHi_nNCJuINzc-Yka8BU0Mo4gLsa4mxuZZH_DjFXVhNeiLzIlUbwXUHweHU0fCLBJttGPHHmTGNfPsBJH6EObqhsq6zKWsJNyATCI1DXjpUY0pt225Za90guvcwB0yDuPlksrdgjuWZVtwmq5WZqCYMaQ5rjcKdFbWA8TSKw_IMkypQQMKkdvWqe7_5RD_4TH_yyrAH0T9C7d7ku4bkmhe1nM_qViK7VhzjN7D60EQhmVdO5yTV9gIRl2Y6Q2aBumpQNm8bMBF0P4EI1JPAp0CVY6Niqd53oB-wtasGZ6H556nLwphqSbtP8iOot1iA76Zxa4jBimFF8E-9dYu9V9SwSX1GGHWC95S6Dx00un-HsGP9c-fzyC4voKrK7gIA7gOw8bJbBhWs37PDft-2HIOl5fBZfjp-uqkFEOm2ApNBJ1kwRb0m5Iuf2ViJbwNfQHmp1vP1cTHkfVysn_SCUz3gjywPrBnsYA-Fl_IPuizxbH4mGNG8VjqP2-QpEBDlQ-DKAigM4TSwX-C4MKPJ0MPnzJyA8624FnICT9AhxV6rvZxkdILKrf3gegjkvLeZ8PKV_zQvxDUb5DqhZDe78hhyb2gEAyGuzxgrKSgp6aeGcyY4PADZNo6_3nmXyulSVu2THLn07GWEstMI3jsTDvUMoNpb0x_k36vAd2HWccHPSLFABdmB7VeiZsyFPTSixOkF5GBzTAWJMsq6J9rr3-V4ijIt8r35okycKSel5rbZl5FUu8eoieiRnJxThIr1fgk1FJ7YIU4irL2-voPvD-94g:1vLdys:VM6uLzgnpiaTfuZH9JN7pFiz956XLGNrkbVs5pqDZYc'}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-c542fe496debd221abbb83b7651f0b58-c25ac439e333e7b6-00', 'Cookie': 'sessionid=.eJyNVdtu4zYQ_ZWBHwoH9UVKk-xG-9D6lmTb-ILYixSti4AWxxZjilRJSl4jyL93KFu2k6ZAX2yRPDycGc45fKlJZt2T05mIa1FtlUubMAULw1ScAEfHhLS1Ri1OmHtKhHXabGvRny81oyXShtyi8ctaOVSOJlK-kJAZzfPY2dpr44Bk1tJ2RqBT-B0anOfnQXhtgcHfuYjXILVeA3Mw7HerpYqwBffoIEVYK72BTSIoSK0QtjrfQQ2CIG6D1iGnz9ZczdVXZZ1wuRNasWNw0Vw1_RkwMfoZYwc3QlHWWE0_arMWagU9lglH-94tT50hltzQMfsVaMN0q7iImT8J7jVTFbhHCRsWU_UI5IlhbDia95w3JcQf2oa-sLHOlaNRtdwVUlqY5IZuwx42UUUoYdBL6FEwwkH9vt07q1YH3zNtTnKbq7FLCG7Kq31bjEfBEejmV-jZhFK6oFQKfA-G-r4xQGkHUpS1JlI88_y3qNAw2XbMrNCv0LaVYemx4LcGcVcfqC-pJL6JbANSpvIlK2vqh1QwXn7QaiGovMRTiN0UUyVtqilz64MtKdsPdPSGLSTCgGJYbWGGcaK01CuB1F-x0dbCcDocEEWi6dhES07fS2bSknd0O6bfWDd1tj9FHHvHHor6dQbfONeHi_nNCJuINzc-Yka8BU0Mo4gLsa4mxuZZH_DjFXVhNeiLzIlUbwXUHweHU0fCLBJttGPHHmTGNfPsBJH6EObqhsq6zKWsJNyATCI1DXjpUY0pt225Za90guvcwB0yDuPlksrdgjuWZVtwmq5WZqCYMaQ5rjcKdFbWA8TSKw_IMkypQQMKkdvWqe7_5RD_4TH_yyrAH0T9C7d7ku4bkmhe1nM_qViK7VhzjN7D60EQhmVdO5yTV9gIRl2Y6Q2aBumpQNm8bMBF0P4EI1JPAp0CVY6Niqd53oB-wtasGZ6H556nLwphqSbtP8iOot1iA76Zxa4jBimFF8E-9dYu9V9SwSX1GGHWC95S6Dx00un-HsGP9c-fzyC4voKrK7gIA7gOw8bJbBhWs37PDft-2HIOl5fBZfjp-uqkFEOm2ApNBJ1kwRb0m5Iuf2ViJbwNfQHmp1vP1cTHkfVysn_SCUz3gjywPrBnsYA-Fl_IPuizxbH4mGNG8VjqP2-QpEBDlQ-DKAigM4TSwX-C4MKPJ0MPnzJyA8624FnICT9AhxV6rvZxkdILKrf3gegjkvLeZ8PKV_zQvxDUb5DqhZDe78hhyb2gEAyGuzxgrKSgp6aeGcyY4PADZNo6_3nmXyulSVu2THLn07GWEstMI3jsTDvUMoNpb0x_k36vAd2HWccHPSLFABdmB7VeiZsyFPTSixOkF5GBzTAWJMsq6J9rr3-V4ijIt8r35okycKSel5rbZl5FUu8eoieiRnJxThIr1fgk1FJ7YIU4irL2-voPvD-94g:1vLdys:VM6uLzgnpiaTfuZH9JN7pFiz956XLGNrkbVs5pqDZYc'}
+BODY RAW: b'{"message":"rangpur"}'
+POST DATA: {'message': 'rangpur'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJyNVdtu4zYQ_ZWBHwoH9UVKk-xG-9D6lmTb-ILYixSti4AWxxZjilRJSl4jyL93KFu2k6ZAX2yRPDycGc45fKlJZt2T05mIa1FtlUubMAULw1ScAEfHhLS1Ri1OmHtKhHXabGvRny81oyXShtyi8ctaOVSOJlK-kJAZzfPY2dpr44Bk1tJ2RqBT-B0anOfnQXhtgcHfuYjXILVeA3Mw7HerpYqwBffoIEVYK72BTSIoSK0QtjrfQQ2CIG6D1iGnz9ZczdVXZZ1wuRNasWNw0Vw1_RkwMfoZYwc3QlHWWE0_arMWagU9lglH-94tT50hltzQMfsVaMN0q7iImT8J7jVTFbhHCRsWU_UI5IlhbDia95w3JcQf2oa-sLHOlaNRtdwVUlqY5IZuwx42UUUoYdBL6FEwwkH9vt07q1YH3zNtTnKbq7FLCG7Kq31bjEfBEejmV-jZhFK6oFQKfA-G-r4xQGkHUpS1JlI88_y3qNAw2XbMrNCv0LaVYemx4LcGcVcfqC-pJL6JbANSpvIlK2vqh1QwXn7QaiGovMRTiN0UUyVtqilz64MtKdsPdPSGLSTCgGJYbWGGcaK01CuB1F-x0dbCcDocEEWi6dhES07fS2bSknd0O6bfWDd1tj9FHHvHHor6dQbfONeHi_nNCJuINzc-Yka8BU0Mo4gLsa4mxuZZH_DjFXVhNeiLzIlUbwXUHweHU0fCLBJttGPHHmTGNfPsBJH6EObqhsq6zKWsJNyATCI1DXjpUY0pt225Za90guvcwB0yDuPlksrdgjuWZVtwmq5WZqCYMaQ5rjcKdFbWA8TSKw_IMkypQQMKkdvWqe7_5RD_4TH_yyrAH0T9C7d7ku4bkmhe1nM_qViK7VhzjN7D60EQhmVdO5yTV9gIRl2Y6Q2aBumpQNm8bMBF0P4EI1JPAp0CVY6Niqd53oB-wtasGZ6H556nLwphqSbtP8iOot1iA76Zxa4jBimFF8E-9dYu9V9SwSX1GGHWC95S6Dx00un-HsGP9c-fzyC4voKrK7gIA7gOw8bJbBhWs37PDft-2HIOl5fBZfjp-uqkFEOm2ApNBJ1kwRb0m5Iuf2ViJbwNfQHmp1vP1cTHkfVysn_SCUz3gjywPrBnsYA-Fl_IPuizxbH4mGNG8VjqP2-QpEBDlQ-DKAigM4TSwX-C4MKPJ0MPnzJyA8624FnICT9AhxV6rvZxkdILKrf3gegjkvLeZ8PKV_zQvxDUb5DqhZDe78hhyb2gEAyGuzxgrKSgp6aeGcyY4PADZNo6_3nmXyulSVu2THLn07GWEstMI3jsTDvUMoNpb0x_k36vAd2HWccHPSLFABdmB7VeiZsyFPTSixOkF5GBzTAWJMsq6J9rr3-V4ijIt8r35okycKSel5rbZl5FUu8eoieiRnJxThIr1fgk1FJ7YIU4irL2-voPvD-94g:1vLdzj:rh00HbZHndpJpbOy0iLN3IUnSfEbOcXgfQAoy2wM4RI'}
+HEADERS: {'Content-Length': '36', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-5a27204848bf41c49ed13c069480a2c5-74a349d4be621423-00', 'Cookie': 'sessionid=.eJyNVdtu4zYQ_ZWBHwoH9UVKk-xG-9D6lmTb-ILYixSti4AWxxZjilRJSl4jyL93KFu2k6ZAX2yRPDycGc45fKlJZt2T05mIa1FtlUubMAULw1ScAEfHhLS1Ri1OmHtKhHXabGvRny81oyXShtyi8ctaOVSOJlK-kJAZzfPY2dpr44Bk1tJ2RqBT-B0anOfnQXhtgcHfuYjXILVeA3Mw7HerpYqwBffoIEVYK72BTSIoSK0QtjrfQQ2CIG6D1iGnz9ZczdVXZZ1wuRNasWNw0Vw1_RkwMfoZYwc3QlHWWE0_arMWagU9lglH-94tT50hltzQMfsVaMN0q7iImT8J7jVTFbhHCRsWU_UI5IlhbDia95w3JcQf2oa-sLHOlaNRtdwVUlqY5IZuwx42UUUoYdBL6FEwwkH9vt07q1YH3zNtTnKbq7FLCG7Kq31bjEfBEejmV-jZhFK6oFQKfA-G-r4xQGkHUpS1JlI88_y3qNAw2XbMrNCv0LaVYemx4LcGcVcfqC-pJL6JbANSpvIlK2vqh1QwXn7QaiGovMRTiN0UUyVtqilz64MtKdsPdPSGLSTCgGJYbWGGcaK01CuB1F-x0dbCcDocEEWi6dhES07fS2bSknd0O6bfWDd1tj9FHHvHHor6dQbfONeHi_nNCJuINzc-Yka8BU0Mo4gLsa4mxuZZH_DjFXVhNeiLzIlUbwXUHweHU0fCLBJttGPHHmTGNfPsBJH6EObqhsq6zKWsJNyATCI1DXjpUY0pt225Za90guvcwB0yDuPlksrdgjuWZVtwmq5WZqCYMaQ5rjcKdFbWA8TSKw_IMkypQQMKkdvWqe7_5RD_4TH_yyrAH0T9C7d7ku4bkmhe1nM_qViK7VhzjN7D60EQhmVdO5yTV9gIRl2Y6Q2aBumpQNm8bMBF0P4EI1JPAp0CVY6Niqd53oB-wtasGZ6H556nLwphqSbtP8iOot1iA76Zxa4jBimFF8E-9dYu9V9SwSX1GGHWC95S6Dx00un-HsGP9c-fzyC4voKrK7gIA7gOw8bJbBhWs37PDft-2HIOl5fBZfjp-uqkFEOm2ApNBJ1kwRb0m5Iuf2ViJbwNfQHmp1vP1cTHkfVysn_SCUz3gjywPrBnsYA-Fl_IPuizxbH4mGNG8VjqP2-QpEBDlQ-DKAigM4TSwX-C4MKPJ0MPnzJyA8624FnICT9AhxV6rvZxkdILKrf3gegjkvLeZ8PKV_zQvxDUb5DqhZDe78hhyb2gEAyGuzxgrKSgp6aeGcyY4PADZNo6_3nmXyulSVu2THLn07GWEstMI3jsTDvUMoNpb0x_k36vAd2HWccHPSLFABdmB7VeiZsyFPTSixOkF5GBzTAWJMsq6J9rr3-V4ijIt8r35okycKSel5rbZl5FUu8eoieiRnJxThIr1fgk1FJ7YIU4irL2-voPvD-94g:1vLdzj:rh00HbZHndpJpbOy0iLN3IUnSfEbOcXgfQAoy2wM4RI'}
+BODY RAW: b'{"message":"rangpur branch details"}'
+POST DATA: {'message': 'rangpur branch details'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJzFVWFv00gQ_Ssjf0CtznHtJA3UfDjclqNwl1I1RUVHUTX2DvHSzW7YXbuUqv-dWScpbQkSoJPuQ5LZ2TfPb2fnOdeRQufPvZnLKsoji3o6byyUHFQ1CPIolYviqKrRn9fSeWOvovzddWSNIi5oHNmwbbQn7TkxbZSrUT9kuIlvS9A55kFG3607IEuA_PE1wYslye49kvxMn-neKqlxRluVEZQ_hG-kaZZtBmghhCXncjjchRNzSTaGf6gl1duOYZhuPYZDY30NRUu6oXjF0-vHsF_jBfayftYPPPuylU4avfWv0fy8bjOGN7bETtHzGcvLYXn0ZHH0ZzMpFGrBmItSJJp8gB4Vu29z-GPjyZNNSHdGMBrBMEthJ8viO9ksW2VDzV_4-bakD9vb6Xb2eGd0pxVj1Dglm0NRl1jy94wEvEI5lVaQfQoY0snHVWK9sr2GL3dGFiZkW1nRN9Zj_ChL2Kf2KdgQJoLa9RwnrMdh5blVUJvGcuezNE9TKMZw1vTTbADpMKyPxgE-Qd9YgVcQWKSerkFnK_SZXupygC23G0tF-TqS7t5PxuAW8LB8qbt5g5kppSKwxNNspwStRBgvzgGvtZKaYGNuaY5SwCOYG-dDuAnoQRuoeN01XSrleKUUdSfN4bSYFDwyzyd7r_nnaH8vht3jkyKIPiS-CiHtAurAWLjspPCgM2VN1QUguDlV8oOsVqL_vOuX7yz2A5P-msWOlyQ_abEHcLbYYHTfYpNGuzq0cGm0A6MEX0dvMBwMYzhFK3rZKIajZJLk8LfxBpXkbrHO5JZ-jdeWO9-7bdmF33LbYBSvza7z1FgkcExfsFFw0HxiC3RxUjefftVHRSktjBvt0XHw0imcsTc5mcgQ_weW-qFJ_m9DBGmn4Yn3rVCTmsOl5FfwWg-876a3JeswlJyzaM_jfR35q3kYc2WqxQZzkmxJsAc6u5xL_cEE4Arx7Y8purn5CuHYUSk:1vLe0F:9eqwVUrxjd1GZHivxArB28Ssy9cYD3zu8vEU2XcorBw'}
+HEADERS: {'Content-Length': '28', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-f0757e7f1caa98b463f26d90a5be4c62-7898b501334865dc-00', 'Cookie': 'sessionid=.eJzFVWFv00gQ_Ssjf0CtznHtJA3UfDjclqNwl1I1RUVHUTX2DvHSzW7YXbuUqv-dWScpbQkSoJPuQ5LZ2TfPb2fnOdeRQufPvZnLKsoji3o6byyUHFQ1CPIolYviqKrRn9fSeWOvovzddWSNIi5oHNmwbbQn7TkxbZSrUT9kuIlvS9A55kFG3607IEuA_PE1wYslye49kvxMn-neKqlxRluVEZQ_hG-kaZZtBmghhCXncjjchRNzSTaGf6gl1duOYZhuPYZDY30NRUu6oXjF0-vHsF_jBfayftYPPPuylU4avfWv0fy8bjOGN7bETtHzGcvLYXn0ZHH0ZzMpFGrBmItSJJp8gB4Vu29z-GPjyZNNSHdGMBrBMEthJ8viO9ksW2VDzV_4-bakD9vb6Xb2eGd0pxVj1Dglm0NRl1jy94wEvEI5lVaQfQoY0snHVWK9sr2GL3dGFiZkW1nRN9Zj_ChL2Kf2KdgQJoLa9RwnrMdh5blVUJvGcuezNE9TKMZw1vTTbADpMKyPxgE-Qd9YgVcQWKSerkFnK_SZXupygC23G0tF-TqS7t5PxuAW8LB8qbt5g5kppSKwxNNspwStRBgvzgGvtZKaYGNuaY5SwCOYG-dDuAnoQRuoeN01XSrleKUUdSfN4bSYFDwyzyd7r_nnaH8vht3jkyKIPiS-CiHtAurAWLjspPCgM2VN1QUguDlV8oOsVqL_vOuX7yz2A5P-msWOlyQ_abEHcLbYYHTfYpNGuzq0cGm0A6MEX0dvMBwMYzhFK3rZKIajZJLk8LfxBpXkbrHO5JZ-jdeWO9-7bdmF33LbYBSvza7z1FgkcExfsFFw0HxiC3RxUjefftVHRSktjBvt0XHw0imcsTc5mcgQ_weW-qFJ_m9DBGmn4Yn3rVCTmsOl5FfwWg-876a3JeswlJyzaM_jfR35q3kYc2WqxQZzkmxJsAc6u5xL_cEE4Arx7Y8purn5CuHYUSk:1vLe0F:9eqwVUrxjd1GZHivxArB28Ssy9cYD3zu8vEU2XcorBw'}
+BODY RAW: b'{"message":"chairman name?"}'
+POST DATA: {'message': 'chairman name?'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJxtU9tu2zAM_RXCD0OKOa6zBEHrPnTpBUgxGA2aDBm2DgFjsbEwWXIlOUUb5N9HOellQx4Mk9QheXRIbSKFzi-8qWURZVFRorQVajAPUEmhUAtYov4DGis6j-IA8ItSOm_sc5T92kTWKOLExpENx0Z70p4DFvWqbiws2ShKEORRKhdt47cUdI7rIKM_5o3JEiB_viS42xe5-KdIdq_vdfc1GJgdF0ZQ9j-8k6b94VGAjoSw5FwG00a7UmqCmXkiG8PYKCH1qtsf9AcxzNGKbm8YwySZJhl8M96gkjFcMc_krXwoeCXX0kmjj38a_d44hu-W1QqA64qZZrBXIdmp8HUvaVB0KRJNPkAno4sfGXzunJwcQXo6hOEQBr0UTvtM5FD0w91z1Lgim0EuErijF2wUjJvHM7CtnZTN4-Gelw1PsCILU7JrWdB7pdFSWsgb7dGxceMUVmeAHExksA-XmzEdh4VnRaA0jWWle2mWpjDK4b75kvb6kA6CP8nD7PZNHeCaVcKloqyd0iwHtzsK7o1utwMqs5SK-Eq8e3ZFsJYI-X43b7UK0-zUlmqUAj5BbZwP5hGgB22gYL9VTCrl2FOKWp4ZzEfTEc_2enp5y7_J1WWgNg8dhbQ7kANjoSRVw5P0JSC4mgr5IItXnufR9ne7vWuyDkPKgkl7Xu9N5J_rsObKFLsDrklyTYLfQPtcFlI_mAB8RTB41ShXoo62278T_Tim:1vLe11:yDkcOk9_KuASkWel06W_pLcBD-aPoRC8g2uLy2OblZ0'}
+HEADERS: {'Content-Length': '24', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-c03e2d5f5ba3cce705b4ba3d84c26a12-401543dbe6939df4-00', 'Cookie': 'sessionid=.eJxtU9tu2zAM_RXCD0OKOa6zBEHrPnTpBUgxGA2aDBm2DgFjsbEwWXIlOUUb5N9HOellQx4Mk9QheXRIbSKFzi-8qWURZVFRorQVajAPUEmhUAtYov4DGis6j-IA8ItSOm_sc5T92kTWKOLExpENx0Z70p4DFvWqbiws2ShKEORRKhdt47cUdI7rIKM_5o3JEiB_viS42xe5-KdIdq_vdfc1GJgdF0ZQ9j-8k6b94VGAjoSw5FwG00a7UmqCmXkiG8PYKCH1qtsf9AcxzNGKbm8YwySZJhl8M96gkjFcMc_krXwoeCXX0kmjj38a_d44hu-W1QqA64qZZrBXIdmp8HUvaVB0KRJNPkAno4sfGXzunJwcQXo6hOEQBr0UTvtM5FD0w91z1Lgim0EuErijF2wUjJvHM7CtnZTN4-Gelw1PsCILU7JrWdB7pdFSWsgb7dGxceMUVmeAHExksA-XmzEdh4VnRaA0jWWle2mWpjDK4b75kvb6kA6CP8nD7PZNHeCaVcKloqyd0iwHtzsK7o1utwMqs5SK-Eq8e3ZFsJYI-X43b7UK0-zUlmqUAj5BbZwP5hGgB22gYL9VTCrl2FOKWp4ZzEfTEc_2enp5y7_J1WWgNg8dhbQ7kANjoSRVw5P0JSC4mgr5IItXnufR9ne7vWuyDkPKgkl7Xu9N5J_rsObKFLsDrklyTYLfQPtcFlI_mAB8RTB41ShXoo62278T_Tim:1vLe11:yDkcOk9_KuASkWel06W_pLcBD-aPoRC8g2uLy2OblZ0'}
+BODY RAW: b'{"message":"age of mdb"}'
+POST DATA: {'message': 'age of mdb'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJyFU2FP2zAQ_SunfJharYR0LRWED1uhbKCpoiJMTBtTdUmujYVjB9sp6lD_-85JgW5D24eq9vn5_PLeu8dAonVzpyuRBXGASwK9gDJPg16QFejmhbBOm3UQf38MjJbEoNqS8cdaOVKOCwbVsqoNpLzICsjJoZA22PSer6C13AcZvXvvnAwB8s8VBFfbJie_NYlv1a3aeyoqLGk_0znFf8I7UTQYdT10nOeGrI0hqZUthCK41g9kenCuZS7Ucm8wHAx7cIMm3-uPejALkzCGz9pplKIHE-YZPrf3DSdiJazQav-bVi8P9-CLSbEhd1Yy0xi2KoStCh9KkUtUOWPu0jxU5Dx0Nj75GsPbzuFhF6KjEYxGMOxHcDRgIq9Vd759iordMTFM8xCu6CfWEs7r-2MwzTos6vvX3zyt2cGSDCRkViKjl07jVBiY1sqh5cWFlVgeA3IxFH79ertrpmMxc6wIFLo2rHQ_iqMIxlO4rd9F_QFEQ7-fTb1320ct4IpVwlRS3Lh0PQXbHvnthWrSAaVOhST-JM6e4SyuBMK0ZQGXSno3O5WhCkUOb6DS1vllF9CB0pDxvlFMSGl5JyU1PGO4GSdj9vYsOb3kv9nk1FO78S_mwrQgC9pAQbKCB-EKQLAVZWIhsiee73cD_dcM7EzOf3M_0bDWNZSEqol-KZQo6xJ8D6dBV6SAj6aTE8As02zQ-3YMElxxgi2M2yp0PpEig7LLHhzCmtCwziwVpnrV6OpbTIh1Eg5mpHyMIckKKlnHySz5572PWAq55jGqKm2cR7b2Hhy0N449b803M-bacG6EM3Rfs6Y5LLQpeaScIOvZXyyeP9qB5UA6Hs4lkLQE6bqNTrZVkZ_vNYUcJHEqCO6UfgiDzY9GxhUZi96zOWvrWOfHwK0rr7fUWXvAppJYUc5mNF7NhVpoD3xCMHhZS1ugCjabXyArs0w:1vLe1M:6ZC_dHbFl8PId7RJ2GZaD-ZetQt7UtJDMlccMqvG_7k'}
+HEADERS: {'Content-Length': '26', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-17f446a6fa70490a8391ef48cc823313-c4aefb4a7df6d491-00', 'Cookie': 'sessionid=.eJyFU2FP2zAQ_SunfJharYR0LRWED1uhbKCpoiJMTBtTdUmujYVjB9sp6lD_-85JgW5D24eq9vn5_PLeu8dAonVzpyuRBXGASwK9gDJPg16QFejmhbBOm3UQf38MjJbEoNqS8cdaOVKOCwbVsqoNpLzICsjJoZA22PSer6C13AcZvXvvnAwB8s8VBFfbJie_NYlv1a3aeyoqLGk_0znFf8I7UTQYdT10nOeGrI0hqZUthCK41g9kenCuZS7Ucm8wHAx7cIMm3-uPejALkzCGz9pplKIHE-YZPrf3DSdiJazQav-bVi8P9-CLSbEhd1Yy0xi2KoStCh9KkUtUOWPu0jxU5Dx0Nj75GsPbzuFhF6KjEYxGMOxHcDRgIq9Vd759iordMTFM8xCu6CfWEs7r-2MwzTos6vvX3zyt2cGSDCRkViKjl07jVBiY1sqh5cWFlVgeA3IxFH79ertrpmMxc6wIFLo2rHQ_iqMIxlO4rd9F_QFEQ7-fTb1320ct4IpVwlRS3Lh0PQXbHvnthWrSAaVOhST-JM6e4SyuBMK0ZQGXSno3O5WhCkUOb6DS1vllF9CB0pDxvlFMSGl5JyU1PGO4GSdj9vYsOb3kv9nk1FO78S_mwrQgC9pAQbKCB-EKQLAVZWIhsiee73cD_dcM7EzOf3M_0bDWNZSEqol-KZQo6xJ8D6dBV6SAj6aTE8As02zQ-3YMElxxgi2M2yp0PpEig7LLHhzCmtCwziwVpnrV6OpbTIh1Eg5mpHyMIckKKlnHySz5572PWAq55jGqKm2cR7b2Hhy0N449b803M-bacG6EM3Rfs6Y5LLQpeaScIOvZXyyeP9qB5UA6Hs4lkLQE6bqNTrZVkZ_vNYUcJHEqCO6UfgiDzY9GxhUZi96zOWvrWOfHwK0rr7fUWXvAppJYUc5mNF7NhVpoD3xCMHhZS1ugCjabXyArs0w:1vLe1M:6ZC_dHbFl8PId7RJ2GZaD-ZetQt7UtJDMlccMqvG_7k'}
+BODY RAW: b'{"message":"mdb bank age"}'
+POST DATA: {'message': 'mdb bank age'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJyFUsFqGzEQ_ZVhTw64oWkJtO6hNJiWHAIBH-titNqxJSxptpqRzWL87x3tOiGhpD2tmHlv5r03e2qCYdkI9d42iyZ2LbQm7cHssJk31hnZOM9CeWgWP09NpoAKK4y5tikJJtGCwoG2oPTmPH-GGWblGkW8xC4JBioQ0SQQhxB98rHEuhKEgHpMoK2H5R0Ya6kk-bpO6_QOVubg047h21SF2Q9MmE24WsDNJxjQZFZiB6alA1ZCHbHEntgLPGJiTwlW1mFEmC0fV__kfTfRhwFWpe8pS0Wuy4f3Nx9vbyfGl6qblGlV66j56MVBxt_FZ-xgSzma4MUjV_X322fTAkwRxakXwMAI7QDjbHtJUdfPx0IHAUU5sE90vH6Z7F8HeHW4_57gwXehOr6rjJnuuwIFZVHdaiUb0aQYfILq-Bom8aOkzxnB8L5qd3SEQPrQdJ1haBHTEz3t5lqeGJeOTmsL-4TMoB-Lr4Zfknnzf5hOznMQDKFGcnTeOugzdcXKeL77aZ222RmVWWddzhHVtub3a8zggJlHhxv1LBrSqZGhr2EFslMjo0V_wE6THKPe-LSlCnxCKHhXgu5Jzfn8BwYyHsY:1vLe1r:1vHlsMMSXNdehhUUNsxxNIqexzFaEivMkIksVv5ebWc'}
+HEADERS: {'Content-Length': '31', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-615c6843707430cbc7ec655668cc641e-553be10b47a28cfc-00', 'Cookie': 'sessionid=.eJyFUsFqGzEQ_ZVhTw64oWkJtO6hNJiWHAIBH-titNqxJSxptpqRzWL87x3tOiGhpD2tmHlv5r03e2qCYdkI9d42iyZ2LbQm7cHssJk31hnZOM9CeWgWP09NpoAKK4y5tikJJtGCwoG2oPTmPH-GGWblGkW8xC4JBioQ0SQQhxB98rHEuhKEgHpMoK2H5R0Ya6kk-bpO6_QOVubg047h21SF2Q9MmE24WsDNJxjQZFZiB6alA1ZCHbHEntgLPGJiTwlW1mFEmC0fV__kfTfRhwFWpe8pS0Wuy4f3Nx9vbyfGl6qblGlV66j56MVBxt_FZ-xgSzma4MUjV_X322fTAkwRxakXwMAI7QDjbHtJUdfPx0IHAUU5sE90vH6Z7F8HeHW4_57gwXehOr6rjJnuuwIFZVHdaiUb0aQYfILq-Bom8aOkzxnB8L5qd3SEQPrQdJ1haBHTEz3t5lqeGJeOTmsL-4TMoB-Lr4Zfknnzf5hOznMQDKFGcnTeOugzdcXKeL77aZ222RmVWWddzhHVtub3a8zggJlHhxv1LBrSqZGhr2EFslMjo0V_wE6THKPe-LSlCnxCKHhXgu5Jzfn8BwYyHsY:1vLe1r:1vHlsMMSXNdehhUUNsxxNIqexzFaEivMkIksVv5ebWc'}
+BODY RAW: b'{"message":"anniversary date?"}'
+POST DATA: {'message': 'anniversary date?'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJyFkc1OKzEMhV_FygqkCgF3BRskxKYLnuDeq8pN3MZqxhkSp6iq-u44HX5aWLCaTHx8jv1l7xJWXWge2bt7hyK8pVKx7CCg0oObOR9RF5Gr5rJz93_3ruREpm2VSi9nURK1iyEsYYmyAVyTO8w-hVirdaNpTtXPHBJKgMfecfH89HgJJipKAfJIBZWzVGCB2-ubP1cwX8Eut3_N_u4KAdYNyxpifoWU7cAKESssieSjXdYzu5463ivmtmyVhWoF-3g6M4eBbEjQSDCw8NCGvglo7o4C6H1uonUGSimZGF4j-whjyaF5hb7MfIqzco1oY3avQi-NCw229tUplh_8fsL_FeIcQpYpswPYTol1JM8r9vDd0TYFjwJmsOIywNkb_E5_SkAYTci-JSxAWxsEcjmh8BVp7QYyfAE7R-Qj-Y1BRH0f68jMGP0_rnh06XMsbDI1Bnunu7GzSNlPhUKeLC0YqCPOBcsqd-GHwsTrlsxX3OHwBmBqBDg:1vLe2D:Dk6XSbHmLGrQm2A-mw-wDlXlw2m-PtgbNMLoEQOnecI'}
+HEADERS: {'Content-Length': '40', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-12a9bd3ca41d7ad9785efdd5bbc172f5-cb3e4ce7c264ac2c-00', 'Cookie': 'sessionid=.eJyFkc1OKzEMhV_FygqkCgF3BRskxKYLnuDeq8pN3MZqxhkSp6iq-u44HX5aWLCaTHx8jv1l7xJWXWge2bt7hyK8pVKx7CCg0oObOR9RF5Gr5rJz93_3ruREpm2VSi9nURK1iyEsYYmyAVyTO8w-hVirdaNpTtXPHBJKgMfecfH89HgJJipKAfJIBZWzVGCB2-ubP1cwX8Eut3_N_u4KAdYNyxpifoWU7cAKESssieSjXdYzu5463ivmtmyVhWoF-3g6M4eBbEjQSDCw8NCGvglo7o4C6H1uonUGSimZGF4j-whjyaF5hb7MfIqzco1oY3avQi-NCw229tUplh_8fsL_FeIcQpYpswPYTol1JM8r9vDd0TYFjwJmsOIywNkb_E5_SkAYTci-JSxAWxsEcjmh8BVp7QYyfAE7R-Qj-Y1BRH0f68jMGP0_rnh06XMsbDI1Bnunu7GzSNlPhUKeLC0YqCPOBcsqd-GHwsTrlsxX3OHwBmBqBDg:1vLe2D:Dk6XSbHmLGrQm2A-mw-wDlXlw2m-PtgbNMLoEQOnecI'}
+BODY RAW: b'{"message":"mdb bank anniversary date?"}'
+POST DATA: {'message': 'mdb bank anniversary date?'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJydkc1qwzAQhF9l0dmE_pyaSyH0kkOfoC1mI61jEVlrpLWDCXn3rp2mdRpIoVftzOzsp4MJmKUUbr01S9O4DWww7gBj9D2ljGkAh0LPpjC2Rilrn4XTYJZvB5M4kJq6TGkccxSKog_X5mPxrcacNQJVOLeswXF87x7u7p8EauwJpCbILVlfeXtVZwFrsBhBAyqfGnj1LmB0sBq7a3oScsAtJRTPMYOPoNGPaqtg4O60AaFVobddwATUaxHgBG1i11m5WKn2xkdXgFAI0KhVd61PdfXB1mR3sFc8X7VyjYkW86uvGN0g_U9Yv4Og0mteX1YTlMW8mcq16gWzDW11eoNYQzrHnx85Y-Izutn6AgLJiGkXea9cvK2B45_UNLL3buT2MV07pY1tSkUgiuNgZGhHLIHtaZDIkm51ymxCXPpY8Sg8K1S87YJeHc3x-AnegAVK:1vLe2k:1CbbF5pihOKz_9juCSywyEEfI4VCofl6zIfmXG0TonA'}
+HEADERS: {'Content-Length': '31', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-5b1227f6f1114ac0d57c70e9f417a631-933483cc75343cb1-00', 'Cookie': 'sessionid=.eJydkc1qwzAQhF9l0dmE_pyaSyH0kkOfoC1mI61jEVlrpLWDCXn3rp2mdRpIoVftzOzsp4MJmKUUbr01S9O4DWww7gBj9D2ljGkAh0LPpjC2Rilrn4XTYJZvB5M4kJq6TGkccxSKog_X5mPxrcacNQJVOLeswXF87x7u7p8EauwJpCbILVlfeXtVZwFrsBhBAyqfGnj1LmB0sBq7a3oScsAtJRTPMYOPoNGPaqtg4O60AaFVobddwATUaxHgBG1i11m5WKn2xkdXgFAI0KhVd61PdfXB1mR3sFc8X7VyjYkW86uvGN0g_U9Yv4Og0mteX1YTlMW8mcq16gWzDW11eoNYQzrHnx85Y-Izutn6AgLJiGkXea9cvK2B45_UNLL3buT2MV07pY1tSkUgiuNgZGhHLIHtaZDIkm51ymxCXPpY8Sg8K1S87YJeHc3x-AnegAVK:1vLe2k:1CbbF5pihOKz_9juCSywyEEfI4VCofl6zIfmXG0TonA'}
+BODY RAW: b'{"message":"ok your ceo name?"}'
+POST DATA: {'message': 'ok your ceo name?'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '16', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-c6a8e6dfa8a7e4de13534410e0e95923-4cfd1826ee2b8aea-00'}
+BODY RAW: b'{"message":"hi"}'
+POST DATA: {'message': 'hi'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '36', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-9f52e770d9160ff722764324cc3034f1-78251f645199bb7d-00'}
+BODY RAW: b'{"message":"what is your ceo name?"}'
+POST DATA: {'message': 'what is your ceo name?'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': 'eyJsYXN0X3RvcGljIjoieW91ciBjZW8gbmFtZT8iLCJjaGF0X2hpc3RvcnkiOltdfQ:1vLeBO:RZgUDx-PFhxoLBKWhGgs044ghjhFkPiN15d0BCLq6k0'}
+HEADERS: {'Content-Length': '38', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-41b1cb22a52b5986b5a62390a29341ee-4b57e4c53ca3dcea-00', 'Cookie': 'sessionid=eyJsYXN0X3RvcGljIjoieW91ciBjZW8gbmFtZT8iLCJjaGF0X2hpc3RvcnkiOltdfQ:1vLeBO:RZgUDx-PFhxoLBKWhGgs044ghjhFkPiN15d0BCLq6k0'}
+BODY RAW: b'{"message":"current fdr presentence "}'
+POST DATA: {'message': 'current fdr presentence '}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJx9U01vI0UQ_SslH5AjnHUMF_AeVgkmkgUJUTaCA0Grmu6yp0hP99Bdk8S7yn_n9TgOYfk4jaa7q95Hvfo0CVzsg6Ve3WQ56XxDbshZohE7lwZ8Nz5Tn6XgTKKTyWziWrYPrRZLeTdZ_vppklMQVA9Fcr1O9aXh4GJ1Rt89tzv9j3ZPs5d6LgVNGaWvm5xmoV0aiMudxi1xkwajc30UTyvpU1Gja3GivdH0fHV9RF6MNRTapEzWCv0Li3e0Jp_i7fDVyeJbo5bvhVBLGlHUsWmK1EqWN3jnOFJpGSweoHtfUojvgcFNkP-DQb9iwn55G2_jMd3selnSZYrHCnHwwI4b4VxVZdkOgfPn5teq74NutdGgtlvSGcdtYC-lVXJq-lFioenimy-PZsTRE4dABphCaUMbzV2ZVw5qQ9VU5ilvOepH3v-51PX4lVJxLjRqN3TgjL4cYONoLjBXN7SYnZyc1FfnwjaA-vLF_C_oQa31mR84zGiTRVDa4MJx9qM7i2K0g9Dn23UVH8WqmDrS5-P3F-__OnGt_DEINSndVdQfZEeNRNmoleogBe2AgCnFoWskE1C4Gy2HbsscC7tR44xi-hsfIGl8Ren3pK_CnvpatRcqZW78WKUextlxHVxk5HZ024VUYAaiST1IFLD2AyIBDtiRvJXyltBiLo9Oi8x_Pr05PL08u6aMp6Pz19CqGXn2yQ0dxl_GQd8dsnb60zlNi26jeIz5a7q6or5NlsYhc98HRUZtWo6IzZAqdGp2UGk5-cEJRN5zUL8vovWKpldYtT5lm1-uV_NV1vuawR_VIU0CiMULREWIqdMI2143P_jVpuAlvx3HHMdgezTzAwc4f5OR1EPbMSXY_FTlg3ROIFX3Yr0Z1xsIftzB0ovTjTrkOjMQZwTL4fIMSzL6NDoElv9cYWtTkZf9z7ptDawe3tAvaQh-hAl6J9ThacKCh37PiuPO2mqBBNQjVXWfP1vFd5On357-BMN01MU:1vLeCH:61-zsLiFonszvTJdOZet-ZAcEsn5SnFrTDaCv02k9OI'}
+HEADERS: {'Content-Length': '27', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-5a30bca9d0e281a5837052ac5c702407-9e8785d28f87d5c0-00', 'Cookie': 'sessionid=.eJx9U01vI0UQ_SslH5AjnHUMF_AeVgkmkgUJUTaCA0Grmu6yp0hP99Bdk8S7yn_n9TgOYfk4jaa7q95Hvfo0CVzsg6Ve3WQ56XxDbshZohE7lwZ8Nz5Tn6XgTKKTyWziWrYPrRZLeTdZ_vppklMQVA9Fcr1O9aXh4GJ1Rt89tzv9j3ZPs5d6LgVNGaWvm5xmoV0aiMudxi1xkwajc30UTyvpU1Gja3GivdH0fHV9RF6MNRTapEzWCv0Li3e0Jp_i7fDVyeJbo5bvhVBLGlHUsWmK1EqWN3jnOFJpGSweoHtfUojvgcFNkP-DQb9iwn55G2_jMd3selnSZYrHCnHwwI4b4VxVZdkOgfPn5teq74NutdGgtlvSGcdtYC-lVXJq-lFioenimy-PZsTRE4dABphCaUMbzV2ZVw5qQ9VU5ilvOepH3v-51PX4lVJxLjRqN3TgjL4cYONoLjBXN7SYnZyc1FfnwjaA-vLF_C_oQa31mR84zGiTRVDa4MJx9qM7i2K0g9Dn23UVH8WqmDrS5-P3F-__OnGt_DEINSndVdQfZEeNRNmoleogBe2AgCnFoWskE1C4Gy2HbsscC7tR44xi-hsfIGl8Ren3pK_CnvpatRcqZW78WKUextlxHVxk5HZ024VUYAaiST1IFLD2AyIBDtiRvJXyltBiLo9Oi8x_Pr05PL08u6aMp6Pz19CqGXn2yQ0dxl_GQd8dsnb60zlNi26jeIz5a7q6or5NlsYhc98HRUZtWo6IzZAqdGp2UGk5-cEJRN5zUL8vovWKpldYtT5lm1-uV_NV1vuawR_VIU0CiMULREWIqdMI2143P_jVpuAlvx3HHMdgezTzAwc4f5OR1EPbMSXY_FTlg3ROIFX3Yr0Z1xsIftzB0ovTjTrkOjMQZwTL4fIMSzL6NDoElv9cYWtTkZf9z7ptDawe3tAvaQh-hAl6J9ThacKCh37PiuPO2mqBBNQjVXWfP1vFd5On357-BMN01MU:1vLeCH:61-zsLiFonszvTJdOZet-ZAcEsn5SnFrTDaCv02k9OI'}
+BODY RAW: b'{"message":"any dps info?"}'
+POST DATA: {'message': 'any dps info?'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJydV11P20gU_StXPFRBDU0CatWShyqQsotaKCLsVtV2VY3tSTzLeMY7Mw64Vf_7nju2E_NRKu2DIbbnft9z7vX3HS18-BpsqdKdwx1haiqyhDK1UkFoymRpvQpUSuOVNeTTXBaSBnfOlH6XlFnatzvDnTQX4WuufLCu3jn86_uOs1pCceWl49fWBGkCHpzNj-i4cg53NEtTW-H_MnNUOuklH0rlzo_hRl54D6UCon0lMyepthUJf63MikRiq0An6lZmNG89v5SpVGWgwcn8chfxBKG0p6V1FHJJj3jxlk4ps-ZLtT-evAmUi7UkyMYIXSECpyGXTr7AuVQgJbmAFzeIuxHxJNawIRItnzIDfT5IkR1-MV_MHl3VpTykc2v2FIJDDsJeIoXjqJxcVVo4SlsFolHAUu80apAorUJ9SEfCrLTIpM8VpSqob6gZDSavn-8OSZiMhNYUYMaTXdJSucKP2AcVKo7Jj6xbCaO-ieYutUWJW-nZzpkyqqgK-Ay927aAzfkVTYbj8ZhPnUgRKrh-uEn-M7pRIc-cuBF6SEsnJUQTvEiFy2J2Jj5QjUDbt6ccvJGBg-GSto8XZ4vtE7Tgv5WkxNprtvpe1pRII5cqeM4gaVXAAqpkqiKRjmBFFDHliDs4YbxIY4xDMvaOP7CkTM-lf6za5ptsyVJNoNKPgrjlULtyFoILZwT6NmY71dYjGWhNgMdF4GQVWgI-ACNuJf2UoGIkb1Pl5ejP2VV39PzokhyOxsxfIlbl0M-ZTasC5fex0Nddr80-ntDAq5WRGcp8QBcXVOY22FhkUZZaoUfDAAgVIaCroCmpEWVwNqtSiSDXQqusEaLTOQ0uALXSujA6P52P5k6tuQc_qBTdJGFisjHBFowtlEHa-sq7fOVWZ9JNY5lNbOwMyrJKaGT-yqFTO7WxS4B8y-HDaWfhFOPidBnhDQtZxKAvZaqWKkVfOwGLQ0LKkeUhQBLzFDMELx9COOTWyw3-nVrlAV7dvKBPttJZNKPVtSSwG0LLpS4br8CIIecUSA15dBXj-R4U3_aZ6gHTMacyAcxbvuzAcdFy6qLl1DtnLhYdp_6SBH8HXWyoh7zKmrtJUjf_-QlpoAVVontGaO1fNM8uFpGJmIcatkhT6Rvw3xXBMaI9-mg0Kj-Mle2BCmcKeJbrGqVxxWaADJgprNH1biuOiUJrJaJ2G3URd53Qo8KC0ZCPtXIBzUJJA_zdjS8bH85aS0xjYDcuPnnBDet7VhB1V4IjOJrmQ1pUyV73G905W7FkSzB0zOPH0WB2dLzLKemR7M_T8e4WlWHpXjzcCb7tIjqeLWZb6o4iUa8G7V9KrlHjwobC78BFyxXMrSrQlMLMYUgBeNbhFcPGKYmBC6mytbf1orF1bgMauLN3hgIDPi1CWYdwwchGwbAhUJmNKtP-whPRJID6E-NhQR4bQaCM188br-5SDef2_efj2G0du4mOYh_PMtjdyJstF06Zwcu89mA5zVkpuJxMh3ESNUJ_eIw82dUHFqfka5BVAVLGcDFxc2CmlI9EtAicK5f1pkArESiJHYRRgE4BI92NbrqZ23diix112uvXwbuz092fR8yw2X855rBejscxV0Wlgyo1s19VMlnFITwed2P4lxiZdvOwHTgdRplSaVCKOu4ujJmgioacVcN7EdoxhKvIu-1MRPCJjS_26OBsSK9wvcE1-TykfVwHuF7ieo1rMuY_fLc__twko9l3RpHRf56J7lzjpkFD85wAbjIe2tudq6X4h5m47OTaKQJB3uOmGN1oFm7uLi0rxwNHbIrNbp6IlBGAJolFwK7whK8n95aWKck9pD_E-fTQs9_sGltPbIe4VQwpq9gS434d_7NJrBPt5hDbtaYBqMF2Q55DB41JhyLXsURnm7AgjKpiN34KWb28PPTwQ1WUex4boAibdE3xBeCTynnkqp2LB2OgnLcs_DbyNjQNQ2LJhMoP-WOj34rs5wXGdoTrdmfiLleeFcPviPT_7flG-yEtmtFA3YZNakkYkfuvXk72-04BFQJIZi_u-0v4VXssQTGwttjWpT3fY6wHhPnsZYoyYvdoY-mb4MA_tlQCLiqfCPCDXXGHA-hbVh-iGxJec7uPMOa-YRza-Na5enYMagT3skO-WmJjUux8IjTvpw-TFOckbIANvDUPuI2d_SR4yY3LEZ6n17wxuXamNKMBFBXXJnxJYtVoN7OYxX4CG4xhrfn7x38e7gC0:1vLeDS:iD6fkpJtp1Cp29AdDAbGXI7WiF0qVGO4gag4EQlO6BI'}
+HEADERS: {'Content-Length': '26', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-1754ea6f1ebc1691c1c7b3b86203e7fe-666dd85865d6ec22-00', 'Cookie': 'sessionid=.eJydV11P20gU_StXPFRBDU0CatWShyqQsotaKCLsVtV2VY3tSTzLeMY7Mw64Vf_7nju2E_NRKu2DIbbnft9z7vX3HS18-BpsqdKdwx1haiqyhDK1UkFoymRpvQpUSuOVNeTTXBaSBnfOlH6XlFnatzvDnTQX4WuufLCu3jn86_uOs1pCceWl49fWBGkCHpzNj-i4cg53NEtTW-H_MnNUOuklH0rlzo_hRl54D6UCon0lMyepthUJf63MikRiq0An6lZmNG89v5SpVGWgwcn8chfxBKG0p6V1FHJJj3jxlk4ps-ZLtT-evAmUi7UkyMYIXSECpyGXTr7AuVQgJbmAFzeIuxHxJNawIRItnzIDfT5IkR1-MV_MHl3VpTykc2v2FIJDDsJeIoXjqJxcVVo4SlsFolHAUu80apAorUJ9SEfCrLTIpM8VpSqob6gZDSavn-8OSZiMhNYUYMaTXdJSucKP2AcVKo7Jj6xbCaO-ieYutUWJW-nZzpkyqqgK-Ay927aAzfkVTYbj8ZhPnUgRKrh-uEn-M7pRIc-cuBF6SEsnJUQTvEiFy2J2Jj5QjUDbt6ccvJGBg-GSto8XZ4vtE7Tgv5WkxNprtvpe1pRII5cqeM4gaVXAAqpkqiKRjmBFFDHliDs4YbxIY4xDMvaOP7CkTM-lf6za5ptsyVJNoNKPgrjlULtyFoILZwT6NmY71dYjGWhNgMdF4GQVWgI-ACNuJf2UoGIkb1Pl5ejP2VV39PzokhyOxsxfIlbl0M-ZTasC5fex0Nddr80-ntDAq5WRGcp8QBcXVOY22FhkUZZaoUfDAAgVIaCroCmpEWVwNqtSiSDXQqusEaLTOQ0uALXSujA6P52P5k6tuQc_qBTdJGFisjHBFowtlEHa-sq7fOVWZ9JNY5lNbOwMyrJKaGT-yqFTO7WxS4B8y-HDaWfhFOPidBnhDQtZxKAvZaqWKkVfOwGLQ0LKkeUhQBLzFDMELx9COOTWyw3-nVrlAV7dvKBPttJZNKPVtSSwG0LLpS4br8CIIecUSA15dBXj-R4U3_aZ6gHTMacyAcxbvuzAcdFy6qLl1DtnLhYdp_6SBH8HXWyoh7zKmrtJUjf_-QlpoAVVontGaO1fNM8uFpGJmIcatkhT6Rvw3xXBMaI9-mg0Kj-Mle2BCmcKeJbrGqVxxWaADJgprNH1biuOiUJrJaJ2G3URd53Qo8KC0ZCPtXIBzUJJA_zdjS8bH85aS0xjYDcuPnnBDet7VhB1V4IjOJrmQ1pUyV73G905W7FkSzB0zOPH0WB2dLzLKemR7M_T8e4WlWHpXjzcCb7tIjqeLWZb6o4iUa8G7V9KrlHjwobC78BFyxXMrSrQlMLMYUgBeNbhFcPGKYmBC6mytbf1orF1bgMauLN3hgIDPi1CWYdwwchGwbAhUJmNKtP-whPRJID6E-NhQR4bQaCM188br-5SDef2_efj2G0du4mOYh_PMtjdyJstF06Zwcu89mA5zVkpuJxMh3ESNUJ_eIw82dUHFqfka5BVAVLGcDFxc2CmlI9EtAicK5f1pkArESiJHYRRgE4BI92NbrqZ23diix112uvXwbuz092fR8yw2X855rBejscxV0Wlgyo1s19VMlnFITwed2P4lxiZdvOwHTgdRplSaVCKOu4ujJmgioacVcN7EdoxhKvIu-1MRPCJjS_26OBsSK9wvcE1-TykfVwHuF7ieo1rMuY_fLc__twko9l3RpHRf56J7lzjpkFD85wAbjIe2tudq6X4h5m47OTaKQJB3uOmGN1oFm7uLi0rxwNHbIrNbp6IlBGAJolFwK7whK8n95aWKck9pD_E-fTQs9_sGltPbIe4VQwpq9gS434d_7NJrBPt5hDbtaYBqMF2Q55DB41JhyLXsURnm7AgjKpiN34KWb28PPTwQ1WUex4boAibdE3xBeCTynnkqp2LB2OgnLcs_DbyNjQNQ2LJhMoP-WOj34rs5wXGdoTrdmfiLleeFcPviPT_7flG-yEtmtFA3YZNakkYkfuvXk72-04BFQJIZi_u-0v4VXssQTGwttjWpT3fY6wHhPnsZYoyYvdoY-mb4MA_tlQCLiqfCPCDXXGHA-hbVh-iGxJec7uPMOa-YRza-Na5enYMagT3skO-WmJjUux8IjTvpw-TFOckbIANvDUPuI2d_SR4yY3LEZ6n17wxuXamNKMBFBXXJnxJYtVoN7OYxX4CG4xhrfn7x38e7gC0:1vLeDS:iD6fkpJtp1Cp29AdDAbGXI7WiF0qVGO4gag4EQlO6BI'}
+BODY RAW: b'{"message":"ok thank you"}'
+POST DATA: {'message': 'ok thank you'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJydV11P20gU_StXPFRBDU0CatWShyqQsotaKCLsVtV2VY3tSTzLeMY7Mw64Vf_7nju2E_NRKu2DIbbnft9z7vX3HS18-BpsqdKdwx1haiqyhDK1UkFoymRpvQpUSuOVNeTTXBaSBnfOlH6XlFnatzvDnTQX4WuufLCu3jn86_uOs1pCceWl49fWBGkCHpzNj-i4cg53NEtTW-H_MnNUOuklH0rlzo_hRl54D6UCon0lMyepthUJf63MikRiq0An6lZmNG89v5SpVGWgwcn8chfxBKG0p6V1FHJJj3jxlk4ps-ZLtT-evAmUi7UkyMYIXSECpyGXTr7AuVQgJbmAFzeIuxHxJNawIRItnzIDfT5IkR1-MV_MHl3VpTykc2v2FIJDDsJeIoXjqJxcVVo4SlsFolHAUu80apAorUJ9SEfCrLTIpM8VpSqob6gZDSavn-8OSZiMhNYUYMaTXdJSucKP2AcVKo7Jj6xbCaO-ieYutUWJW-nZzpkyqqgK-Ay927aAzfkVTYbj8ZhPnUgRKrh-uEn-M7pRIc-cuBF6SEsnJUQTvEiFy2J2Jj5QjUDbt6ccvJGBg-GSto8XZ4vtE7Tgv5WkxNprtvpe1pRII5cqeM4gaVXAAqpkqiKRjmBFFDHliDs4YbxIY4xDMvaOP7CkTM-lf6za5ptsyVJNoNKPgrjlULtyFoILZwT6NmY71dYjGWhNgMdF4GQVWgI-ACNuJf2UoGIkb1Pl5ejP2VV39PzokhyOxsxfIlbl0M-ZTasC5fex0Nddr80-ntDAq5WRGcp8QBcXVOY22FhkUZZaoUfDAAgVIaCroCmpEWVwNqtSiSDXQqusEaLTOQ0uALXSujA6P52P5k6tuQc_qBTdJGFisjHBFowtlEHa-sq7fOVWZ9JNY5lNbOwMyrJKaGT-yqFTO7WxS4B8y-HDaWfhFOPidBnhDQtZxKAvZaqWKkVfOwGLQ0LKkeUhQBLzFDMELx9COOTWyw3-nVrlAV7dvKBPttJZNKPVtSSwG0LLpS4br8CIIecUSA15dBXj-R4U3_aZ6gHTMacyAcxbvuzAcdFy6qLl1DtnLhYdp_6SBH8HXWyoh7zKmrtJUjf_-QlpoAVVontGaO1fNM8uFpGJmIcatkhT6Rvw3xXBMaI9-mg0Kj-Mle2BCmcKeJbrGqVxxWaADJgprNH1biuOiUJrJaJ2G3URd53Qo8KC0ZCPtXIBzUJJA_zdjS8bH85aS0xjYDcuPnnBDet7VhB1V4IjOJrmQ1pUyV73G905W7FkSzB0zOPH0WB2dLzLKemR7M_T8e4WlWHpXjzcCb7tIjqeLWZb6o4iUa8G7V9KrlHjwobC78BFyxXMrSrQlMLMYUgBeNbhFcPGKYmBC6mytbf1orF1bgMauLN3hgIDPi1CWYdwwchGwbAhUJmNKtP-whPRJID6E-NhQR4bQaCM188br-5SDef2_efj2G0du4mOYh_PMtjdyJstF06Zwcu89mA5zVkpuJxMh3ESNUJ_eIw82dUHFqfka5BVAVLGcDFxc2CmlI9EtAicK5f1pkArESiJHYRRgE4BI92NbrqZ23diix112uvXwbuz092fR8yw2X855rBejscxV0Wlgyo1s19VMlnFITwed2P4lxiZdvOwHTgdRplSaVCKOu4ujJmgioacVcN7EdoxhKvIu-1MRPCJjS_26OBsSK9wvcE1-TykfVwHuF7ieo1rMuY_fLc__twko9l3RpHRf56J7lzjpkFD85wAbjIe2tudq6X4h5m47OTaKQJB3uOmGN1oFm7uLi0rxwNHbIrNbp6IlBGAJolFwK7whK8n95aWKck9pD_E-fTQs9_sGltPbIe4VQwpq9gS434d_7NJrBPt5hDbtaYBqMF2Q55DB41JhyLXsURnm7AgjKpiN34KWb28PPTwQ1WUex4boAibdE3xBeCTynnkqp2LB2OgnLcs_DbyNjQNQ2LJhMoP-WOj34rs5wXGdoTrdmfiLleeFcPviPT_7flG-yEtmtFA3YZNakkYkfuvXk72-04BFQJIZi_u-0v4VXssQTGwttjWpT3fY6wHhPnsZYoyYvdoY-mb4MA_tlQCLiqfCPCDXXGHA-hbVh-iGxJec7uPMOa-YRza-Na5enYMagT3skO-WmJjUux8IjTvpw-TFOckbIANvDUPuI2d_SR4yY3LEZ6n17wxuXamNKMBFBXXJnxJYtVoN7OYxX4CG4xhrfn7x38e7gC0:1vLeES:t94whCh2Q1JI5kUTDAcQzXw1ySoiG261zqMWvMXxOAg'}
+HEADERS: {'Content-Length': '23', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-1bc1d024cf5b237626197b2c93385028-164ed1cba467bff8-00', 'Cookie': 'sessionid=.eJydV11P20gU_StXPFRBDU0CatWShyqQsotaKCLsVtV2VY3tSTzLeMY7Mw64Vf_7nju2E_NRKu2DIbbnft9z7vX3HS18-BpsqdKdwx1haiqyhDK1UkFoymRpvQpUSuOVNeTTXBaSBnfOlH6XlFnatzvDnTQX4WuufLCu3jn86_uOs1pCceWl49fWBGkCHpzNj-i4cg53NEtTW-H_MnNUOuklH0rlzo_hRl54D6UCon0lMyepthUJf63MikRiq0An6lZmNG89v5SpVGWgwcn8chfxBKG0p6V1FHJJj3jxlk4ps-ZLtT-evAmUi7UkyMYIXSECpyGXTr7AuVQgJbmAFzeIuxHxJNawIRItnzIDfT5IkR1-MV_MHl3VpTykc2v2FIJDDsJeIoXjqJxcVVo4SlsFolHAUu80apAorUJ9SEfCrLTIpM8VpSqob6gZDSavn-8OSZiMhNYUYMaTXdJSucKP2AcVKo7Jj6xbCaO-ieYutUWJW-nZzpkyqqgK-Ay927aAzfkVTYbj8ZhPnUgRKrh-uEn-M7pRIc-cuBF6SEsnJUQTvEiFy2J2Jj5QjUDbt6ccvJGBg-GSto8XZ4vtE7Tgv5WkxNprtvpe1pRII5cqeM4gaVXAAqpkqiKRjmBFFDHliDs4YbxIY4xDMvaOP7CkTM-lf6za5ptsyVJNoNKPgrjlULtyFoILZwT6NmY71dYjGWhNgMdF4GQVWgI-ACNuJf2UoGIkb1Pl5ejP2VV39PzokhyOxsxfIlbl0M-ZTasC5fex0Nddr80-ntDAq5WRGcp8QBcXVOY22FhkUZZaoUfDAAgVIaCroCmpEWVwNqtSiSDXQqusEaLTOQ0uALXSujA6P52P5k6tuQc_qBTdJGFisjHBFowtlEHa-sq7fOVWZ9JNY5lNbOwMyrJKaGT-yqFTO7WxS4B8y-HDaWfhFOPidBnhDQtZxKAvZaqWKkVfOwGLQ0LKkeUhQBLzFDMELx9COOTWyw3-nVrlAV7dvKBPttJZNKPVtSSwG0LLpS4br8CIIecUSA15dBXj-R4U3_aZ6gHTMacyAcxbvuzAcdFy6qLl1DtnLhYdp_6SBH8HXWyoh7zKmrtJUjf_-QlpoAVVontGaO1fNM8uFpGJmIcatkhT6Rvw3xXBMaI9-mg0Kj-Mle2BCmcKeJbrGqVxxWaADJgprNH1biuOiUJrJaJ2G3URd53Qo8KC0ZCPtXIBzUJJA_zdjS8bH85aS0xjYDcuPnnBDet7VhB1V4IjOJrmQ1pUyV73G905W7FkSzB0zOPH0WB2dLzLKemR7M_T8e4WlWHpXjzcCb7tIjqeLWZb6o4iUa8G7V9KrlHjwobC78BFyxXMrSrQlMLMYUgBeNbhFcPGKYmBC6mytbf1orF1bgMauLN3hgIDPi1CWYdwwchGwbAhUJmNKtP-whPRJID6E-NhQR4bQaCM188br-5SDef2_efj2G0du4mOYh_PMtjdyJstF06Zwcu89mA5zVkpuJxMh3ESNUJ_eIw82dUHFqfka5BVAVLGcDFxc2CmlI9EtAicK5f1pkArESiJHYRRgE4BI92NbrqZ23diix112uvXwbuz092fR8yw2X855rBejscxV0Wlgyo1s19VMlnFITwed2P4lxiZdvOwHTgdRplSaVCKOu4ujJmgioacVcN7EdoxhKvIu-1MRPCJjS_26OBsSK9wvcE1-TykfVwHuF7ieo1rMuY_fLc__twko9l3RpHRf56J7lzjpkFD85wAbjIe2tudq6X4h5m47OTaKQJB3uOmGN1oFm7uLi0rxwNHbIrNbp6IlBGAJolFwK7whK8n95aWKck9pD_E-fTQs9_sGltPbIe4VQwpq9gS434d_7NJrBPt5hDbtaYBqMF2Q55DB41JhyLXsURnm7AgjKpiN34KWb28PPTwQ1WUex4boAibdE3xBeCTynnkqp2LB2OgnLcs_DbyNjQNQ2LJhMoP-WOj34rs5wXGdoTrdmfiLleeFcPviPT_7flG-yEtmtFA3YZNakkYkfuvXk72-04BFQJIZi_u-0v4VXssQTGwttjWpT3fY6wHhPnsZYoyYvdoY-mb4MA_tlQCLiqfCPCDXXGHA-hbVh-iGxJec7uPMOa-YRza-Na5enYMagT3skO-WmJjUux8IjTvpw-TFOckbIANvDUPuI2d_SR4yY3LEZ6n17wxuXamNKMBFBXXJnxJYtVoN7OYxX4CG4xhrfn7x38e7gC0:1vLeES:t94whCh2Q1JI5kUTDAcQzXw1ySoiG261zqMWvMXxOAg'}
+BODY RAW: b'{"message":"no thanks"}'
+POST DATA: {'message': 'no thanks'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJydV11P20gU_StXPFRBDU0CatWShyqQsotaKCLsVtV2VY3tSTzLeMY7Mw64Vf_7nju2E_NRKu2DIbbnft9z7vX3HS18-BpsqdKdwx1haiqyhDK1UkFoymRpvQpUSuOVNeTTXBaSBnfOlH6XlFnatzvDnTQX4WuufLCu3jn86_uOs1pCceWl49fWBGkCHpzNj-i4cg53NEtTW-H_MnNUOuklH0rlzo_hRl54D6UCon0lMyepthUJf63MikRiq0An6lZmNG89v5SpVGWgwcn8chfxBKG0p6V1FHJJj3jxlk4ps-ZLtT-evAmUi7UkyMYIXSECpyGXTr7AuVQgJbmAFzeIuxHxJNawIRItnzIDfT5IkR1-MV_MHl3VpTykc2v2FIJDDsJeIoXjqJxcVVo4SlsFolHAUu80apAorUJ9SEfCrLTIpM8VpSqob6gZDSavn-8OSZiMhNYUYMaTXdJSucKP2AcVKo7Jj6xbCaO-ieYutUWJW-nZzpkyqqgK-Ay927aAzfkVTYbj8ZhPnUgRKrh-uEn-M7pRIc-cuBF6SEsnJUQTvEiFy2J2Jj5QjUDbt6ccvJGBg-GSto8XZ4vtE7Tgv5WkxNprtvpe1pRII5cqeM4gaVXAAqpkqiKRjmBFFDHliDs4YbxIY4xDMvaOP7CkTM-lf6za5ptsyVJNoNKPgrjlULtyFoILZwT6NmY71dYjGWhNgMdF4GQVWgI-ACNuJf2UoGIkb1Pl5ejP2VV39PzokhyOxsxfIlbl0M-ZTasC5fex0Nddr80-ntDAq5WRGcp8QBcXVOY22FhkUZZaoUfDAAgVIaCroCmpEWVwNqtSiSDXQqusEaLTOQ0uALXSujA6P52P5k6tuQc_qBTdJGFisjHBFowtlEHa-sq7fOVWZ9JNY5lNbOwMyrJKaGT-yqFTO7WxS4B8y-HDaWfhFOPidBnhDQtZxKAvZaqWKkVfOwGLQ0LKkeUhQBLzFDMELx9COOTWyw3-nVrlAV7dvKBPttJZNKPVtSSwG0LLpS4br8CIIecUSA15dBXj-R4U3_aZ6gHTMacyAcxbvuzAcdFy6qLl1DtnLhYdp_6SBH8HXWyoh7zKmrtJUjf_-QlpoAVVontGaO1fNM8uFpGJmIcatkhT6Rvw3xXBMaI9-mg0Kj-Mle2BCmcKeJbrGqVxxWaADJgprNH1biuOiUJrJaJ2G3URd53Qo8KC0ZCPtXIBzUJJA_zdjS8bH85aS0xjYDcuPnnBDet7VhB1V4IjOJrmQ1pUyV73G905W7FkSzB0zOPH0WB2dLzLKemR7M_T8e4WlWHpXjzcCb7tIjqeLWZb6o4iUa8G7V9KrlHjwobC78BFyxXMrSrQlMLMYUgBeNbhFcPGKYmBC6mytbf1orF1bgMauLN3hgIDPi1CWYdwwchGwbAhUJmNKtP-whPRJID6E-NhQR4bQaCM188br-5SDef2_efj2G0du4mOYh_PMtjdyJstF06Zwcu89mA5zVkpuJxMh3ESNUJ_eIw82dUHFqfka5BVAVLGcDFxc2CmlI9EtAicK5f1pkArESiJHYRRgE4BI92NbrqZ23diix112uvXwbuz092fR8yw2X855rBejscxV0Wlgyo1s19VMlnFITwed2P4lxiZdvOwHTgdRplSaVCKOu4ujJmgioacVcN7EdoxhKvIu-1MRPCJjS_26OBsSK9wvcE1-TykfVwHuF7ieo1rMuY_fLc__twko9l3RpHRf56J7lzjpkFD85wAbjIe2tudq6X4h5m47OTaKQJB3uOmGN1oFm7uLi0rxwNHbIrNbp6IlBGAJolFwK7whK8n95aWKck9pD_E-fTQs9_sGltPbIe4VQwpq9gS434d_7NJrBPt5hDbtaYBqMF2Q55DB41JhyLXsURnm7AgjKpiN34KWb28PPTwQ1WUex4boAibdE3xBeCTynnkqp2LB2OgnLcs_DbyNjQNQ2LJhMoP-WOj34rs5wXGdoTrdmfiLleeFcPviPT_7flG-yEtmtFA3YZNakkYkfuvXk72-04BFQJIZi_u-0v4VXssQTGwttjWpT3fY6wHhPnsZYoyYvdoY-mb4MA_tlQCLiqfCPCDXXGHA-hbVh-iGxJec7uPMOa-YRza-Na5enYMagT3skO-WmJjUux8IjTvpw-TFOckbIANvDUPuI2d_SR4yY3LEZ6n17wxuXamNKMBFBXXJnxJYtVoN7OYxX4CG4xhrfn7x38e7gC0:1vLeEk:iaG8MLmUuKsjrTuBo4at-HgtKLQxlPJCI39NsUmE_7w'}
+HEADERS: {'Content-Length': '16', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-195a48a58b17bfbbfc86044844e7f5f3-ad78c151447555f0-00', 'Cookie': 'sessionid=.eJydV11P20gU_StXPFRBDU0CatWShyqQsotaKCLsVtV2VY3tSTzLeMY7Mw64Vf_7nju2E_NRKu2DIbbnft9z7vX3HS18-BpsqdKdwx1haiqyhDK1UkFoymRpvQpUSuOVNeTTXBaSBnfOlH6XlFnatzvDnTQX4WuufLCu3jn86_uOs1pCceWl49fWBGkCHpzNj-i4cg53NEtTW-H_MnNUOuklH0rlzo_hRl54D6UCon0lMyepthUJf63MikRiq0An6lZmNG89v5SpVGWgwcn8chfxBKG0p6V1FHJJj3jxlk4ps-ZLtT-evAmUi7UkyMYIXSECpyGXTr7AuVQgJbmAFzeIuxHxJNawIRItnzIDfT5IkR1-MV_MHl3VpTykc2v2FIJDDsJeIoXjqJxcVVo4SlsFolHAUu80apAorUJ9SEfCrLTIpM8VpSqob6gZDSavn-8OSZiMhNYUYMaTXdJSucKP2AcVKo7Jj6xbCaO-ieYutUWJW-nZzpkyqqgK-Ay927aAzfkVTYbj8ZhPnUgRKrh-uEn-M7pRIc-cuBF6SEsnJUQTvEiFy2J2Jj5QjUDbt6ccvJGBg-GSto8XZ4vtE7Tgv5WkxNprtvpe1pRII5cqeM4gaVXAAqpkqiKRjmBFFDHliDs4YbxIY4xDMvaOP7CkTM-lf6za5ptsyVJNoNKPgrjlULtyFoILZwT6NmY71dYjGWhNgMdF4GQVWgI-ACNuJf2UoGIkb1Pl5ejP2VV39PzokhyOxsxfIlbl0M-ZTasC5fex0Nddr80-ntDAq5WRGcp8QBcXVOY22FhkUZZaoUfDAAgVIaCroCmpEWVwNqtSiSDXQqusEaLTOQ0uALXSujA6P52P5k6tuQc_qBTdJGFisjHBFowtlEHa-sq7fOVWZ9JNY5lNbOwMyrJKaGT-yqFTO7WxS4B8y-HDaWfhFOPidBnhDQtZxKAvZaqWKkVfOwGLQ0LKkeUhQBLzFDMELx9COOTWyw3-nVrlAV7dvKBPttJZNKPVtSSwG0LLpS4br8CIIecUSA15dBXj-R4U3_aZ6gHTMacyAcxbvuzAcdFy6qLl1DtnLhYdp_6SBH8HXWyoh7zKmrtJUjf_-QlpoAVVontGaO1fNM8uFpGJmIcatkhT6Rvw3xXBMaI9-mg0Kj-Mle2BCmcKeJbrGqVxxWaADJgprNH1biuOiUJrJaJ2G3URd53Qo8KC0ZCPtXIBzUJJA_zdjS8bH85aS0xjYDcuPnnBDet7VhB1V4IjOJrmQ1pUyV73G905W7FkSzB0zOPH0WB2dLzLKemR7M_T8e4WlWHpXjzcCb7tIjqeLWZb6o4iUa8G7V9KrlHjwobC78BFyxXMrSrQlMLMYUgBeNbhFcPGKYmBC6mytbf1orF1bgMauLN3hgIDPi1CWYdwwchGwbAhUJmNKtP-whPRJID6E-NhQR4bQaCM188br-5SDef2_efj2G0du4mOYh_PMtjdyJstF06Zwcu89mA5zVkpuJxMh3ESNUJ_eIw82dUHFqfka5BVAVLGcDFxc2CmlI9EtAicK5f1pkArESiJHYRRgE4BI92NbrqZ23diix112uvXwbuz092fR8yw2X855rBejscxV0Wlgyo1s19VMlnFITwed2P4lxiZdvOwHTgdRplSaVCKOu4ujJmgioacVcN7EdoxhKvIu-1MRPCJjS_26OBsSK9wvcE1-TykfVwHuF7ieo1rMuY_fLc__twko9l3RpHRf56J7lzjpkFD85wAbjIe2tudq6X4h5m47OTaKQJB3uOmGN1oFm7uLi0rxwNHbIrNbp6IlBGAJolFwK7whK8n95aWKck9pD_E-fTQs9_sGltPbIe4VQwpq9gS434d_7NJrBPt5hDbtaYBqMF2Q55DB41JhyLXsURnm7AgjKpiN34KWb28PPTwQ1WUex4boAibdE3xBeCTynnkqp2LB2OgnLcs_DbyNjQNQ2LJhMoP-WOj34rs5wXGdoTrdmfiLleeFcPviPT_7flG-yEtmtFA3YZNakkYkfuvXk72-04BFQJIZi_u-0v4VXssQTGwttjWpT3fY6wHhPnsZYoyYvdoY-mb4MA_tlQCLiqfCPCDXXGHA-hbVh-iGxJec7uPMOa-YRza-Na5enYMagT3skO-WmJjUux8IjTvpw-TFOckbIANvDUPuI2d_SR4yY3LEZ6n17wxuXamNKMBFBXXJnxJYtVoN7OYxX4CG4xhrfn7x38e7gC0:1vLeEk:iaG8MLmUuKsjrTuBo4at-HgtKLQxlPJCI39NsUmE_7w'}
+BODY RAW: b'{"message":"ok"}'
+POST DATA: {'message': 'ok'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '16', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-c56a1772261b9f68296c0e212577173b-f808b86b06290136-00'}
+BODY RAW: b'{"message":"hi"}'
+POST DATA: {'message': 'hi'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '16', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-497455b80494829e02daf70fe600b736-afcedcd87e12f6af-00'}
+BODY RAW: b'{"message":"hi"}'
+POST DATA: {'message': 'hi'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '16', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-46c397818ca4f142aa848c8975a1465c-5058fd59c6d63392-00'}
+BODY RAW: b'{"message":"hi"}'
+POST DATA: {'message': 'hi'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-701977e73208ca82d74d555a0d13c108-44f9ac81ee70b4a0-00'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': 'eyJjb252ZXJzYXRpb25fc3RhdGUiOnsidHlwZSI6ImF3YWl0aW5nX2xvY2F0aW9uIn19:1vLeY3:ncaWg3AmuRI40RQQzKxjGkPxXkeXh41a4SY59_qv35g'}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-5a77511e012606f4706365eef9c85dae-09990b693850bc15-00', 'Cookie': 'sessionid=eyJjb252ZXJzYXRpb25fc3RhdGUiOnsidHlwZSI6ImF3YWl0aW5nX2xvY2F0aW9uIn19:1vLeY3:ncaWg3AmuRI40RQQzKxjGkPxXkeXh41a4SY59_qv35g'}
+BODY RAW: b'{"message":"gulshan"}'
+POST DATA: {'message': 'gulshan'}
+No cache provided; using temporary in-memory cache
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJyrVkrOzytLLSpOLMnMz4svLkksSVWyqlYqqSwA0ko5-ckQiaLU5NTMstQUpVodpdLi1KL4zLy0fJBCmAqg4vTSnOKMxDyl2loAg1wgBg:1vLeYF:QqIhDucYT592dxGiS_vU14SLOX0oofPn_02kZKjqmPU'}
+HEADERS: {'Content-Length': '21', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-b9f6473c42099fd8581143b29ffa1305-23aab8f134360f49-00', 'Cookie': 'sessionid=.eJyrVkrOzytLLSpOLMnMz4svLkksSVWyqlYqqSwA0ko5-ckQiaLU5NTMstQUpVodpdLi1KL4zLy0fJBCmAqg4vTSnOKMxDyl2loAg1wgBg:1vLeYF:QqIhDucYT592dxGiS_vU14SLOX0oofPn_02kZKjqmPU'}
+BODY RAW: b'{"message":"rangpur"}'
+POST DATA: {'message': 'rangpur'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJyrVkrOzytLLSpOLMnMz4svLkksSVWyqlYqqSwA0ko5-ckQiaLU5NTMstQUpVodpdLi1KL4zLy0fJBCmAqg4vTSnOKMxDyl2loAg1wgBg:1vLeYP:-qMtFfhOGSdVTvBIp04B7O9KMHCtQpC9isZB5GSYy3E'}
+HEADERS: {'Content-Length': '36', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-3db35294d2513af92a213081ceb3cc0d-7de302f13792bdd2-00', 'Cookie': 'sessionid=.eJyrVkrOzytLLSpOLMnMz4svLkksSVWyqlYqqSwA0ko5-ckQiaLU5NTMstQUpVodpdLi1KL4zLy0fJBCmAqg4vTSnOKMxDyl2loAg1wgBg:1vLeYP:-qMtFfhOGSdVTvBIp04B7O9KMHCtQpC9isZB5GSYy3E'}
+BODY RAW: b'{"message":"rangpur branch details"}'
+POST DATA: {'message': 'rangpur branch details'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {}
+HEADERS: {'Content-Length': '50', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-c33cbbe6f4b32a85fd0ded558c8050e3-53f1cb28c69ca017-00'}
+BODY RAW: b'{"message":"can u tell me about deposit products"}'
+POST DATA: {'message': 'can u tell me about deposit products'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJyNVMlu2zAQ_ZWBTi0gG11O9S1Lm7hFADdKT3Vh0NLIIjriqEOyrhH43zvyosSyjeTAA2ceH9-sjwkZH2aBG5sno6TAhr0N0AgXMQ8-SZO8MmFWWR9YVsno52MiTKjQ6FFaN7uALqghNw4iBCSCGsHMOQY44lunHYHxXlmNvn3Ocouij_VwlKPno6mbugHcXV_CFRPhAiEzf1H2xusdfoLOW3aQ5RXW2HntwgZDr0VxnBPCJTosWzBFfwb5xdSWVpDFpmEJ50D2Hxbd1xd5ztGFPmgiPDe-sm1U1i183983H0g8bT0l_FBwZxVEMi5H-Hz_va_wxpYBrir8EzuWsZZM0AcNTXwH_MbBNnr29ztLpEk2VnAvv6dmguIVQHCPwVjq_zwhE6yL9ZnX2cXD7bi7GEOmfqHAe9CrumEHfjmKHVBzinLYlMeeTU2e3Fu6XdgwjR_evf8IN1o-MdSh8oqZesS10Xb74azaNIJVz3tCyRkJD6ImHSfZ_P3J9_sMZ89pBl8rDlridhbHJaz4aeiXuitaw5ZHc0XMv5UJShZ4g8PFMAW_5U6h3EzEbsRTaLb5V0CIhe6CQcm57pgihawyYk01yLluyOrCeJvCGNp1UyE14IwIL0FLWPDSDZP1r_V_NZGpIg:1vLf1W:UdsrLXsp99k89W3Grzn4sTZISh9HsL6lRtl7L9sF1Tg'}
+HEADERS: {'Content-Length': '40', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-204ce75bbd0627b79678b2660b703a63-2fe8c1df33957d5c-00', 'Cookie': 'sessionid=.eJyNVMlu2zAQ_ZWBTi0gG11O9S1Lm7hFADdKT3Vh0NLIIjriqEOyrhH43zvyosSyjeTAA2ceH9-sjwkZH2aBG5sno6TAhr0N0AgXMQ8-SZO8MmFWWR9YVsno52MiTKjQ6FFaN7uALqghNw4iBCSCGsHMOQY44lunHYHxXlmNvn3Ocouij_VwlKPno6mbugHcXV_CFRPhAiEzf1H2xusdfoLOW3aQ5RXW2HntwgZDr0VxnBPCJTosWzBFfwb5xdSWVpDFpmEJ50D2Hxbd1xd5ztGFPmgiPDe-sm1U1i183983H0g8bT0l_FBwZxVEMi5H-Hz_va_wxpYBrir8EzuWsZZM0AcNTXwH_MbBNnr29ztLpEk2VnAvv6dmguIVQHCPwVjq_zwhE6yL9ZnX2cXD7bi7GEOmfqHAe9CrumEHfjmKHVBzinLYlMeeTU2e3Fu6XdgwjR_evf8IN1o-MdSh8oqZesS10Xb74azaNIJVz3tCyRkJD6ImHSfZ_P3J9_sMZ89pBl8rDlridhbHJaz4aeiXuitaw5ZHc0XMv5UJShZ4g8PFMAW_5U6h3EzEbsRTaLb5V0CIhe6CQcm57pgihawyYk01yLluyOrCeJvCGNp1UyE14IwIL0FLWPDSDZP1r_V_NZGpIg:1vLf1W:UdsrLXsp99k89W3Grzn4sTZISh9HsL6lRtl7L9sF1Tg'}
+BODY RAW: b'{"message":"tell me about school saver"}'
+POST DATA: {'message': 'tell me about school saver'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJyVVk1vGzcQ_SsDHQIZkOM47SFVD4UdxYnbJnYttT00RcDlcrWsueSGH7bVIP-9b7gflhQbSQ-CseRw-GbmvUd_mhgR4ofoWi0n80lTFhRk7ZyhIG6Un8wmshbxQ61DdH4zmf_1aeKdUQhNodt2NiobsSCFpURRGUONIlG4FKlUrQs6UutdmWQMk8-zMYEIAVkFzm5neaM8DuPnkv_i-Py9fW8P6e3ilF46Y9Ra0ZJhDouLPv5S2aCdpaWsVaPGXb3WUZhvjXKpMIpOlVUVB5sUHok8E402G1qmtnU-Phak71Q5Xn0ipUs27gddeleIUGuuStt12N_fX96B-PDqQ8B3AY-rXikjrFT06uq3fYSvdRXpZa0-pjHLOUbmVYgozYcx8BcXdYvf8P1WG4MmC-3VAH8PzaXyAQGGrlQU2uzffGlE1DY1j5xenqzenI8fQhjRfGXAQ9A3saEP_noVfSB6qvwuKb_cyTO53-7S9WXT-_T82fF39Brj88KMUZ0odxM3AnT73WqsoYLN3u4DSB6BsPJYgpx8vvuHsM8z9WE7zeHPtYsYMWvxvKKNuxf9LbyCF7o86JVx7hqZqHKepurp-umMfYVzz6jKiuglPqO26z8CYirhBYeVk_CYckbLWngt6kPpmtZoGMbBjM6J7aZWpiUrvHe3hBGW7tY-3baYLzxq1532G_s_3CnWiq7VBvCZsyEXyGv7KYexZud6ZcC5QhvMint5KuzaiFKx4DvTPZK9q_U9CJRsiSTHL-hWx5puhNHlsEnnC056cgMA4j7rCSpkFIWHlmsVOKbneKAno2rzMLXVDZSFP1FDCv0s5rS6puNnzzhkFLkURiaWorNzEoGYSXyNV2ss-2GsNB0CMVuoqRTsNIXIxnKwk1FI6ZMwc2rQ3tpsdjZbsWlQ45xqYarDjRK-C1g5-ohDutrklvdHUUF3DsnEXa7pe1RTgBMRbQhCMu4OdD7CTXkpfMkd6Vwtk32Rj0hscCJbCn70fiQdQkI52uYRrxP2QcNBLFZ0LtDloQKUn5N1sT_GV50p1d0k_Lq7aVB7Ixi6zbZbKTWnWwE5l9sh0riQfL_ddx50UWWCy7uK5H3WlbibkbqTOigqExzhCf1xshpPvTu9Io9TmRND-qWKqaWLNneIkywxR87s6R8HcDQtHKgnWmgPmgOJmoQBFeqrnD3I1IOKm7x8hfbAP8ue-tdD_wYgF3AA9ooz5xuanlycHVDQa4vGF5v76zPCUQA03QWRGbaq8ZKBQSHw83YY9L_4gme5wO0aM00DfETECNp0oF73gx1EPSeAONK21De6BOlAgMox7ZotYAMbZvT8wStxhS174eaVjPqyjzx6d744WnjN2qFftYQHdjW8c422PHBnHyxlBL6NoVdQ_mdJeYzdbsAG2BhnZ7GKvtW1MzwijJhDeMdVlZbsAVNtpUkln1gsL_II_6xVx_zBeGLyENPxi22W3uKFZFJAh0Deyd8TnBMmyB8MGarwjTCjVwxwUgungNlH1wCVz3IE7_CW8K3FFldKHaRXTNUOmeBi-BFwPXm4XXxvrWR-eGTyniEPBkEe0MJPk89_f_4PTwXbZw:1vLf1x:k3X2jBJPpbSQT2bOxC4duCidC2RmBAtZ-LVQxUUjX-s'}
+HEADERS: {'Content-Length': '17', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-5a0429f40f9e22042251467b928740de-3002176dadde62a8-00', 'Cookie': 'sessionid=.eJyVVk1vGzcQ_SsDHQIZkOM47SFVD4UdxYnbJnYttT00RcDlcrWsueSGH7bVIP-9b7gflhQbSQ-CseRw-GbmvUd_mhgR4ofoWi0n80lTFhRk7ZyhIG6Un8wmshbxQ61DdH4zmf_1aeKdUQhNodt2NiobsSCFpURRGUONIlG4FKlUrQs6UutdmWQMk8-zMYEIAVkFzm5neaM8DuPnkv_i-Py9fW8P6e3ilF46Y9Ra0ZJhDouLPv5S2aCdpaWsVaPGXb3WUZhvjXKpMIpOlVUVB5sUHok8E402G1qmtnU-Phak71Q5Xn0ipUs27gddeleIUGuuStt12N_fX96B-PDqQ8B3AY-rXikjrFT06uq3fYSvdRXpZa0-pjHLOUbmVYgozYcx8BcXdYvf8P1WG4MmC-3VAH8PzaXyAQGGrlQU2uzffGlE1DY1j5xenqzenI8fQhjRfGXAQ9A3saEP_noVfSB6qvwuKb_cyTO53-7S9WXT-_T82fF39Brj88KMUZ0odxM3AnT73WqsoYLN3u4DSB6BsPJYgpx8vvuHsM8z9WE7zeHPtYsYMWvxvKKNuxf9LbyCF7o86JVx7hqZqHKepurp-umMfYVzz6jKiuglPqO26z8CYirhBYeVk_CYckbLWngt6kPpmtZoGMbBjM6J7aZWpiUrvHe3hBGW7tY-3baYLzxq1532G_s_3CnWiq7VBvCZsyEXyGv7KYexZud6ZcC5QhvMint5KuzaiFKx4DvTPZK9q_U9CJRsiSTHL-hWx5puhNHlsEnnC056cgMA4j7rCSpkFIWHlmsVOKbneKAno2rzMLXVDZSFP1FDCv0s5rS6puNnzzhkFLkURiaWorNzEoGYSXyNV2ss-2GsNB0CMVuoqRTsNIXIxnKwk1FI6ZMwc2rQ3tpsdjZbsWlQ45xqYarDjRK-C1g5-ohDutrklvdHUUF3DsnEXa7pe1RTgBMRbQhCMu4OdD7CTXkpfMkd6Vwtk32Rj0hscCJbCn70fiQdQkI52uYRrxP2QcNBLFZ0LtDloQKUn5N1sT_GV50p1d0k_Lq7aVB7Ixi6zbZbKTWnWwE5l9sh0riQfL_ddx50UWWCy7uK5H3WlbibkbqTOigqExzhCf1xshpPvTu9Io9TmRND-qWKqaWLNneIkywxR87s6R8HcDQtHKgnWmgPmgOJmoQBFeqrnD3I1IOKm7x8hfbAP8ue-tdD_wYgF3AA9ooz5xuanlycHVDQa4vGF5v76zPCUQA03QWRGbaq8ZKBQSHw83YY9L_4gme5wO0aM00DfETECNp0oF73gx1EPSeAONK21De6BOlAgMox7ZotYAMbZvT8wStxhS174eaVjPqyjzx6d744WnjN2qFftYQHdjW8c422PHBnHyxlBL6NoVdQ_mdJeYzdbsAG2BhnZ7GKvtW1MzwijJhDeMdVlZbsAVNtpUkln1gsL_II_6xVx_zBeGLyENPxi22W3uKFZFJAh0Deyd8TnBMmyB8MGarwjTCjVwxwUgungNlH1wCVz3IE7_CW8K3FFldKHaRXTNUOmeBi-BFwPXm4XXxvrWR-eGTyniEPBkEe0MJPk89_f_4PTwXbZw:1vLf1x:k3X2jBJPpbSQT2bOxC4duCidC2RmBAtZ-LVQxUUjX-s'}
+BODY RAW: b'{"message":"yes"}'
+POST DATA: {'message': 'yes'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJytVm1vGzcM_iuEPwwOYOel6IfO-1Ak8bIGWJOhCVoMy1DodLRPs0666iXOrch_H6k7nZ3UabJhnxKfRPIh-Tykvo608OFzsI2So9moRX8TXx0evW40Co9QoW6gRrANGhAG6rIALytrNXhxiw6ElDaasA_rSgQQDiFUCD5g4yFYEE2j29FkJOn0c6V8sK4dzf74OnJWI8WLHh0fWxPQBPoQUGsOKAobA7yfn8BVF-6Kw43uJ4Op8J78CbLatn-HBCHDWGELJQahtIeFdenbY5dw3GUwuzE35metlqpQWoX2xkzhRJilFiX6SvVZH0irNS45w1hSRA_RlOTk6A2sVajgVmhV5kM4n7PT41sCIDZejylDRlE4YWRFBac7c2ysV-TuBzinVBz6wFffK6PqWAP9CUpoSiZdm8H1Co4OD_lKvg5SaBm1CMqaGQgPDcHiMA6X9Nlxv5RZehjni1iCNVASuBYKoQkM7j3wSL11UegZ1FTeSrcPDhvR1pTjDCqhF9MWhesuXFv4QkZq0aaS96aUQWdHzsRdyuk1ZVOoAIHK4IVk3B3oZMJFORWu5IqcVvglcp2mME8mkg7YkSkFE-onUN5HSkeZ1OJlpHMlTGLyjx6MqJGNOz9QWLuagbGhN-NQZ4hdJOGWXaSeFhSFoRuuDiwQZ7AW6paNNlektj66_rivPNEFy6hJOQuQG6_X4m4CeCcVaauMoaWYH4-vB6uLkw_gyCpxIru_whAbuGxShdjJFfWRPTv4yxI4GBeWqMdSU1IwJ-tIDSrwWc7uJepZGev0-QOVR7kuN6L-KtcvA7mkIUCh4cy6GsbHl2d74NXSUOGLdhM-IRwEAOOHIBLDriuHSAzyvrEuTL36m35VNljP5Ro8jf3eBEQIRJsO1C99Y7OoZ0AgDpQp1a0qiXREgIVl2tVbwDIbJvBqZ0gKYcpeuOlLQv1bf_Pg4nx-MHeKtQO_KonGdzlc2FoZbrg1O1MZgG9j6BXkbBklOmq7aYkNNMbYO4u1H6dQWc0tohbzFT6xi4WSPAPGykgdS7aYX12mFn6q0PRzt6t7iI7EdPRmm6VrRXOHSEE6JOSd_B3Q5KQhyD8YMqnC1UIPsyLDiQ1NCkmssjWhckmOxDua-By12OJKqbx0yFTtkAlOhpeI7cnD5eK4FcoV_5bROYacBwQ4gubfbk_6b5bE789sqadm_D58enpLdTwg3kFrIwjtLfgqX2WPpz3SXNAHiN--YDVRmJbDJbgc5Hm8vM5yaSu7HsAmrAwsMd6a7wJMq-3dtjVP5sdBmSsfFW2XgXLdgtpP48Bxr1w_IKDMM4NcA2z0Ph60uzdLI4QFSiMgiZHE_Hg9TigHHgWDVnYJtAuRtf8dzW_ihLV9Quv_Uucc-T8qnU3_d61vngRZTzueBKfUVFJF9h_ahsD7Fy-NHVviBYv3qaV7YQNFp1cBvRDMN8-BCb3RsNn1EkjjKL8VaCu8fvg2eFaQadSGjIYnm5nmC9OCwHDx8uuVPZ4vWJOdQQlarXAC52keDHptHKZ_3EYASYjaSoqY9GjIM0PotTO6__P-Hzh3CdY:1vLf2b:X3dvpt4HIYlL3yrXOuaosTqGKfpkZ41ypxpNNb9gEQk'}
+HEADERS: {'Content-Length': '26', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-fc6347d6af8884a2d3258d6aa03db8fa-c1efa00f8908396c-00', 'Cookie': 'sessionid=.eJytVm1vGzcM_iuEPwwOYOel6IfO-1Ak8bIGWJOhCVoMy1DodLRPs0666iXOrch_H6k7nZ3UabJhnxKfRPIh-Tykvo608OFzsI2So9moRX8TXx0evW40Co9QoW6gRrANGhAG6rIALytrNXhxiw6ElDaasA_rSgQQDiFUCD5g4yFYEE2j29FkJOn0c6V8sK4dzf74OnJWI8WLHh0fWxPQBPoQUGsOKAobA7yfn8BVF-6Kw43uJ4Op8J78CbLatn-HBCHDWGELJQahtIeFdenbY5dw3GUwuzE35metlqpQWoX2xkzhRJilFiX6SvVZH0irNS45w1hSRA_RlOTk6A2sVajgVmhV5kM4n7PT41sCIDZejylDRlE4YWRFBac7c2ysV-TuBzinVBz6wFffK6PqWAP9CUpoSiZdm8H1Co4OD_lKvg5SaBm1CMqaGQgPDcHiMA6X9Nlxv5RZehjni1iCNVASuBYKoQkM7j3wSL11UegZ1FTeSrcPDhvR1pTjDCqhF9MWhesuXFv4QkZq0aaS96aUQWdHzsRdyuk1ZVOoAIHK4IVk3B3oZMJFORWu5IqcVvglcp2mME8mkg7YkSkFE-onUN5HSkeZ1OJlpHMlTGLyjx6MqJGNOz9QWLuagbGhN-NQZ4hdJOGWXaSeFhSFoRuuDiwQZ7AW6paNNlektj66_rivPNEFy6hJOQuQG6_X4m4CeCcVaauMoaWYH4-vB6uLkw_gyCpxIru_whAbuGxShdjJFfWRPTv4yxI4GBeWqMdSU1IwJ-tIDSrwWc7uJepZGev0-QOVR7kuN6L-KtcvA7mkIUCh4cy6GsbHl2d74NXSUOGLdhM-IRwEAOOHIBLDriuHSAzyvrEuTL36m35VNljP5Ro8jf3eBEQIRJsO1C99Y7OoZ0AgDpQp1a0qiXREgIVl2tVbwDIbJvBqZ0gKYcpeuOlLQv1bf_Pg4nx-MHeKtQO_KonGdzlc2FoZbrg1O1MZgG9j6BXkbBklOmq7aYkNNMbYO4u1H6dQWc0tohbzFT6xi4WSPAPGykgdS7aYX12mFn6q0PRzt6t7iI7EdPRmm6VrRXOHSEE6JOSd_B3Q5KQhyD8YMqnC1UIPsyLDiQ1NCkmssjWhckmOxDua-By12OJKqbx0yFTtkAlOhpeI7cnD5eK4FcoV_5bROYacBwQ4gubfbk_6b5bE789sqadm_D58enpLdTwg3kFrIwjtLfgqX2WPpz3SXNAHiN--YDVRmJbDJbgc5Hm8vM5yaSu7HsAmrAwsMd6a7wJMq-3dtjVP5sdBmSsfFW2XgXLdgtpP48Bxr1w_IKDMM4NcA2z0Ph60uzdLI4QFSiMgiZHE_Hg9TigHHgWDVnYJtAuRtf8dzW_ihLV9Quv_Uucc-T8qnU3_d61vngRZTzueBKfUVFJF9h_ahsD7Fy-NHVviBYv3qaV7YQNFp1cBvRDMN8-BCb3RsNn1EkjjKL8VaCu8fvg2eFaQadSGjIYnm5nmC9OCwHDx8uuVPZ4vWJOdQQlarXAC52keDHptHKZ_3EYASYjaSoqY9GjIM0PotTO6__P-Hzh3CdY:1vLf2b:X3dvpt4HIYlL3yrXOuaosTqGKfpkZ41ypxpNNb9gEQk'}
+BODY RAW: b'{"message":"eligibility?"}'
+POST DATA: {'message': 'eligibility?'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJytVttuGzcQ_ZWBHgoZkHwJ8pBuHwLbqhsDjV3ERoKiLgIud6RlxSU3vFjeBvn3znCXkuzIlxZ9srXkzJwZnjMzX0da-PA52FbJUTHq0N_EV4dHr1uNwiPUqFtoEGyLBoSBpirBy9paDV7cogMhpY0m7MOqFgGEQwg1gg_YeggWRNvqbjQZSTr9XCsfrOtGxR9fR85qpHjRo-NjawKaQB8Cas0BRWljgPezE7jqw11xuNG3ydpUeE_-BFlt279DgpBhLLGDCoNQ2sPcuvTtoUs47jMobsyN-VmrhSqVVqG7MVM4EWahRYW-VkPWB9JqjQvOMFYU0UM0FTk5egMrFWq4FVpV-RDOZ-z0-JYAiI3XY8qQUZROGFlTwenODFvrFbn7Ac4pFYc-8NX3yqgmNkB_ghKakknXCrhewtHhIV_J10EKLaMWQVlTgPDQEiwO43BBnx2_lzILD-N8ESuwBioC10EpNIHBvXse6W1dFLqAhspb6-7eYSu6hnIsoBZ6Pu1QuP7CtYUvZKTmXSr5YEoZ9HbkTNylnF5TNqUKEKgMXkjG3YNOJlyUU-EqrshpjV8i12kKs2Qi6YAdmUowoX4C5X2kdJRJT7yIdK6ESUz-0YMRDbJx7wdKa5cFGBsGMw51hthHEm7RRxpoQVEYuuHqwByxgJVQt2y0uSK19dENx0PliS5YRU3KmYPceL0WdxPAO6lIW1UMHcX8eHy9tro4-QCOrBInsvsrDLGFyzZViJ1c0TuyZwd_WQIH49IS9VhqSgrmZBPpgUp8lrN7iXpWxiZ9_kDlUa7Pjai_zPXLQC6pCVBoOLOugfHx5dkeeLUwVPiy24RPCNcCgPF9EIlh17VDJAZ531oXpl79Tb9qG6zncq09jf3eBEQIRJse1C_Dw2ZRF0AgDpSp1K2qiHREgLll2jVbwDIbJvBqZ0gKYapBuOlLQv3bcPPg4nx2MHOKtQO_KonG9zlc2EYZfnBrdqayBr6NYVCQs1WU6OjZTUdsoDbG3lmsQzuF2mp-InpivsIndj5XknvAWBmpY8UWs6vL9ISfajRD3-3rHqIjMR292WbpSlHfIVKQDgl5L38H1DmpCfIPhkyqcI3Q616R4cSWOoUkVtmGULkkR-IddXyOWm5xpVJeOmSq9sgEJ8NDxA7k4XJx3Brlkn_L6BxDzg0CHEHzb7c7_XdD4vdnptRjPX4fPj0-pXoeEO-gsxGE9hZ8na-yx9MBaS7oPcRvXzCaKEzH4RJcDvI8Xh5nubS1Xa3BJqwMLDHemicBptH2btuaO_PDoMyVj4qmy5py_YDaT-3A8Vu5oUFAlXsGuQbY6H281u5ekVoIC5RaQBIjifnheJxQDtwK1lrZJdA-RNb-E5rfxAkr-4jW_6XOOfJ_VDqb_u9a36wEWU87VoJTelRSRfYfupbA-xcPjR1T4gWD97Ghe2EDRaetgDYE8906MKEdDdtdm0BqR3lXoKnw-v5u8KwgU6sNGQ13NjPNF6YlgeHi5e2VPZ7PWZO9QQVaLXEC56kfrPXaOkz_uI0AkhC1lRQx6dGQZ4YwaOfJNoabbfMF7WNrN92p3yI1e2LQ81trv6uKB3LMokh-6HKJmnoGbba83KWN5ALprVM11u17UwiCZPAu9F2V8vnz2z8PxmHv:1vLf2s:Bru06IZ6PROaiseVml05XWhB6954W66BdDrLy2FBcdQ'}
+HEADERS: {'Content-Length': '33', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-23b1815496688e8d1e4a6c2c8cc39f51-5ed0e3a294323e96-00', 'Cookie': 'sessionid=.eJytVttuGzcQ_ZWBHgoZkHwJ8pBuHwLbqhsDjV3ERoKiLgIud6RlxSU3vFjeBvn3znCXkuzIlxZ9srXkzJwZnjMzX0da-PA52FbJUTHq0N_EV4dHr1uNwiPUqFtoEGyLBoSBpirBy9paDV7cogMhpY0m7MOqFgGEQwg1gg_YeggWRNvqbjQZSTr9XCsfrOtGxR9fR85qpHjRo-NjawKaQB8Cas0BRWljgPezE7jqw11xuNG3ydpUeE_-BFlt279DgpBhLLGDCoNQ2sPcuvTtoUs47jMobsyN-VmrhSqVVqG7MVM4EWahRYW-VkPWB9JqjQvOMFYU0UM0FTk5egMrFWq4FVpV-RDOZ-z0-JYAiI3XY8qQUZROGFlTwenODFvrFbn7Ac4pFYc-8NX3yqgmNkB_ghKakknXCrhewtHhIV_J10EKLaMWQVlTgPDQEiwO43BBnx2_lzILD-N8ESuwBioC10EpNIHBvXse6W1dFLqAhspb6-7eYSu6hnIsoBZ6Pu1QuP7CtYUvZKTmXSr5YEoZ9HbkTNylnF5TNqUKEKgMXkjG3YNOJlyUU-EqrshpjV8i12kKs2Qi6YAdmUowoX4C5X2kdJRJT7yIdK6ESUz-0YMRDbJx7wdKa5cFGBsGMw51hthHEm7RRxpoQVEYuuHqwByxgJVQt2y0uSK19dENx0PliS5YRU3KmYPceL0WdxPAO6lIW1UMHcX8eHy9tro4-QCOrBInsvsrDLGFyzZViJ1c0TuyZwd_WQIH49IS9VhqSgrmZBPpgUp8lrN7iXpWxiZ9_kDlUa7Pjai_zPXLQC6pCVBoOLOugfHx5dkeeLUwVPiy24RPCNcCgPF9EIlh17VDJAZ531oXpl79Tb9qG6zncq09jf3eBEQIRJse1C_Dw2ZRF0AgDpSp1K2qiHREgLll2jVbwDIbJvBqZ0gKYapBuOlLQv3bcPPg4nx2MHOKtQO_KonG9zlc2EYZfnBrdqayBr6NYVCQs1WU6OjZTUdsoDbG3lmsQzuF2mp-InpivsIndj5XknvAWBmpY8UWs6vL9ISfajRD3-3rHqIjMR292WbpSlHfIVKQDgl5L38H1DmpCfIPhkyqcI3Q616R4cSWOoUkVtmGULkkR-IddXyOWm5xpVJeOmSq9sgEJ8NDxA7k4XJx3Brlkn_L6BxDzg0CHEHzb7c7_XdD4vdnptRjPX4fPj0-pXoeEO-gsxGE9hZ8na-yx9MBaS7oPcRvXzCaKEzH4RJcDvI8Xh5nubS1Xa3BJqwMLDHemicBptH2btuaO_PDoMyVj4qmy5py_YDaT-3A8Vu5oUFAlXsGuQbY6H281u5ekVoIC5RaQBIjifnheJxQDtwK1lrZJdA-RNb-E5rfxAkr-4jW_6XOOfJ_VDqb_u9a36wEWU87VoJTelRSRfYfupbA-xcPjR1T4gWD97Ghe2EDRaetgDYE8906MKEdDdtdm0BqR3lXoKnw-v5u8KwgU6sNGQ13NjPNF6YlgeHi5e2VPZ7PWZO9QQVaLXEC56kfrPXaOkz_uI0AkhC1lRQx6dGQZ4YwaOfJNoabbfMF7WNrN92p3yI1e2LQ81trv6uKB3LMokh-6HKJmnoGbba83KWN5ALprVM11u17UwiCZPAu9F2V8vnz2z8PxmHv:1vLf2s:Bru06IZ6PROaiseVml05XWhB6954W66BdDrLy2FBcdQ'}
+BODY RAW: b'{"message":"schedule of charges"}'
+POST DATA: {'message': 'schedule of charges'}
+=== CHATBOT VIEW HIT ===
+METHOD: POST
+COOKIES: {'sessionid': '.eJyFUcGO2jAQ_ZVRTq0EbbenlktVYIs4sF0B0h5KtTLOJB5h7GjGgUar_feOodBUXWlPyTy_efZ776nwRtJjig3ZYlSIdVi2HiFWYJ3hGqUYFPqXHh1JitwVox9PBUePym4FOR_HkDAkBdBTTVvylLovxfPgSjQium2U02ff_mVDFRkW0zGsrIvRw8ockEebMISvoYOxCbU3JYojkBPhvY3eY40gqS1VDY6UHBg4GE_lFWxcTBHm05OOkrfo4xFuPkGHhmUTNuEOsQSHvlG3aHcUaiijbfe6LaBPCvgrqRw28o-f_4y_lNur_h8QnPqE5FAwO79KTM4SYE3COjKhnLKYYUA2PueRn5qhSeQmstIuIEzpQEIxwJsJY0kJvje6lBSRt3njW2SkOsCaNVEwoYS75bgvuVrc9kcczu7zd7merf4EqdH2n3C-ZmK4zOMUt73pnrExWsllnos3e-qvrxmNtNzBwvAOEyxJdrmauTYRNu3HDzef0zUnoIT74ZE0rwo1IIeM7-DBkXWXsDrdgy62cNS8ByeD87OM9-eq82FFimdBadBSRfZSm_b88_k38RIUOw:1vLf4f:4ahbN723iCPoQzbcu-J8a_VDElfMcNrcSNov3PwdI5M'}
+HEADERS: {'Content-Length': '28', 'Content-Type': 'application/json; charset=utf-8', 'Host': 'localhost:8000', 'Traceparent': '00-dd5c27507ee7f3b6cfdde383f44fb3be-ff5e4b7ac3f4b461-00', 'Cookie': 'sessionid=.eJyFUcGO2jAQ_ZVRTq0EbbenlktVYIs4sF0B0h5KtTLOJB5h7GjGgUar_feOodBUXWlPyTy_efZ776nwRtJjig3ZYlSIdVi2HiFWYJ3hGqUYFPqXHh1JitwVox9PBUePym4FOR_HkDAkBdBTTVvylLovxfPgSjQium2U02ff_mVDFRkW0zGsrIvRw8ockEebMISvoYOxCbU3JYojkBPhvY3eY40gqS1VDY6UHBg4GE_lFWxcTBHm05OOkrfo4xFuPkGHhmUTNuEOsQSHvlG3aHcUaiijbfe6LaBPCvgrqRw28o-f_4y_lNur_h8QnPqE5FAwO79KTM4SYE3COjKhnLKYYUA2PueRn5qhSeQmstIuIEzpQEIxwJsJY0kJvje6lBSRt3njW2SkOsCaNVEwoYS75bgvuVrc9kcczu7zd7merf4EqdH2n3C-ZmK4zOMUt73pnrExWsllnos3e-qvrxmNtNzBwvAOEyxJdrmauTYRNu3HDzef0zUnoIT74ZE0rwo1IIeM7-DBkXWXsDrdgy62cNS8ByeD87OM9-eq82FFimdBadBSRfZSm_b88_k38RIUOw:1vLf4f:4ahbN723iCPoQzbcu-J8a_VDElfMcNrcSNov3PwdI5M'}
+BODY RAW: b'{"message":"islami banking"}'
+POST DATA: {'message': 'islami banking'}

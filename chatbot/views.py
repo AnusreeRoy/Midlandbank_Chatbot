@@ -1,5 +1,4 @@
 # ChromaDB based chatbot implementation
-import json
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
 import time, re, logging
@@ -16,8 +15,15 @@ from chatbot.services.retrieval_services import cache
 from chatbot.data.config import PRODUCT_ALIASES
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 
 
+def index(request):
+    return render(request, "chatbot/chatbot.html")
+
+
+@csrf_exempt
 @api_view(["GET", "POST"])
 def chatbot_response(request):
     """Handle chatbot responses using ChromaDB and GPT."""
@@ -32,7 +38,7 @@ def chatbot_response(request):
     followup_response = text_utils.handle_conversation_state(user_message, request)
     if followup_response:
         return JsonResponse({"response": followup_response})
-
+ 
     conversation_state = request.session.get("conversation_state", {})
 
     # Only ask for location if NOT already awaiting location or location_received
@@ -89,6 +95,7 @@ def chatbot_response(request):
     
     # Apply product/general aliases for query normalization
     user_message = text_utils.normalize_query_with_aliases(user_message, PRODUCT_ALIASES)
+    print(f"🔄 Normalized user message: {user_message}")
                 
     # Identify query category        
     query_category_identified, _ = identify_query_category(user_message)

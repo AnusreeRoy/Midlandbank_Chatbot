@@ -125,6 +125,3 @@ def is_charge_query(text: str) -> bool:
         "reschedule fee", "stamp charge", "penal interest", "sms alert", "npsb-ibft fees"
     ]
     return any(k in text.lower() for k in charge_keywords)
-
-
-

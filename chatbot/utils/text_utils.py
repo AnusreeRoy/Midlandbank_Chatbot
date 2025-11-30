@@ -143,8 +143,6 @@ def extract_sponsor_sentences(context: str, sponsor_keywords=None):
     return "\n".join(relevant)
 
 
-import re
-
 def normalize_query_for_matching(query: str) -> str:
     query = query.lower().strip()
     query = re.sub(r'\bu\b', 'you', query)         # Replace u → you
@@ -172,6 +170,11 @@ def normalize_query_with_aliases(query: str, aliases: dict) -> str:
 
     # Work on a copy so we can track replacements properly
     result = query
+    
+    # Catch the "What are the charges of [product]" and "What are the charges for [product]"
+    if "charges" in result and ("of" in result or "for" in result):
+        # Normalize phrasing such as "What are the charges of credit card?" to "credit card fees and charges"
+        result = re.sub(r"(what are the charges (of|for)\s+)(\w+(\s\w+)+)", lambda match: match.group(3).strip() + " fees and charges", result, flags=re.IGNORECASE)
 
     for alias, canonical in sorted_aliases:
         pattern = re.compile(r'\b' + re.escape(alias) + r'\b', re.IGNORECASE)
@@ -326,26 +329,66 @@ def handle_conversation_state(user_message, request):
         user_info["location"] = location
         request.session["user_info"] = user_info
 
-        # Instead of clearing, set to 'location_received' to mark we got location
+        # Mark location as received
         request.session["conversation_state"] = {"type": "location_received"}
         request.session.modified = True
 
-        # Fetch branches from ChromaDB or fallback
+        # 🔹 Step 1: Fetch ChromaDB data
         context = retrieval_services.get_relevant_chroma_data(location)
         sanitized = sanitize_context(context)
 
-        if not sanitized.strip():
-            return f"Thanks! Noted your location as **{location.title()}**, but I couldn't find any nearby branches."
+        # 🔹 Step 2: Filter only the relevant location lines
+        filtered_lines = []
+        for line in sanitized.splitlines():
+            # Keep lines containing the location or branch keywords
+            if location.lower() in line.lower() or "midland bank" in line.lower():
+                filtered_lines.append(line)
 
+        sanitized = "\n".join(filtered_lines).strip()
+        print(f"Sanitized branch data for location '{location}': {sanitized}")
+        # Handle empty data
+        if not sanitized:
+            return (
+                f"Thanks! Noted your location as **{location.title()}**, "
+                "but I couldn't find any nearby branches."
+            )
+
+        # 🔹 Step 3: Build clean GPT prompt (no disclaimers allowed)
         messages = llm_services.build_message_list(
-            f"List Midland Bank branches near {location} with address, hours, email, and services.", 
-            sanitized, 
-            cache=None, 
+            f"""
+            From the provided data, display only the Midland Bank branch or branches
+            that directly match '{location}'.
+            Do NOT mention other branches, unavailable information, or data limitations.
+            Only show confirmed details for the matched branch(es): 
+            branch name, address, hours, email, phone, and services.
+            Keep the tone concise and professional.
+            """,
+            sanitized,
+            cache=None,
             history=[]
         )
+
+        # 🔹 Step 4: Get GPT response
         response = llm_services.get_gpt_response(messages, cache=None)
+
+        # 🔹 Step 5: Clean up unwanted fallback lines (safety net)
+        unwanted_phrases = [
+            "I don’t have complete details",
+            "If you tell me a specific area",
+            "I can check if we have that branch’s details",
+            "other nearby branches",
+            "I don’t have a confirmed list",
+            "data I have"
+        ]
+        for phrase in unwanted_phrases:
+            response = response.replace(phrase, "")
+
+        # Remove empty or extra newlines
+        response = "\n".join(
+            [line.strip() for line in response.splitlines() if line.strip()]
+        )
+
         return response
 
     # Add other conversation states as needed
-
     return None

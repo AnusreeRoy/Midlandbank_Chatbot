@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from decouple import config, Csv
+from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,11 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 # DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 # ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv)
+
+ALLOWED_HOSTS = ['10.96.56.51', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -56,7 +58,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 #CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOW_CREDENTIALS = True
+# CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'mychatbot.urls'
 
@@ -76,10 +78,10 @@ TEMPLATES = [
     },
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:4200", 
-    # "http://chatbot.midlandbankbd.net:4200",
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:4200", 
+#     "http://chatbot.midlandbankbd.net:4200",
+# ]
 
 
 WSGI_APPLICATION = 'mychatbot.wsgi.application'
@@ -110,12 +112,12 @@ DATABASES = {
 }
 
 # SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Or use cache/file if preferred
-SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+# SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
 SESSION_COOKIE_AGE = 300  # Optional: expires after 5 minutes
 SESSION_SAVE_EVERY_REQUEST = True  # Refresh session expiry on each request
 
-SESSION_COOKIE_SAMESITE = 'Lax'
-SESSION_COOKIE_SECURE = False  # Use True if you're running over HTTPS
+# SESSION_COOKIE_SAMESITE = 'Lax'
+# SESSION_COOKIE_SECURE = False  # Use True if you're running over HTTPS
 
 # # HTTPS and Secure Cookies
 # SESSION_COOKIE_SECURE = True
@@ -162,9 +164,68 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "chatbot" / "static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 API_KEY = config('API_KEY')
+
+REST_FRAMEWORK = {
+    "DEFAULT_THROTTLE_CLASSES": [
+        "chatbot.throttles.SessionRateThrottle",
+        "rest_framework.throttling.AnonRateThrottle",
+    ],
+    "DEFAULT_THROTTLE_RATES": {
+        "session": "20/minute",  # browser sessions
+        "anon": "10/minute",     # API clients without session
+    },
+}
+
+
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+
+SESSION_COOKIE_SECURE = False                # must be False for HTTP
+CSRF_COOKIE_SECURE = False
+
+SESSION_COOKIE_SAMESITE = "Lax"              # correct for HTTP cross-site POST
+CSRF_COOKIE_SAMESITE = "Lax"
+
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:4200",
+    "http://10.96.56.51:4200",
+    "http://localhost:33915",
+    
+]
+
+# # Django is NOT behind HTTPS -> disable proxy SSL header
+# SECURE_PROXY_SSL_HEADER = None
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+
+#     'handlers': {
+#         'console': {
+#             'class': 'logging.StreamHandler',
+#         },
+#         'file': {
+#             'class': 'logging.FileHandler',
+#             'filename': BASE_DIR / 'chatbot.log',
+#             'level': 'DEBUG',
+#         },
+#     },
+
+#     'loggers': {
+#         'chatbot': {
+#             'handlers': ['console', 'file'],
+#             'level': 'DEBUG',
+#             'propagate': True,
+#         },
+#     },
+# }

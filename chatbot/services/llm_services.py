@@ -9,6 +9,8 @@ import json
 client = OpenAI(api_key=settings.API_KEY)
 import logging
 logger = logging.getLogger(__name__)
+from tenacity import retry, wait_random_exponential, stop_after_attempt, retry_if_exception_type
+from openai import RateLimitError, APIError
 
 def build_message_list(prompt: str,context: str,cache: dict,history: list) -> list:
     
@@ -36,7 +38,11 @@ def build_message_list(prompt: str,context: str,cache: dict,history: list) -> li
     return messages
 
 
-
+@retry(
+    retry=retry_if_exception_type(RateLimitError),
+    wait=wait_random_exponential(min=1, max=10),
+    stop=stop_after_attempt(3)
+)
 def get_gpt_response(messages: list, cache) -> str:
     """
     Sends `messages` to GPT-5, caching by the hash of their content.
@@ -58,7 +64,8 @@ def get_gpt_response(messages: list, cache) -> str:
             model=model,
             input=messages,
             reasoning={"effort": "minimal"},
-            text={"verbosity": "low"}
+            text={"verbosity": "low"},
+            timeout=30
         )
         out = resp.output_text.strip()
 
@@ -69,6 +76,15 @@ def get_gpt_response(messages: list, cache) -> str:
             cache[key] = out
 
         return out
+    
+    
+    except RateLimitError:
+        logger.warning("Rate limit hit — retrying automatically")
+        raise
+
+    except APIError as e:
+        logger.error("OpenAI API error", exc_info=e)
+        return "Sorry, I'm having trouble right now."
 
     except Exception as e:
         logger.error("OpenAI API Error:", exc_info=e)

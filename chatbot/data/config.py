@@ -162,15 +162,47 @@ role_aliases = {
      }
 
 location_aliases = {
-        'dhaka': ['dhaka', 'gulshan', 'fatullah', 'uttara', 'gazipur', 'banani', 'dhanmondi'],
-        'chittagong': ['chittagong', 'agrabad', 'sompara'],
-        'sylhet': ['sylhet'],
+        'barishal': ['barishal', 'barishal branch'],
+        'chattogram': [
+            'chattogram', 'agrabad', 'agrabad branch',
+            'bokhter munshi bazar', 'bokhter munshi bazar branch',
+            'cda avenue', 'cda avenue branch',
+            'chandraganj', 'chandraganj branch',
+            'chowdhuryhat', 'chowdhuryhat branch',
+            'dalal bazar', 'dalal bazar branch',
+            'shashongacha', 'shashongacha branch',
+            'sompara', 'sompara bazar'
+        ],
+        'dhaka': [
+            'dhaka', 'aganagar', 'aganagar branch', 'banani', 'banani branch',
+            'dhanmondi', 'dhanmondi branch', 'dilkusha corporate', 'dilkusha corporate branch',
+            'fatullah', 'fatullah branch', 'gazipur', 'gazipur branch',
+            'gulshan', 'gulshan branch', 'hemayetpur', 'hemayetpur branch',
+            'islampur', 'islampur branch', 'kamarpara', 'kamarpara branch',
+            'katiadi', 'katiadi branch', 'kawran bazar', 'kawran bazar branch',
+            'maligram', 'maligram branch', 'mirpur', 'mirpur branch',
+            'mirzapur bazar', 'mirzapur bazar branch', 'narayanganj', 'narayanganj branch',
+            'narshingdi', 'narshingdi branch', 'panchar', 'panchar branch',
+            'panchrukhi', 'panchrukhi branch', 'paragram', 'paragram branch',
+            'uttara', 'uttara branch', 'zirabo', 'zirabo branch'
+        ],
+        'khulna': [
+            'khulna', 'khulna branch', 'bheramara', 'bheramara branch',
+            'foyla bazar', 'foyla bazar branch'
+        ],
+        'mymensingh': ['mymensingh', 'valuka', 'valuka branch'],
+        'rajshahi': [
+            'rajshahi', 'rajshahi branch', 'bogura', 'bogura branch',
+            'mokamtola', 'mokamtola branch'
+        ],
+        'rangpur': ['rangpur', 'rangpur branch', 'doshmile', 'doshmile branch'],
+        'sylhet': ['sylhet', 'sylhet branch']
 }
     
 # Management roles to look for
 management_roles = [
         "managing director", "ceo", "chairman", "cto", "chief technology officer",
-        "chief risk officer", "deputy managing director", "md", "dmd", "vice chairman", "vc"
+        "chief risk officer", "deputy managing director", "md", "dmd", "vice chairman", "vc", "vice chairman"
         "board of directors", "board member", "board members", "senior executive vice president",
         "head of information technology division"
     ]
@@ -191,13 +223,16 @@ Speak like a trusted banking partner: approachable, concise, and supportive.
 Stick only to information provided by Midland Bank. If something isn’t in the data, be honest about it — don’t guess or make things up.
 
 Here’s how to respond:
-1. Use only what's in the bank’s data. If something’s not covered, say it simply — e.g., "I don't have details on that right now." Only say this if you truly can't help.
+1. Use only what's in the bank’s data. If something’s not covered, don’t guess — instead, guide the customer to what you *can* help with, without repeating phrases like “I don’t have details right now.”
 2. Don’t assume or infer details — stick to what’s clearly stated.
 3. Keep it natural — skip phrases like "According to the document" or "Based on the context."
 4. Use bullet points for listing features, benefits, or steps — it makes things easier to read.
 5. Only mention roles like CEO or Chairman if they’re clearly included in the data.
 6. Invite follow-up questions — make the user feel welcome to ask more.
 7. If the user follows up with 'yes' or 'ok', assume they're referring to the last discussed topic.
+8. Whenever you provide deposit rates, lending rates, fees, charges, or compare any rate-based products:
+   - Include the “Effective Date” at the top if it is available in the bank’s data.
+   - If the user does not specify a date, default to the latest available Effective Date without asking again.
 """
 
 

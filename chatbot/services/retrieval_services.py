@@ -19,14 +19,32 @@ import time
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
+LOCAL_MODEL_PATH = r"C:\Users\mdbl.plc\Downloads\bge-base-en-v1.5"
 
-embedding_func = embedding_functions.SentenceTransformerEmbeddingFunction(
-    model_name="BAAI/bge-base-en-v1.5"
-)
+# embedding_func = embedding_functions.SentenceTransformerEmbeddingFunction(
+#     model_name= LOCAL_MODEL_PATH,
+#      local_files_only=True
+# )
+
+# embedding_func = embedding_functions.SentenceTransformerEmbeddingFunction(
+#     model_name="BAAI/bge-base-en-v1.5"
+# )
+
+
+try:
+    embedding_func = embedding_functions.SentenceTransformerEmbeddingFunction(
+        model_name= LOCAL_MODEL_PATH,
+       local_files_only=True
+    )
+    print("Embedding model loaded successfully.")
+except Exception as e:
+    print("❌ Failed to load embedding model:", e)
+        
 
 # Initialize ChromaDB client
 chroma_client = chromadb.PersistentClient(
     path=r"C:\Users\mdbl.plc\Scraper\chroma_rich",
+    # path=r"/var/www/midlandbank_chatbot/chroma_rich",
     settings=Settings(
         anonymized_telemetry=False  # Disable telemetry for faster performance
     )
@@ -38,21 +56,107 @@ collection = chroma_client.get_collection(
 )
 
 
+# def identify_query_category(query):
+#     """Identify the primary category of the query."""
+#     query_lower = query.lower()
+#     category_scores = {}
+#     for category, info in category_keywords.items():
+#         score = 0
+#         for keyword in info['keywords']:
+#             if re.search(rf'\b{re.escape(keyword.lower())}\b', query_lower):
+#                 score += 1
+#         if score > 0:
+#             category_scores[category] = score * info['weight']
+#     if not category_scores:
+#         return None, 0
+#     primary_category = max(category_scores.items(), key=lambda x: x[1])
+#     return primary_category[0], primary_category[1]
+
 def identify_query_category(query):
-    """Identify the primary category of the query."""
-    query_lower = query.lower()
+    """
+    Identify the primary category of the query with safe priority:
+    
+    1. Management / Board / Sponsor (highest priority)
+    2. Other keyword categories
+    3. Location aliases (BUT only if no higher category matched)
+    4. Single-word location fallback
+    """
+    query_lower = query.lower().strip()
+
+    # ---------------------------------------------
+    # 1️⃣ STEP 1 — HIGH-PRIORITY CATEGORIES FIRST
+    #    (management, board, sponsor)
+    # ---------------------------------------------
+    high_priority = ["management", "board", "sponsor"]
     category_scores = {}
-    for category, info in category_keywords.items():
+
+    for category in high_priority:
+        info = category_keywords.get(category)
+        if not info:
+            continue
+
         score = 0
-        for keyword in info['keywords']:
+        for keyword in info["keywords"]:
             if re.search(rf'\b{re.escape(keyword.lower())}\b', query_lower):
                 score += 1
+
         if score > 0:
-            category_scores[category] = score * info['weight']
-    if not category_scores:
-        return None, 0
-    primary_category = max(category_scores.items(), key=lambda x: x[1])
-    return primary_category[0], primary_category[1]
+            category_scores[category] = score * info["weight"]
+
+    # If high-priority category matched → return immediately
+    if category_scores:
+        primary_category = max(category_scores.items(), key=lambda x: x[1])
+        return primary_category[0], primary_category[1]
+
+    # ---------------------------------------------
+    # 2️⃣ STEP 2 — NORMAL KEYWORD CATEGORIES
+    # ---------------------------------------------
+    normal_categories = [
+        cat for cat in category_keywords.keys() 
+        if cat not in high_priority
+    ]
+
+    category_scores = {}
+    for category in normal_categories:
+        info = category_keywords.get(category)
+        if not info:
+            continue
+
+        score = 0
+        for keyword in info["keywords"]:
+            if re.search(rf'\b{re.escape(keyword.lower())}\b', query_lower):
+                score += 1
+
+        if score > 0:
+            category_scores[category] = score * info["weight"]
+
+    # If something matched here, return it
+    if category_scores:
+        primary_category = max(category_scores.items(), key=lambda x: x[1])
+        return primary_category[0], primary_category[1]
+
+    # ---------------------------------------------
+    # 3️⃣ STEP 3 — LOCATION ALIASES (SAFE)
+    #     Only apply if no other category matched
+    # ---------------------------------------------
+    for city, aliases in config.location_aliases.items():
+        for alias in aliases:
+            if alias.lower() in query_lower:
+                return "location", 100
+
+    # ---------------------------------------------
+    # 4️⃣ STEP 4 — SINGLE-WORD FALLBACK:
+    #     If only one word, treat it as location
+    # ---------------------------------------------
+    if len(query_lower.split()) == 1:
+        for city in config.location_aliases:
+            if query_lower == city:
+                return "location", 50
+
+    # ---------------------------------------------
+    # 5️⃣ STEP 5 — NOTHING MATCHED
+    # ---------------------------------------------
+    return None, 0
 
 
 @retry(wait=wait_random_exponential(min=1, max=10), stop=stop_after_attempt(2))
