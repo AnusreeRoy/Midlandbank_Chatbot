@@ -167,6 +167,27 @@
     max-width: 80%;
     margin-left: 20px;
   }
+  .stop-btn {
+  background:  rgb(235, 234, 229);
+  color:#111927 ;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.stop-btn-wrapper {
+  display: flex;
+  justify-content: flex-start; /* aligns with bot message text */
+  margin-top: 4px;
+}
+
+.stop-btn:hover {
+  background: rgb(186, 186, 182);
+}
 }
 
 .loading-indicator {
@@ -246,6 +267,18 @@ message-wrapper {
       box-sizing: border-box;
     }
 
+      .voice-btn {
+      position: absolute;
+      top: 50%;
+      right: 35px; /* Align to the left side */
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: #e56175; /* optional, match your theme */
+    }
+
     button {
       position: absolute;
       top: 50%;
@@ -260,6 +293,10 @@ message-wrapper {
       cursor: pointer;
     }
   }
+  
+.voice-btn:active {
+  transform: scale(0.9); /* Optional active state effect */
+}
 }
 
 

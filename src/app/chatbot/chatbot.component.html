@@ -36,7 +36,11 @@
 
     <!-- Chat Body -->
     <div #chatBody class="chat-body">
-      <div *ngFor="let message of chatHistory" class="message-container" #messageElement>
+      <div
+        *ngFor="let message of chatHistory"
+        class="message-container"
+        #messageElement
+      >
         <div
           [ngClass]="{
             'user-message': message.isUser,
@@ -50,6 +54,20 @@
               <span class="message-name">Midland Bank AI Assistant</span>
             </div>
             <p #messageText [innerHTML]="message.text | linebreaks"></p>
+
+            <!-- SHOW STOP BUTTON ONLY WHILE TTS IS PLAYING -->
+
+            <div *ngIf="message.showStopButton" class="stop-btn-wrapper">
+              <button class="stop-btn" (click)="stopSpeech(message)">
+                <i class="fa-solid fa-volume-xmark"></i>
+              </button>
+            </div>
+            <div *ngIf="message.showResumeButton" class="stop-btn-wrapper">
+              <button class="stop-btn" (click)="resumeSpeech(message)">
+                <i class="fa-solid fa-play"></i> 
+              </button>
+            </div>
+
             <span *ngIf="message.isLoading" class="loading-indicator"></span>
           </div>
 
@@ -80,6 +98,11 @@
           placeholder="Message Assistant"
           (keydown.enter)="sendMessage()"
         />
+        <!-- Voice button -->
+        <button class="voice-btn" (click)="startVoiceInput()">
+          <i class="fa-solid fa-microphone"></i>
+        </button>
+
         <button (click)="sendMessage()">
           <i class="fa-solid fa-paper-plane"></i>
         </button>

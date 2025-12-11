@@ -29,7 +29,7 @@ export class LinebreaksPipe implements PipeTransform {
       // === Headings ===
       const headingLabels = ['savings products', 'loan products', 'current products', 'islamic products',
         'general products', 'agent-banking products', 'cards products', 'loans products', 'loans', 'loan', 
-        'current','savings', 'loan', 'current', 'benefits', 'eligibility', 'documents'];
+        'current','savings', 'loan', 'current', 'benefits', 'eligibility', 'documents', 'institutional products'];
 
       const cleanedLine = line.toLowerCase().replace(/^[-•\s]+/, '').replace(/[:\s]+$/g, '').trim();
       const isHeading = headingLabels.includes(cleanedLine);
