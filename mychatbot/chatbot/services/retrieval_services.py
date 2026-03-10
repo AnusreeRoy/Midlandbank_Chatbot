@@ -1,4 +1,4 @@
-from chatbot.data.config import category_keywords, bonus_keywords, personnel_info
+from chatbot.data.config import category_keywords, bonus_keywords, management_roles
 import re
 import chromadb
 from tenacity import retry, wait_random_exponential, stop_after_attempt
@@ -9,20 +9,45 @@ import chromadb
 from chromadb.config import Settings
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # Suppress INFO and WARNING logs
 import diskcache as dc
-cache = dc.Cache("cache_dir")  # Initialize disk cache for caching results
+cache = dc.Cache("cache_dir", size_limit=1e9)  # Initialize disk cache for caching results
 from chromadb.utils import embedding_functions
 # Import the loaded product aliases data
 from chatbot.apps import product_aliases_data as product_aliases
 from chatbot.data import config 
 from chatbot.utils.text_utils import normalize_query_with_aliases
+import time
+from datetime import datetime
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
-embedding_func = embedding_functions.SentenceTransformerEmbeddingFunction(
-    model_name="BAAI/bge-base-en-v1.5"
-)
+#LOCAL_MODEL_PATH = r"C:\Users\mdbl.plc\Downloads\bge-base-en-v1.5"
+LOCAL_MODEL_PATH = r"/var/www/midlandbank_chatbot/bge-base-en-v1.5"
+
+
+# embedding_func = embedding_functions.SentenceTransformerEmbeddingFunction(
+#     model_name= LOCAL_MODEL_PATH,
+#      local_files_only=True
+# )
+
+# embedding_func = embedding_functions.SentenceTransformerEmbeddingFunction(
+#     model_name="BAAI/bge-base-en-v1.5"
+# )
+
+
+try:
+    embedding_func = embedding_functions.SentenceTransformerEmbeddingFunction(
+        model_name= LOCAL_MODEL_PATH,
+       local_files_only=True
+    )
+    print("Embedding model loaded successfully.")
+except Exception as e:
+    print("❌ Failed to load embedding model:", e)
+        
 
 # Initialize ChromaDB client
 chroma_client = chromadb.PersistentClient(
-    path=r"C:\Users\mdbl.plc\Scraper\chroma_rich",
+    #path=r"C:\Users\mdbl.plc\Scraper\chroma_rich",
+    path=r"/var/www/midlandbank_chatbot/chroma_rich",
     settings=Settings(
         anonymized_telemetry=False  # Disable telemetry for faster performance
     )
@@ -34,43 +59,137 @@ collection = chroma_client.get_collection(
 )
 
 
+# def identify_query_category(query):
+#     """Identify the primary category of the query."""
+#     query_lower = query.lower()
+#     category_scores = {}
+#     for category, info in category_keywords.items():
+#         score = 0
+#         for keyword in info['keywords']:
+#             if re.search(rf'\b{re.escape(keyword.lower())}\b', query_lower):
+#                 score += 1
+#         if score > 0:
+#             category_scores[category] = score * info['weight']
+#     if not category_scores:
+#         return None, 0
+#     primary_category = max(category_scores.items(), key=lambda x: x[1])
+#     return primary_category[0], primary_category[1]
+
 def identify_query_category(query):
-    """Identify the primary category of the query."""
-    query_lower = query.lower()
+    """
+    Identify the primary category of the query with safe priority:
+    
+    1. Management / Board / Sponsor (highest priority)
+    2. Other keyword categories
+    3. Location aliases (BUT only if no higher category matched)
+    4. Single-word location fallback
+    """
+    query_lower = query.lower().strip()
+
+    # ---------------------------------------------
+    # 1️⃣ STEP 1 — HIGH-PRIORITY CATEGORIES FIRST
+    #    (management, board, sponsor)
+    # ---------------------------------------------
+    high_priority = ["management", "board", "sponsor"]
     category_scores = {}
-    for category, info in category_keywords.items():
+
+    for category in high_priority:
+        info = category_keywords.get(category)
+        if not info:
+            continue
+
         score = 0
-        for keyword in info['keywords']:
+        for keyword in info["keywords"]:
             if re.search(rf'\b{re.escape(keyword.lower())}\b', query_lower):
                 score += 1
+
         if score > 0:
-            category_scores[category] = score * info['weight']
-    if not category_scores:
-        return None, 0
-    primary_category = max(category_scores.items(), key=lambda x: x[1])
-    return primary_category[0], primary_category[1]
+            category_scores[category] = score * info["weight"]
+
+    # If high-priority category matched → return immediately
+    if category_scores:
+        primary_category = max(category_scores.items(), key=lambda x: x[1])
+        return primary_category[0], primary_category[1]
+
+    # ---------------------------------------------
+    # 2️⃣ STEP 2 — NORMAL KEYWORD CATEGORIES
+    # ---------------------------------------------
+    normal_categories = [
+        cat for cat in category_keywords.keys() 
+        if cat not in high_priority
+    ]
+
+    category_scores = {}
+    for category in normal_categories:
+        info = category_keywords.get(category)
+        if not info:
+            continue
+
+        score = 0
+        for keyword in info["keywords"]:
+            if re.search(rf'\b{re.escape(keyword.lower())}\b', query_lower):
+                score += 1
+
+        if score > 0:
+            category_scores[category] = score * info["weight"]
+
+    # If something matched here, return it
+    if category_scores:
+        primary_category = max(category_scores.items(), key=lambda x: x[1])
+        return primary_category[0], primary_category[1]
+    
+    # 3️⃣ Amount detection (NEW) 
+    amount_keywords = ["loan", "amount", "eligible", "eligibility", "credit", "apply"] 
+    if re.search(r"\d+", query_lower) and any(k in query_lower for k in amount_keywords): 
+        return "amount", 100 
+    if any(word in query_lower for word in ["bdt", "lac", "crore", "thousand"]): 
+        return "amount", 100
+
+    # ---------------------------------------------
+    # 3️⃣ STEP 3 — LOCATION ALIASES (SAFE)
+    #     Only apply if no other category matched
+    # ---------------------------------------------
+    for city, aliases in config.location_aliases.items():
+        for alias in aliases:
+            if alias.lower() in query_lower:
+                return "location", 100
+
+    # ---------------------------------------------
+    # 4️⃣ STEP 4 — SINGLE-WORD FALLBACK:
+    #     If only one word, treat it as location
+    # ---------------------------------------------
+    if len(query_lower.split()) == 1:
+        for city in config.location_aliases:
+            if query_lower == city:
+                return "location", 50
+
+    # ---------------------------------------------
+    # 5️⃣ STEP 5 — NOTHING MATCHED
+    # ---------------------------------------------
+    return None, 0
 
 
 @retry(wait=wait_random_exponential(min=1, max=10), stop=stop_after_attempt(2))
-def get_relevant_chroma_data(query: str, n_results: int = 5):
+def get_relevant_chroma_data(query: str, n_results: int = 3):
     cache_key = f"chroma:{query.lower().strip()}"
-    if cache_key in cache:
+    cached = cache.get(cache_key)
+    if cached:
         print("⚡ Serving ChromaDB result from cache")
-        return cache[cache_key]
+        return cached
 
-    def calculate_relevance_score(doc, query, found_categories, query_category, product_aliases, personnel_info, meta=None, distance=0.0): # Added product_aliases, meta
+    def calculate_relevance_score(doc, query, found_categories, query_category, product_aliases, meta=None, distance=0.0): # Added product_aliases, meta
         """
         Calculate a weighted relevance score for a document with category focus,
         generality penalty, and service-specific boosts.
         """
-        query = normalize_query_with_aliases(query, product_aliases)
+        # query = normalize_query_with_aliases(query, product_aliases)
         query_lower = query.lower()
         doc_lower = doc.lower()
         query_terms = set(query_lower.split())
         doc_terms = set(doc_lower.split())
-        term_overlap = len(query_terms.intersection(doc_terms)) # Keep this one!
+        term_overlap = len(query_terms.intersection(doc_terms)) 
 
-        is_general_query = bool(re.match(r"what is\s+(.*?)\??$", query_lower)) # <-- INSERT THIS LINE HERE
+        is_general_query = bool(re.match(r"what is\s+(.*?)\??$", query_lower))
         
         # --- 1. Base Score from Semantic Distance (Inverse of distance) ---
         # Max score if distance is 0, gradually decreasing. Max 10.0 for very close matches.
@@ -142,18 +261,21 @@ def get_relevant_chroma_data(query: str, n_results: int = 5):
         # conditional on the *type* of query.
 
         # Personnel Match Boost (if query is likely about management/personnel)
-        if query_category == 'management' or any(role in query_lower for role in ["cto", "md", "ceo", "chairman", "dmd", "cro","senior executive"]):
-            for person_canonical, associated_roles in personnel_info.items():
-                query_mentions_person = person_canonical in query_lower
-                query_mentions_role = any(role_alias.lower() in query_lower for role_alias in associated_roles)
+        query_has_role = any(
+            re.search(rf"\b{re.escape(role)}\b", query_lower)
+            for role in management_roles
+            )
 
-                doc_contains_person = person_canonical in doc_lower
-                doc_contains_role = any(role_alias.lower() in doc_lower for role_alias in associated_roles)
-
-                if (query_mentions_person or query_mentions_role) and doc_contains_person and doc_contains_role:
-                    # Give a very strong but non-absolute boost. This ensures it floats near the top.
+        if query_category == "management" or query_has_role:
+        
+            for role in management_roles:
+                role_pattern = rf"\b{re.escape(role)}\b"
+        
+                if re.search(role_pattern, query_lower) and \
+                   re.search(role_pattern, doc_lower):
+        
                     final_score += 70.0
-                    break # Apply only once
+                    break
 
      
        # Product Match Boost
@@ -213,8 +335,16 @@ def get_relevant_chroma_data(query: str, n_results: int = 5):
             final_score *= 0.6  # Significant demotion
         
         
-        if "vice chairman" in doc_lower:
-            final_score += 150.0
+        if query_category == "management":
+            if "vice chairman" in query_lower:
+                if "vice chairman" not in doc_lower and "vice-chairman" not in doc_lower:
+                    return max(0, final_score)  # skip chairman-only chunks
+
+         
+        if query_category == "management" and "vice chairman" in query_lower:
+             if "message from chairman" in doc_lower or "chairman" in doc_lower:
+                 final_score *= 0.7
+
             
         if meta.get("section", "").lower() == "board of directors":
             final_score += 200.0  # Strong boost for clean board chunk
@@ -291,11 +421,15 @@ def get_relevant_chroma_data(query: str, n_results: int = 5):
 
     try:
         print(f"\n📦 Querying vector data from ChromaDB collection: {collection.name}")
+        start_time = time.time()
         results = collection.query(
             query_texts=[query],
-            n_results=n_results * 5,
+            n_results=n_results,
             include=["documents", "metadatas", "distances"]
+
         )
+        end_time = time.time()
+        print(f"⏱️ ChromaDB query completed in {end_time - start_time:.2f} seconds")
 
         all_results = []
         query_category, query_category_score = identify_query_category(query)
@@ -310,8 +444,13 @@ def get_relevant_chroma_data(query: str, n_results: int = 5):
                 for category, info in category_keywords.items():
                     if any(kw.lower() in doc.lower() for kw in info['keywords']):
                         found_categories.append(category)
+                print(f"Calculating relevance score for Document {idx + 1}...")
+                score_start_time = time.time()
                 # Calculate relevance score with category focus
-                relevance_score = calculate_relevance_score(doc, query, found_categories, query_category, product_aliases, personnel_info, meta, dist)
+                relevance_score = calculate_relevance_score(doc, query, found_categories, query_category, product_aliases, meta, dist)
+                score_end_time = time.time()
+                print(f"⏱️ Relevance score calculation for Document {idx + 1} took {score_end_time - score_start_time:.2f} seconds")
+    
                 # Only include results that match the query category if it's exclusive
                 if query_category and category_keywords[query_category].get('exclusive', False):
                     if query_category not in found_categories and not any(
@@ -322,40 +461,78 @@ def get_relevant_chroma_data(query: str, n_results: int = 5):
                     'score': dist,
                     'collection': collection.name,
                     'categories': found_categories,
-                    'relevance_score': relevance_score
+                    'relevance_score': relevance_score,
+                    'meta': meta
                 }
                 all_results.append(result_entry)
-
+                
+        print("Sorting results by relevance score...")
+        sort_start_time = time.time()
         # Sort results using the comprehensive scoring system
         all_results.sort(key=lambda x: x['relevance_score'], reverse=True)
-        for i, res in enumerate(all_results[:5]): # Print top 5 to see what's being prioritized
-            print(f"Rank {i+1}: Score={res['relevance_score']:.4f}, Categories={res['categories']}, Content Preview: {res['content'][:150]}...")
-        print("-------------------------------------------------------------------")
+        sort_end_time = time.time()
+        print(f"⏱️ Sorting completed in {sort_end_time - sort_start_time:.2f} seconds")
 
+
+        # for i, res in enumerate(all_results[:5]): # Print top 5 to see what's being prioritized
+        #     print(f"Rank {i+1}: Score={res['relevance_score']:.4f}, Categories={res['categories']}, Content Preview: {res['content'][:150]}...")
+        # print("-------------------------------------------------------------------")
+        print(f"Filtering results to keep only the top {n_results}...")
+        filter_start_time = time.time()
         # Filter results to keep only the most relevant ones
         if query_category and category_keywords[query_category].get('exclusive', False):
             best_results = [r for r in all_results[:n_results] if query_category in r['categories']]
         else:
             best_results = all_results[:n_results]
-            print("\n--- DEBUG: Contents of best_results before raw_results creation ---")
-            for i, res in enumerate(best_results):
-                print(f"Result {i+1} (Score: {res['relevance_score']:.4f}): Content Length={len(res['content'])}, Content Preview: {res['content'][:300]}...")
-            print("-------------------------------------------------------------------")
+            
+        def parse_date(meta): 
+            if meta.get("effective_date"): 
+                try:
+                    return datetime.fromisoformat(meta["effective_date"]) 
+                except ValueError:
+                    pass 
+            if meta.get("scraped_at"): 
+                try:
+                    return datetime.fromisoformat(meta["scraped_at"]) 
+                except ValueError:
+                    pass 
+            return datetime.min
+
+        best_results.sort(
+            key=lambda r: (parse_date(r.get("meta", {})), r['relevance_score']),
+            reverse=True 
+            )
+        
+        filter_end_time = time.time()
+        print(f"⏱️ Filtering completed in {filter_end_time - filter_start_time:.2f} seconds")
+            # print("\n--- DEBUG: Contents of best_results before raw_results creation ---")
+            # for i, res in enumerate(best_results):
+            #     print(f"Result {i+1} (Score: {res['relevance_score']:.4f}): Content Length={len(res['content'])}, Content Preview: {res['content'][:300]}...")
+            # print("-------------------------------------------------------------------")
 
         if best_results:
+            print(f"Formatting the top {len(best_results)} results...")
+
+            format_start_time = time.time()
             formatted_results = []
             for result in best_results:
                 # For exclusive categories, only show the relevant part of the content
                 if query_category == "location":
-                    if any(key in result['content'].lower() for key in ["gulshan", "n. b. tower", "40/7", "dhaka"]):
+                    query_location = query.lower().strip()
+                    content_lower = result['content'].lower()
+                    if query_location in content_lower:
                         content = result['content']
                     else:
-                        content = (
-                            "Midland Bank Limited Head Office:\n"
-                            "N. B. Tower (Level 6–9)\n"
-                            "40/7 Gulshan Avenue\n"
-                            "Gulshan-2, Dhaka-1212, Bangladesh."
-                             )
+                        continue
+                    # if any(key in result['content'].lower() for key in ["gulshan", "n. b. tower", "40/7", "dhaka"]):
+                    #     content = result['content']
+                    # else:
+                    #     content = (
+                    #         "Midland Bank Limited Head Office:\n"
+                    #         "N. B. Tower (Level 6–9)\n"
+                    #         "40/7 Gulshan Avenue\n"
+                    #         "Gulshan-2, Dhaka-1212, Bangladesh."
+                    #          )
                 elif query_category and category_keywords[query_category]['exclusive']:
                     sentences = result['content'].split('.')
                     relevant_sentences = []
@@ -370,14 +547,15 @@ def get_relevant_chroma_data(query: str, n_results: int = 5):
                 else:
                     content = result['content']
                 formatted_results.append(f"• {content}\n  [Relevance: {result['relevance_score']:.4f}]")
-
+            format_end_time = time.time()
+            print(f"⏱️ Formatting completed in {format_end_time - format_start_time:.2f} seconds") 
             # Debug log each document being passed to GPT
-            print("\n📄 Documents sent to GPT:")
-            for result in best_results:
-                print(f"\n[Collection: {result['collection']}]")
-                print(f"Categories: {result['categories']}")
-                print(f"Relevance Score: {result['relevance_score']:.4f}")
-                print("Content Preview:\n", result['content'][:500], "...\n")
+            # print("\n📄 Documents sent to GPT:")
+            # for result in best_results:
+            #     print(f"\n[Collection: {result['collection']}]")
+            #     print(f"Categories: {result['categories']}")
+            #     print(f"Relevance Score: {result['relevance_score']:.4f}")
+            #     print("Content Preview:\n", result['content'][:500], "...\n")
 
             original_results = best_results.copy()
             query_lower = query.lower().strip()
@@ -403,9 +581,9 @@ def get_relevant_chroma_data(query: str, n_results: int = 5):
             #print(f"Raw results {raw_results}")
             context = "\n\n".join(raw_results)
             cache[cache_key] = context
-            print(f"\n--- DEBUG: FINAL context sent to GPT (first 1000 chars) ---")
-            print(context[:6000])
-            print("-----------------------------------------------------------")
+            # print(f"\n--- DEBUG: FINAL context sent to GPT (first 1000 chars) ---")
+            # print(context[:6000])
+            # print("-----------------------------------------------------------")
             return context
 
 

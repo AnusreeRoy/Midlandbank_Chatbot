@@ -1,6 +1,35 @@
 import re
 from fuzzywuzzy import fuzz
+from difflib import get_close_matches
 from chatbot.data.config import bank_keywords
+from chatbot.services import llm_services
+from chatbot.services.retrieval_services import cache
+from chatbot.services import retrieval_services
+
+def normalize_message(text):
+    text = text.lower()
+    text = re.sub(r'[^\w\s]', '', text)
+    text = re.sub(r'\s+', ' ', text).strip()
+
+    # Expand common abbreviations
+    replacements = {
+        "u": "you",
+        "r": "are",
+        "ur": "your",
+        "pls": "please",
+        "thx": "thanks"
+    }
+    words = text.split()
+    expanded = [replacements.get(w, w) for w in words]
+    return ' '.join(expanded)
+
+
+def fuzzy_greeting_match(text, greetings_dict):
+    normalized = normalize_message(text)
+    matches = get_close_matches(normalized, greetings_dict.keys(), n=1, cutoff=0.6)
+    return matches[0] if matches else None
+
+
 
 def is_relevant_query(user_message):
     """Check if query is banking-related using fuzzy matching."""
@@ -24,12 +53,12 @@ def clean_response(text):
         clean_text.append('.'.join(filtered_sents).strip())
     return "\n".join(clean_text).strip()
 
-def truncate_context(context, max_chars=6000):
+def truncate_context(context, max_chars=3000, fallback_min=1000):
     if len(context) <= max_chars:
         return context
     truncated = context[:max_chars]
     last_period = truncated.rfind('.')
-    if last_period == -1 or last_period < max_chars * 0.5:
+    if last_period == -1 or last_period < fallback_min:
         return truncated.strip() + " ..."
     return truncated[:last_period+1]
 
@@ -49,13 +78,24 @@ def normalize_block_spacing(text):
 
 
 def extract_management_sentences(context, role_keywords):
-    """Extract sentences mentioning management roles from the context."""
-    sentences = re.split(r'(?<=[.?!])\s+', context.strip())
+    text = context.strip()
+    # Protect common abbreviations
+    for abbr in ["Mr.", "Md.", "Mrs.", "Dr.", "Ms."]:
+        text = text.replace(abbr, abbr.replace(".", "<dot>"))
+    # Protect middle initials like "U."
+    text = re.sub(r"\b([A-Z])\.", r"\1<dot>", text)
+
+    # Split into sentences
+    sentences = re.split(r'(?<=[.?!])\s+', text)
+    # Restore dots
+    sentences = [s.replace("<dot>", ".") for s in sentences]
+
     relevant = []
     for sentence in sentences:
         if any(re.search(rf'\b{re.escape(role)}\b', sentence, re.IGNORECASE) for role in role_keywords):
             relevant.append(sentence.strip())
     return "\n".join(relevant)
+
 
 def extract_board_sentences(context, board_keywords=None):
     if board_keywords is None:
@@ -114,16 +154,47 @@ def extract_sponsor_sentences(context: str, sponsor_keywords=None):
     return "\n".join(relevant)
 
 
-def normalize_query_with_aliases(query: str, aliases: dict) -> str:
-    query_lower = query.lower()
-    sorted_aliases = sorted(aliases.items(), key=lambda x: len(x[0]), reverse=True)  # Prioritize longer phrases
-
-    for alias_phrase, canonical_name in sorted_aliases:
-        alias_phrase_lower = alias_phrase.lower()
-        if alias_phrase_lower in query_lower:
-            query = query.replace(alias_phrase, canonical_name)
-            query_lower = query.lower()  # Update after each replacement
+def normalize_query_for_matching(query: str) -> str:
+    query = query.lower().strip()
+    query = re.sub(r'\bu\b', 'you', query)         # Replace u → you
+    query = re.sub(r'[^\w\s]', '', query)          # Remove punctuation like ? or !
     return query
+
+
+def normalize_query_with_aliases(query: str, aliases: dict) -> str:
+    # Sort by descending alias length to match longer phrases first
+    sorted_aliases = sorted(aliases.items(), key=lambda x: -len(x[0]))
+
+    # Keep track of replaced spans to avoid double replacements
+    replaced_spans = []
+
+    def replacement_func_factory(start, end, canonical_name):
+        def replace_func(match):
+            # Ensure the match doesn't overlap any existing replacements
+            match_span = match.span()
+            for span in replaced_spans:
+                if not (match_span[1] <= span[0] or match_span[0] >= span[1]):
+                    return match.group()  # Overlaps, skip replacement
+            replaced_spans.append(match_span)
+            return canonical_name
+        return replace_func
+
+    # Work on a copy so we can track replacements properly
+    result = query
+    
+    # Catch the "What are the charges of [product]" and "What are the charges for [product]"
+    if "charges" in result and ("of" in result or "for" in result):
+        # Normalize phrasing such as "What are the charges of credit card?" to "credit card fees and charges"
+        result = re.sub(r"(what are the charges (of|for)\s+)(\w+(\s\w+)+)", lambda match: match.group(3).strip() + " fees and charges", result, flags=re.IGNORECASE)
+
+    for alias, canonical in sorted_aliases:
+        pattern = re.compile(r'\b' + re.escape(alias) + r'\b', re.IGNORECASE)
+        for match in pattern.finditer(result):
+            replacement_func = replacement_func_factory(*match.span(), canonical)
+            result = pattern.sub(replacement_func, result, count=1)  # Replace one at a time to preserve spans
+
+    return result
+
 
 def extract_target_phrases(context, target_phrases):
     """
@@ -136,3 +207,293 @@ def extract_target_phrases(context, target_phrases):
         if any(re.search(rf'\b{re.escape(phrase)}\b', sentence, re.IGNORECASE) for phrase in target_phrases):
             relevant.append(sentence.strip())
     return "\n".join(relevant)
+
+
+# === Topic Detection ===
+def extract_topic_from_message(message: str):
+    """
+    Extracts topic/product name from user message. 
+    If message is vague or purely follow-up, returns None.
+    """
+    follow_up_keywords = [
+        "its features", "eligibility", "requirements", "needed",
+        "documents", "interest rate", "where to get", "benefits",
+        "how to apply", "how does it work", "what are the benefits",
+        "can i apply", "tell me more", "explain its features", "next steps",
+        "what's the process", "application process", "open it", "what about it",
+        "next steps", "what's next", "i want to know more", "i want to apply",
+        "guide me", "more info", "details please", "what are charges"
+    ]
+    message_lower = message.lower().strip()
+    
+    # === New addition: Ignore short numeric or currency answers ===
+    if re.fullmatch(r'(bdt|taka)?\s?[\d,.]+( years?)?', message_lower) or re.fullmatch(r'[\d,.]+\s?(years?)?', message_lower):
+        return None
+    
+    # Also ignore short replies that are likely parameters
+    if len(message_lower.split()) <= 2 and any(char.isdigit() for char in message_lower):
+        return None
+
+    # If the message is very short and vague
+    if len(message_lower.split()) < 3 and any(k in message_lower for k in follow_up_keywords):
+        return None
+
+    # Try extracting topic from question pattern
+    match = re.search(r"(what is|tell me about|explain|define)\s+(.*?)($|\s(and|with)\s)", message_lower)
+    if match:
+        return match.group(2).strip()
+    
+    # Try fallback noun extraction if message includes 'and'
+    parts = re.split(r'\s+and\s+|\s*,\s*', message_lower)
+    for part in parts:
+        if any(word in part for word in ['account', 'saver', 'loan', 'card', 'deposit']):
+            return part.strip()
+
+    return message_lower  # fallback
+
+
+def sanitize_context(raw) -> str:
+    if isinstance(raw, bytes):
+        raw = raw.decode('utf-8', errors='replace')
+    return str(raw)
+
+def sanitize_for_llm(text: str) -> str:
+    import re
+
+    # Remove HTML-like content
+    text = re.sub(r"<[^>]+>", "", text)
+
+    # Remove instruction-style phrases
+    blocked_phrases = [
+        r"ignore\s+previous",
+        r"ignore\s+all",
+        r"system\s+prompt",
+        r"developer\s+message",
+        r"you\s+are\s+now",
+        r"act\s+as",
+        r"pretend\s+to",
+    ]
+
+    for pattern in blocked_phrases:
+        text = re.sub(pattern, "", text, flags=re.I)
+
+    return text.strip()
+
+
+def reframe_confirmation_reply(user_message, last_topic, last_bot_message):
+    """
+    Reframes vague replies like 'yes', 'how do I apply for it' etc.
+    Replaces vague pronouns like 'it', 'this', 'that' with last_topic.
+    Returns None if no reframing is needed.
+    """
+
+    confirmations = {
+        "yes", "ok", "okay", "sure", "go ahead", "please do", "proceed", "alright",
+        "tell me more", "elaborate", "how can i apply for it", "how do i apply", "apply for it",
+        "more info", "details please", "what's the process", "what about it", "this", "that", "it",
+        "guide me", "next steps", "what's next", "i want to know more", "i want to apply",
+        "more details", "more information", "please continue", "continue", "go on"
+    }
+    rejections = {"no", "not now", "maybe later", "cancel", "never mind"}
+
+    user_msg = user_message.strip().lower()
+
+    if user_msg in rejections:
+        return "No follow-up needed. Thank you!"
+
+    if not last_topic:
+        return None  # Can't fix vague refs if we don't know the topic
+
+    # If user's message contains vague words like "it", "this", etc — replace them with topic
+    if any(vague in user_msg for vague in {"it", "this", "that"}):
+        rewritten = re.sub(r'\b(it|this|that)\b', last_topic, user_msg)
+        return rewritten.strip()
+
+    # If user message is one of the confirmations — reframe into generic follow-up
+    if user_msg in confirmations:
+        print("🧠 Using GPT to rephrase vague confirmation based on last bot question...")
+        
+        
+        # Basic message structure
+        gpt_messages = [ {"role": "system", "content": (
+        "You are a bank assistant. Your task is to rephrase vague replies "
+        "like 'yes', 'how do I apply for it', or 'tell me more' into clear, complete follow-up requests. "
+        "Make sure the output is specific to the last topic. Be clear and concise."
+        )},
+        {"role": "user", "content": (
+            f"The user said: '{user_msg}'. The previous bot message was: '{last_bot_message}'. "
+            f"The topic is: '{last_topic}'.\n\nPlease convert the user reply into a clear follow-up request."
+        )}]
+
+        followup_rephrased = llm_services.get_gpt_response(gpt_messages, cache=cache)
+        print(f"🔄 GPT rephrased: {followup_rephrased}")
+        if not followup_rephrased or not followup_rephrased.strip():
+            return f"Please continue explaining about {last_topic}."
+    
+        return followup_rephrased.strip()
+
+    # Otherwise no reframing needed
+    return None
+
+def append_to_chat_history(request, user_message, bot_response):
+    chat_history = request.session.get("chat_history", [])
+    chat_history.append({"role": "user", "content": user_message})
+    chat_history.append({"role": "assistant", "content": bot_response})
+    request.session["chat_history"] = chat_history[-10:]  # Keep last 10
+    request.session.modified = True
+
+
+def get_last_bot_message(chat_history):
+    for msg in reversed(chat_history):
+        if msg["role"] == "assistant":
+            return msg["content"]
+    return None
+
+
+def parse_amount(text: str) -> int:
+    text = text.lower().strip()
+
+    # Define multipliers
+    multipliers = {
+        "thousand": 1_000,
+        "k": 1_000,  # shorthand
+        "lakh": 100_000,
+        "lac": 100_000,
+        "crore": 10_000_000,
+        "million": 1_000_000,
+        "billion": 1_000_000_000,
+    }
+
+    # Extract number part
+    number_match = re.search(r"[\d\.]+", text)
+    if not number_match:
+        raise ValueError(f"Could not parse numeric value from: {text}")
+    number = float(number_match.group())
+
+    # Find multiplier keyword
+    multiplier = 1
+    for word, factor in multipliers.items():
+        if word in text:
+            multiplier = factor
+            break
+
+    return int(number * multiplier)
+
+
+def handle_conversation_state(user_message, request):
+    conversation_state = request.session.get("conversation_state", {})
+    user_info = request.session.get("user_info", {})
+
+    state_type = conversation_state.get("type")
+
+    if state_type == "awaiting_location":
+        location = user_message.strip().lower()
+        user_info["location"] = location
+        request.session["user_info"] = user_info
+
+        # Mark location as received
+        request.session["conversation_state"] = {"type": "location_received"}
+        request.session.modified = True
+
+        # 🔹 Step 1: Fetch ChromaDB data
+        context = retrieval_services.get_relevant_chroma_data(location)
+        sanitized = sanitize_context(context)
+
+        # 🔹 Step 2: Filter only the relevant location lines
+        filtered_lines = []
+        for line in sanitized.splitlines():
+            l = line.lower()
+
+            # Skip obvious non-branch data (minimal change)
+            if any(x in l for x in ["hotel", "restaurant", "buffet", "offer", "iftar"]):
+                continue
+        
+            # Your original filter, unchanged
+            if location in l or "midland bank" in l:
+                filtered_lines.append(line)
+
+        sanitized = "\n".join(filtered_lines).strip()
+        print(f"Sanitized branch data for location '{location}': {sanitized}")
+        # Handle empty data
+        if not sanitized:
+            return (
+                f"Thanks! Noted your location as **{location.title()}**, "
+                "but I couldn't find any nearby branches."
+            )
+
+        # 🔹 Step 3: Build clean GPT prompt (no disclaimers allowed)
+        messages = llm_services.build_message_list(
+            f"""
+            From the provided data, display only the Midland Bank branch or branches
+            that directly match '{location}'.
+            Do NOT mention other branches, unavailable information, or data limitations.
+            Only show confirmed details for the matched branch(es): 
+            branch name, address, hours, email, phone, and services.
+            Keep the tone concise and professional.
+            """,
+            sanitized,
+            cache=None,
+            history=[]
+        )
+
+        # 🔹 Step 4: Get GPT response
+        response = llm_services.get_gpt_response(messages, cache=None)
+
+        # 🔹 Step 5: Clean up unwanted fallback lines (safety net)
+        unwanted_phrases = [
+            "I don’t have complete details",
+            "If you tell me a specific area",
+            "I can check if we have that branch’s details",
+            "other nearby branches",
+            "I don’t have a confirmed list",
+            "data I have"
+        ]
+        for phrase in unwanted_phrases:
+            response = response.replace(phrase, "")
+
+        # Remove empty or extra newlines
+        response = "\n".join(
+            [line.strip() for line in response.splitlines() if line.strip()]
+        )
+
+        return response
+    
+    if state_type == "awaiting_amount":
+        amount_keywords = ["loan", "amount", "eligible", "eligibility", "credit", "apply", "bdt", "lac", "crore", "thousand"]
+        if re.search(r"\d+", user_message) and any(k in user_message.lower() for k in amount_keywords):
+            try:
+                amount = parse_amount(user_message.strip())
+            except ValueError:
+                return "Please enter a valid numeric amount."
+        
+            # Save amount in session
+            user_info["amount"] = amount
+            request.session["user_info"] = user_info
+        
+            # Mark state as 'amount_received'
+            request.session["conversation_state"] = {"type": "amount_received"}
+            request.session.modified = True
+        
+            # Now perform eligibility check
+            context = retrieval_services.get_relevant_chroma_data( f"eligibility check for loan amount {amount}" )
+            sanitized = sanitize_context(context)
+        
+            if not sanitized.strip():
+                return f"Got your amount: {amount}, but I couldn’t find eligibility rules."
+        
+            messages = llm_services.build_message_list(
+                f"Check eligibility for loan with amount {amount}.",
+                sanitized,
+                cache=None,
+                history=[]
+            )
+            response = llm_services.get_gpt_response(messages, cache=None)
+            return response
+        else:
+            # Reset state if input is not a loan amount 
+            request.session["conversation_state"] = {} 
+            request.session.modified = True 
+            return None
+
+
+    return None

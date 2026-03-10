@@ -1,0 +1,15 @@
+# Ignore virtual environment
+myenv/
+
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+
+# Ignore environment config
+*.env
+
+# Ignore SQLite DB if not needed
+*.sqlite3
+
+# Ignore system files
+.DS_Store

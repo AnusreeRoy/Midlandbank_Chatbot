@@ -1,0 +1,86 @@
+{% load static %}
+{% load linebreaks_custom %}
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+/>
+<link rel="stylesheet" href="{% static 'chatbot/css/chatbot.css' %}" />
+
+<div class="chatbot-container">
+  <!-- Text Message -->
+  <span class="chatbot-text">Need help? Ask Us!</span>
+
+  <!-- Chatbot Icon -->
+  <img
+    src="{% static 'chatbot/images/chat-icon.png' %}"
+    alt="Chatbot Icon"
+    class="chatbot-icon"
+    onclick="toggleChat()"
+  />
+
+  <!-- Chat Interface -->
+  <div id="chatInterface" class="chat-interface hidden">
+    <!-- Chat Header -->
+    <div class="chat-header">
+      <h4>Midland Bank AI Assistant</h4>
+      <div class="chat-header-buttons">
+        <button onclick="toggleExpand()" class="expand-btn">
+          <i id="expandIcon" class="fa-solid fa-expand"></i>
+        </button>
+        <button onclick="toggleChat()">×</button>
+      </div>
+    </div>
+
+    <!-- Chat Body -->
+    <div id="chatBody" class="chat-body">
+      {% for message in chatHistory %}
+      <div class="message-container">
+        <div class="{% if message.isUser %}user-message{% else %}bot-message{% endif %}">
+          {% if not message.isUser %}
+          <!-- BOT MESSAGE -->
+          <div class="message-wrapper">
+            <div class="message-header">
+              <img src="{% static 'chatbot/images/chat-icon.png' %}" alt="Bot Icon" class="message-icon" />
+              <span class="message-name">Midland Bank AI Assistant</span>
+            </div>
+            <p class="message-text">{{ message.text|linebreaks_custom|safe }}</p>
+            {% if message.isLoading %}
+            <span class="loading-indicator"></span>
+            {% endif %}
+          </div>
+          {% else %}
+          <!-- USER MESSAGE -->
+          <div class="message-wrapper user-side">
+            <div class="message-header user-header">
+              <img src="{% static 'chatbot/images/user-icon.png' %}" alt="User Icon" class="user-message-icon" />
+              <span class="message-name">Me</span>
+            </div>
+            <p class="message-text">{{ message.text}}</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Chat Footer -->
+    <div class="chat-footer">
+      <div class="input-container">
+        <input
+          maxlength="1000"
+          id="chatInput"
+          type="text"
+          name="userQuery"
+          placeholder="Message Assistant"
+          onkeydown="if(event.key === 'Enter') sendMessage()"
+        />
+        <button onclick="sendMessage()">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'chatbot/js/chatbot.js' %}"></script>
