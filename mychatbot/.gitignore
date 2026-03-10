@@ -13,3 +13,10 @@ __pycache__/
 
 # Ignore system files
 .DS_Store
+
+tools/
+tools.zip
+tools/
+*.dll
+*.exe
+cache_dir/
