@@ -1,7 +1,7 @@
-<link
+<!-- <link
   rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-/>
+  href=""
+/> -->
 <div class="chatbot-container">
   <!-- Text Message -->
   <span class="chatbot-text">Need help? Ask Us!</span>
@@ -81,7 +81,9 @@
               />
               <span class="message-name">Me</span>
             </div>
-            <p [innerHTML]="message.text | linebreaks"></p>
+            <!-- <p [innerHTML]="message.text | linebreaks"></p> -->
+             <!-- USER MESSAGE -->
+            <p class="user-text">{{ message.text }}</p>
           </div>
         </div>
       </div>

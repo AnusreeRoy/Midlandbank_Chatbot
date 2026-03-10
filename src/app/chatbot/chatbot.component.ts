@@ -64,6 +64,8 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { timeout, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 declare var webkitSpeechRecognition: any;
+import url from '../../assets/config.json';
+
 @Component({
   selector: 'app-chatbot',
   standalone: true,
@@ -81,6 +83,9 @@ export class ChatbotComponent implements AfterViewChecked {
   private shouldScroll = false;
   private recognition: any;
   private currentPlayingMessage: any = null;
+  private backendAudio: HTMLAudioElement | null = null;
+  private backendAudioPaused = false;
+  private backendPlayingMessage: any = null;
 
   ngAfterViewChecked(): void {
     if (this.shouldScroll) {
@@ -99,6 +104,10 @@ export class ChatbotComponent implements AfterViewChecked {
   constructor(private http: HttpClient, private sanitizer: DomSanitizer, private cdr: ChangeDetectorRef) {} // Inject HttpClient and DomSanitizer
 
 toggleChat(): void {
+  if (this.chatVisible) {
+    this.stopSpeech();
+  }
+
   this.chatVisible = !this.chatVisible;
 
   if (this.chatVisible) {
@@ -124,18 +133,17 @@ toggleChat(): void {
   }
 
 ngOnInit(): void {
-  if ('webkitSpeechRecognition' in window) {
+if ((window as any).webkitSpeechRecognition) {
     this.recognition = new webkitSpeechRecognition();
     this.recognition.continuous = false; // Stops after the first speech result
     this.recognition.interimResults = false; // Get only final results
   }
 }
 
-startVoiceInput(): void {
-  this.stopSpeech(); // Stop any ongoing TTS or audio playback
+startChromeSpeechRecognition(): void {
+  this.stopSpeech();
 
   if (!this.recognition) {
-    // Show message in chat instead of alert
     this.chatHistory.push({
       text: "Your browser does not support voice input.",
       isUser: false,
@@ -146,35 +154,34 @@ startVoiceInput(): void {
     return;
   }
 
-  // Reset state for each new voice input attempt
   let noVoiceInputDetected = true;
   let silenceTimer: any;
 
-  // Optional: show a "Listening..." indicator
   const listeningMessage = {
     text: "🎤 Listening...",
     isUser: false,
     isLoading: false
   };
+
   this.chatHistory.push(listeningMessage);
   this.shouldScroll = true;
   this.cdr.detectChanges();
 
-  // Set up the result handler to process speech input
   this.recognition.onresult = (event: SpeechRecognitionEvent) => {
-    clearTimeout(silenceTimer); // Stop silence detection when speech is detected
+    clearTimeout(silenceTimer);
 
     for (let i = event.resultIndex; i < event.results.length; i++) {
       const result = event.results[i];
       const transcript = result[0].transcript;
+
       if (result.isFinal && transcript.trim()) {
         this.userQuery = transcript.trim();
-        noVoiceInputDetected = false; // Voice input detected
         this.lastInputWasVoice = true;
-        this.recognition.stop(); // Stop recognition after result
-        this.sendMessage(); // Send the detected message
+        noVoiceInputDetected = false;
 
-        // Remove the "Listening..." indicator
+        this.recognition.stop();
+        this.sendMessage();
+
         const index = this.chatHistory.indexOf(listeningMessage);
         if (index !== -1) this.chatHistory.splice(index, 1);
         this.cdr.detectChanges();
@@ -182,54 +189,56 @@ startVoiceInput(): void {
     }
   };
 
-  // Handle speech recognition errors
   this.recognition.onerror = (event: SpeechRecognitionError) => {
     clearTimeout(silenceTimer);
-    console.error('Speech recognition error', event);
 
-    // Replace alert with chat message
-    let errorMsg = 'Sorry, something went wrong with the voice input. Please try again.';
-    if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
-      errorMsg = 'Microphone access denied. Please allow microphone permissions and try again.';
+    let errorMsg = 'Voice input failed. Please try again.';
+    if (event.error === 'not-allowed') {
+      errorMsg = 'Microphone permission denied.';
     } else if (event.error === 'no-speech') {
-      errorMsg = 'No speech detected. Please speak clearly and try again.';
+      errorMsg = 'No speech detected.';
     }
 
     this.chatHistory.push({ text: errorMsg, isUser: false, isLoading: false });
     this.lastInputWasVoice = false;
 
-    // Remove "Listening..." indicator
     const index = this.chatHistory.indexOf(listeningMessage);
     if (index !== -1) this.chatHistory.splice(index, 1);
 
-    this.shouldScroll = true;
     this.cdr.detectChanges();
   };
 
-  // Start speech recognition
   this.recognition.start();
 
   this.recognition.onstart = () => {
-  // Set a timer for detecting no voice input
-  silenceTimer = setTimeout(() => {
-    if (noVoiceInputDetected) {
-      this.chatHistory.push({
-        text: 'No voice input detected. Please try again or type your message.',
-        isUser: false,
-        isLoading: false
-      });
-      this.lastInputWasVoice = false;
-      this.recognition.stop();
+    silenceTimer = setTimeout(() => {
+      if (noVoiceInputDetected) {
+        this.chatHistory.push({
+          text: 'No voice input detected. Please try again.',
+          isUser: false,
+          isLoading: false
+        });
+        this.lastInputWasVoice = false;
+        this.recognition.stop();
 
-      // Remove "Listening..." indicator
-      const index = this.chatHistory.indexOf(listeningMessage);
-      if (index !== -1) this.chatHistory.splice(index, 1);
+        const index = this.chatHistory.indexOf(listeningMessage);
+        if (index !== -1) this.chatHistory.splice(index, 1);
 
-      this.shouldScroll = true;
-      this.cdr.detectChanges();
-    }
-  }, 6000); // 6 seconds of silence detection
-};
+        this.cdr.detectChanges();
+      }
+    }, 6000);
+  };
+}
+
+
+startVoiceInput(): void {
+if ((window as any).webkitSpeechRecognition) {
+    // ✅ Chrome / Edge
+    this.startChromeSpeechRecognition();
+  } else {
+    // 🌍 Firefox / Safari / Mobile
+    this.startVoiceRecording();
+  }
 }
 
   // sendMessage(): void {
@@ -359,7 +368,37 @@ startVoiceInput(): void {
   //   }
   // }
 
+private startThinking(botMessage: any): number {
+  const loadingMessages = [
+    { after: 0, text: 'Thinking' },
+    { after: 5000, text: 'Working on it' },
+    { after: 12000, text: 'This may take a little longer' },
+    { after: 15000, text: 'Almost there' }
+  ];
+
+  const startTime = Date.now();
+
+  return window.setInterval(() => {
+    if (!botMessage.isLoading) return;
+
+    const elapsed = Date.now() - startTime;
+
+    const current = [...loadingMessages]
+      .reverse()
+      .find(m => elapsed >= m.after);
+
+    if (current) {
+      const dots = '.'.repeat((Math.floor(elapsed / 500) % 4));
+      botMessage.text = current.text + dots;
+      this.cdr.markForCheck();
+      this.shouldScroll = true;
+    }
+  }, 500);
+}
+
+
   sendMessage(): void {
+
   this.stopSpeech();
 
   const trimmedQuery = this.userQuery.trim();
@@ -399,20 +438,23 @@ startVoiceInput(): void {
   this.shouldScroll = true;
   this.cdr.detectChanges(); // render immediately
 
-  // 3️⃣ Animate "Thinking..."
-  let dotCount = 0;
-  const baseText = 'Thinking';
-  const typingInterval = setInterval(() => {
-    dotCount = (dotCount + 1) % 4;
-    botMessage.text = baseText + '.'.repeat(dotCount);
-    this.cdr.markForCheck();
-    this.shouldScroll = true;
-  }, 500);
+  // // 3️⃣ Animate "Thinking..."
+  // let dotCount = 0;
+  // const baseText = 'Thinking';
+  // const typingInterval = setInterval(() => {
+  //   dotCount = (dotCount + 1) % 4;
+  //   botMessage.text = baseText + '.'.repeat(dotCount);
+  //   this.cdr.markForCheck();
+  //   this.shouldScroll = true;
+  // }, 500);
+  const typingInterval = this.startThinking(botMessage);
+
 
   const TIMEOUT_DURATION = 30000; // 30 seconds
 
   // 4️⃣ Send request to backend
-  this.http.post<{ response: string }>('http://localhost:33915/mdb/GetChatbotResponse/', { message: trimmedQuery }, { withCredentials: true })
+  this.http.post<{ response: string }>(
+    `${url.apiurl}` + '/mdb/GetChatbotResponse/', { message: trimmedQuery }, { withCredentials: true })
     .pipe(timeout(TIMEOUT_DURATION),
       catchError(error => {
         clearInterval(typingInterval);
@@ -500,6 +542,7 @@ startVoiceInput(): void {
     const target = event.target as HTMLElement;
     if (!target.closest('.chat-interface') && !target.closest('.chatbot-icon')&&
     !target.closest('.stop-btn')) {
+      this.stopSpeech();     
       this.chatVisible = false;
     }
   }
@@ -559,6 +602,29 @@ private addGreeting(): void {
 }
 
 stopSpeech(message?: any): void {
+
+    // 🔊 Backend audio
+  if (message?.isBackendAudio && this.backendAudio) {
+    this.backendAudio.pause();
+    //this.backendAudio.currentTime = 0;
+    this.backendAudioPaused = true;
+
+    message.isPlaying = false;
+    message.showStopButton = false;
+    message.showResumeButton = true;
+
+    this.cdr.detectChanges();
+    return;
+  }
+
+  if (this.backendAudio) {
+    this.backendAudio.pause();
+    this.backendAudio.currentTime = 0;
+    this.resetBackendAudio(this.backendPlayingMessage);
+  }
+
+  
+  // Browser TTS stop
   speechSynthesis.cancel();
 
   if (message) {
@@ -574,6 +640,21 @@ stopSpeech(message?: any): void {
 }
 
 resumeSpeech(message: any): void {
+
+    // 🔊 Backend audio
+  if (message?.isBackendAudio && this.backendAudioPaused && this.backendAudio) {
+    this.backendAudio.play();
+
+    message.isPlaying = true;
+    message.showStopButton = true;
+    message.showResumeButton = false;
+
+    this.backendAudioPaused = false;
+    this.backendPlayingMessage = message;
+    this.cdr.detectChanges();
+    return;
+  }
+
   if (!message.pausedText || message.pausedCharIndex == null) return;
 
   if (this.currentPlayingMessage && this.currentPlayingMessage !== message) {
@@ -607,4 +688,235 @@ resumeSpeech(message: any): void {
   this.cdr.detectChanges();
 }
 
+private resetBackendAudio(message: any) {
+  message.isPlaying = false;
+  message.showStopButton = false;
+  message.showResumeButton = false;
+
+  this.backendAudio = null;
+  this.backendAudioPaused = false;
+  this.backendPlayingMessage = null;
+
+  this.cdr.detectChanges();
 }
+
+
+sendAudioMessage(audioBlob: Blob): void {
+  this.stopSpeech();
+
+  // Prevent duplicate sends
+  if (this.chatHistory.some(m => m.isLoading)) return;
+
+  /* ================================
+     1️⃣ Insert USER voice placeholder
+     ================================ */
+  const userMessageIndex = this.chatHistory.length;
+
+  this.chatHistory.push({
+    text: '🎤 Voice message',
+    isUser: true,
+    isLoading: false
+  });
+  this.shouldScroll = true;
+  this.cdr.detectChanges();
+
+
+  /* ================================
+     2️⃣ Insert BOT placeholder
+     ================================ */
+  const botMessageIndex = this.chatHistory.length;
+
+  this.chatHistory.push({
+    text: 'Thinking',
+    isUser: false,
+    isLoading: true,
+    showStopButton: false,
+    showResumeButton: false,
+    pausedText: '',
+    pausedCharIndex: 0,
+    isPlaying: false
+  });
+  const botMessage = this.chatHistory[botMessageIndex];
+  const typingInterval = this.startThinking(botMessage);
+
+  this.shouldScroll = true;
+  this.cdr.detectChanges();
+
+  // /* ================================
+  //    3️⃣ Thinking animation
+  //    ================================ */
+  // let dotCount = 0;
+  // const typingInterval = setInterval(() => {
+  //   dotCount = (dotCount + 1) % 4;
+  //   this.chatHistory[botMessageIndex].text =
+  //     'Thinking' + '.'.repeat(dotCount);
+  //   this.cdr.markForCheck();
+  // }, 500);
+
+  /* ================================
+     4️⃣ Build FormData
+     ================================ */
+  const formData = new FormData();
+
+  const fileName =
+    audioBlob.type.includes('ogg') ? 'audio.ogg'
+    : audioBlob.type.includes('wav') ? 'audio.wav'
+    : audioBlob.type.includes('mp3') ? 'audio.mp3'
+    : audioBlob.type.includes('m4a') || audioBlob.type.includes('aac') ? 'audio.m4a'
+    : 'audio.webm';
+
+  formData.append('audio', audioBlob, fileName);
+
+  /* ================================
+     5️⃣ Send to backend
+     ================================ */
+  this.http.post<any>(`${url.apiurl}` + '/mdb/GetChatbotResponseByVoice/',
+    formData,
+    { withCredentials: true }
+  ).pipe(
+    timeout(60000),
+    catchError(() => {
+      clearInterval(typingInterval);
+
+      this.chatHistory[botMessageIndex].isLoading = false;
+      this.chatHistory[botMessageIndex].text =
+        'Voice processing failed. Please try again.';
+
+      // this.chatHistory = [...this.chatHistory];
+      this.cdr.detectChanges();
+      return of(null);
+    })
+  ).subscribe(res => {
+    clearInterval(typingInterval);
+    if (!res) return;
+
+    /* ================================
+       6️⃣ Replace VOICE placeholder
+       ================================ */
+    if (res.transcript && this.chatHistory[userMessageIndex]) {
+      this.chatHistory[userMessageIndex].text = res.transcript;
+    }
+
+    /* ================================
+       7️⃣ Update BOT message
+       ================================ */
+    const botMessage = this.chatHistory[botMessageIndex];
+    botMessage.text = res.response;
+    botMessage.isLoading = false;
+    botMessage.pausedText = res.response;
+
+    /* ================================
+       8️⃣ Trigger UI refresh
+       ================================ */
+    this.chatHistory = [...this.chatHistory];
+    this.cdr.detectChanges();
+
+    /* ================================
+       9️⃣ Play backend TTS
+       ================================ */
+    if (res.audio_base64) {
+      this.playBackendAudio(res.audio_base64, botMessage);
+    }
+  });
+}
+
+
+playBackendAudio(base64: string, botMessage: any) {
+  // Stop only if another message is playing
+  if (this.backendPlayingMessage && this.backendPlayingMessage !== botMessage) {
+    this.stopSpeech(this.backendPlayingMessage);
+  }
+
+  // if (this.backendAudio) {
+  //   this.backendAudio.pause();
+  //   this.backendAudio.currentTime = 0;
+  //   this.resetBackendAudio(this.backendPlayingMessage);
+  // }
+
+  const audio = new Audio(`data:audio/mp3;base64,${base64}`);
+
+  this.backendAudio = audio;
+  this.backendPlayingMessage = botMessage;
+  this.backendAudioPaused = false;
+
+
+  botMessage.isBackendAudio = true;
+  botMessage.isPlaying = true;
+  botMessage.showStopButton = true;
+  botMessage.showResumeButton = false;
+  
+  this.cdr.detectChanges();
+
+  audio.onended = () => {
+    this.resetBackendAudio(botMessage);
+    // botMessage.isPlaying = false;
+    // botMessage.showStopButton = false;
+    // this.currentPlayingMessage = null;
+    // this.cdr.detectChanges();
+  };
+
+  // this.currentPlayingMessage = botMessage;
+  audio.play();
+}
+
+async startVoiceRecording(): Promise<void> {
+  this.stopSpeech();
+
+  // Request microphone access
+  const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+
+  // ✅ Try to use a MIME type Whisper can handle
+  // Firefox often prefers 'audio/ogg;codecs=opus'
+  // Chrome/Edge usually support 'audio/webm;codecs=opus'
+  const preferredMimeTypes = [
+    'audio/webm;codecs=opus',
+    'audio/ogg;codecs=opus',
+    'audio/webm',
+    'audio/ogg',
+    'audio/mp4', 
+    'audio/m4a'
+  ];
+
+  let mimeType = '';
+  for (const type of preferredMimeTypes) {
+    if (MediaRecorder.isTypeSupported(type)) {
+      mimeType = type;
+      break;
+    }
+  }
+
+  const recorder = new MediaRecorder(stream, mimeType ? { mimeType } : undefined);
+  const chunks: Blob[] = [];
+
+  const listeningMessage = {
+    text: "🎤 Listening...",
+    isUser: false,
+    isLoading: false
+  };
+
+  this.chatHistory.push(listeningMessage);
+  this.cdr.detectChanges();
+
+  recorder.ondataavailable = e => chunks.push(e.data);
+
+  recorder.onstop = () => {
+    // ✅ Use recorder.mimeType so Blob type matches actual data
+    const audioBlob = new Blob(chunks, { type: recorder.mimeType });
+
+    this.lastInputWasVoice = true;
+
+    const index = this.chatHistory.indexOf(listeningMessage);
+    if (index !== -1) this.chatHistory.splice(index, 1);
+
+    console.log(audioBlob.size, audioBlob.type);
+    this.sendAudioMessage(audioBlob);
+  };
+
+  recorder.start();
+
+  // Stop after 6 seconds
+  setTimeout(() => recorder.stop(), 10000);
+}
+
+}
+
